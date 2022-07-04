@@ -4812,6 +4812,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .site-header__phone-number {
     font-size: 20px;
+    color: red;
     font-weight: 700
 }
 
