@@ -9,7 +9,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
-        public ActionResult Index()
+        public ActionResult Contact()
         {
             return View();
         }

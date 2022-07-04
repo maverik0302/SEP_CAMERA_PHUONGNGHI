@@ -9,7 +9,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
-        public ActionResult Index()
+        public ActionResult Blog()
         {
             return View();
         }

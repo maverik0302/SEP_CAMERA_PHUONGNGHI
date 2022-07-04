@@ -9,7 +9,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
     public class ShopGridController : Controller
     {
         // GET: ShopGrid
-        public ActionResult Index()
+        public ActionResult ShopGrid()
         {
             return View();
         }
