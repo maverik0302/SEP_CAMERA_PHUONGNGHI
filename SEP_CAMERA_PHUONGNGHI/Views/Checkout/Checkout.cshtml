@@ -121,11 +121,52 @@
                                 </tbody>
                                 <tfoot class="checkout__totals-footer">
                                     <tr>
-                                        <th>Total</th>
+                                        <th>Tổng hóa đơn</th>
                                         <td>$5,882.00</td>
                                     </tr>
                                 </tfoot>
                             </table>
+                            <div class="payment-methods">
+                                <ul class="payment-methods__list">
+                                    <li class="payment-methods__item payment-methods__item--active">
+                                        <label class="payment-methods__item-header">
+                                            <span class="payment-methods__item-radio input-radio">
+                                                <span class="input-radio__body">
+                                                    <input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked"> <span class="input-radio__circle"></span>
+                                                </span>
+                                            </span><span class="payment-methods__item-title">
+                                                Giao hàng thanh toán tiền mặt
+                                            </span>
+                                        </label>
+                                        <div class="payment-methods__item-container">
+                                            <div class="payment-methods__item-description text-muted">
+                                                Make your
+                                                payment directly into our bank account. Please use your Order ID
+                                                as the payment reference. Your order will not be shipped until
+                                                the funds have cleared in our account.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="payment-methods__item">
+                                        <label class="payment-methods__item-header">
+                                            <span class="payment-methods__item-radio input-radio">
+                                                <span class="input-radio__body">
+                                                    <input class="input-radio__input" name="checkout_payment_method" type="radio"> <span class="input-radio__circle"></span>
+                                                </span>
+                                            </span><span class="payment-methods__item-title">
+                                                Chuyển khoản ngân hàng
+                                            </span>
+                                        </label>
+                                        <div class="payment-methods__item-container">
+                                            <div class="payment-methods__item-description text-muted">
+                                                Please
+                                                send a check to Store Name, Store Street, Store Town, Store
+                                                State / County, Store Postcode.
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                             <button type="submit" class="btn btn-primary btn-xl btn-block">
                                 Đặt mua
                             </button>
