@@ -136,6 +136,7 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PayController.cs" />
     <Compile Include="Controllers\ShopGridController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -327,6 +328,7 @@
     <Content Include="Views\Checkout\Checkout.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\ShopGrid\ShopGrid.cshtml" />
+    <Content Include="Views\Pay\Pay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
