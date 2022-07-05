@@ -22,15 +22,15 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     
         public int id_order { get; set; }
         public string email { get; set; }
-        public string phone_number { get; set; }
+        public string name { get; set; }
+        public string phone { get; set; }
         public string address { get; set; }
         public string note { get; set; }
-        public System.DateTime order_date { get; set; }
-        public int total_price { get; set; }
-        public int status { get; set; }
-        public int id_customer { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
+        public Nullable<int> totalprice { get; set; }
+        public Nullable<int> status { get; set; }
+        public Nullable<int> id_customer { get; set; }
     
-        public virtual CUSTOMER CUSTOMER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ORDER_DETAIL> ORDER_DETAIL { get; set; }
     }

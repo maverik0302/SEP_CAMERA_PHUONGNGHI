@@ -21,16 +21,16 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
             this.ORDER_DETAIL = new HashSet<ORDER_DETAIL>();
         }
     
-        public int id { get; set; }
-        public int categoy_id { get; set; }
+        public int id_product { get; set; }
+        public Nullable<int> categoy_id { get; set; }
         public string brand { get; set; }
         public string title { get; set; }
-        public int price { get; set; }
-        public int discount { get; set; }
+        public Nullable<int> price { get; set; }
+        public Nullable<int> discount { get; set; }
         public string thumbnail { get; set; }
         public string description { get; set; }
-        public System.DateTime created { get; set; }
-        public System.DateTime updated { get; set; }
+        public Nullable<System.DateTime> created { get; set; }
+        public Nullable<System.DateTime> updated { get; set; }
         public int rank_id { get; set; }
     
         public virtual CATEGORY CATEGORY { get; set; }

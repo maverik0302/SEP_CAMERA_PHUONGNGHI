@@ -22,6 +22,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     
         public int id_category { get; set; }
         public string name_category { get; set; }
+        public Nullable<System.DateTime> createdate { get; set; }
+        public Nullable<bool> status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRODUCT> PRODUCT { get; set; }

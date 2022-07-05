@@ -141,16 +141,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ADMIN.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CATEGORY.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CUSTOMER.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GALLERY.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -168,13 +168,28 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ORDER.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORDER_DETAIL.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhuongNghiModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhuongNghiModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhuongNghiModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhuongNghiModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhuongNghiModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PRODUCT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RANK.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -182,8 +197,11 @@
     <Compile Include="Models\ROLE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SLIDE.cs">
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -231,6 +249,16 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\PhuongNghiModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhuongNghiModel.edmx</DependentUpon>
+      <LastGenOutput>PhuongNghiModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PhuongNghiModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhuongNghiModel.edmx</DependentUpon>
+      <LastGenOutput>PhuongNghiModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\stroyka\stroyka.ttf" />
@@ -259,6 +287,13 @@
     </EntityDeploy>
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PhuongNghiModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PhuongNghiModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PhuongNghiModel.edmx.diagram">
+      <DependentUpon>PhuongNghiModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

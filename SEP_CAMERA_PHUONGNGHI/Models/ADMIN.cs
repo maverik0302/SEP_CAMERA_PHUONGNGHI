@@ -14,10 +14,12 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     
     public partial class ADMIN
     {
-        public int id { get; set; }
-        public string name { get; set; }
+        public int id_admin { get; set; }
+        public string username { get; set; }
+        public string firstname { get; set; }
+        public string lastname { get; set; }
         public string password { get; set; }
-        public Nullable<System.DateTime> dateofbirth { get; set; }
-        public Nullable<int> role_id { get; set; }
+        public string email { get; set; }
+        public Nullable<System.DateTime> birthday { get; set; }
     }
 }

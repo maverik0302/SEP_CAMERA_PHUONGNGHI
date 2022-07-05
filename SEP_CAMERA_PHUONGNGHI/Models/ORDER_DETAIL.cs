@@ -14,12 +14,12 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     
     public partial class ORDER_DETAIL
     {
-        public int id_detail { get; set; }
-        public int id_order { get; set; }
-        public int id_product { get; set; }
-        public int price_detail { get; set; }
-        public int amout { get; set; }
-        public int total_price_detail { get; set; }
+        public int id_orderdetail { get; set; }
+        public Nullable<int> id_oder { get; set; }
+        public Nullable<int> id_product { get; set; }
+        public Nullable<int> price { get; set; }
+        public Nullable<int> number { get; set; }
+        public Nullable<int> totalprice { get; set; }
     
         public virtual ORDER ORDER { get; set; }
         public virtual PRODUCT PRODUCT { get; set; }

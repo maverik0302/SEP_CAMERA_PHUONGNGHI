@@ -12,12 +12,11 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class GALLERY
+    public partial class SLIDE
     {
-        public int id_gallery { get; set; }
-        public Nullable<int> id_product { get; set; }
-        public string thumbnail { get; set; }
-    
-        public virtual PRODUCT PRODUCT { get; set; }
+        public int id_slide { get; set; }
+        public string image { get; set; }
+        public string description { get; set; }
+        public Nullable<System.DateTime> create_date { get; set; }
     }
 }
