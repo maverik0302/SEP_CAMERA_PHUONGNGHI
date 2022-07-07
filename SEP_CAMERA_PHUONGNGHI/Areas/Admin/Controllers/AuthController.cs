@@ -6,12 +6,15 @@ using System.Web.Mvc;
 using SEP_CAMERA_PHUONGNGHI.Models;
 namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
 {
+    
     public class AuthController : Controller
     {
         PhuongNghiEntities model = new PhuongNghiEntities();
         // GET: Admin/Auth
         public ActionResult Login()
         {
+            Session["password-incorrect"] = false;
+            Session["user-not-found"] = false;
             return View();
         }
         [HttpPost]
