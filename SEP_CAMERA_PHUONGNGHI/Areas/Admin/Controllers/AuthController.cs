@@ -20,7 +20,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-            var user = model.Account.FirstOrDefault(u => u.Email.Equals(email));/*ADMIN.FirstOrDefault(u => u.email.Equals(email));*/
+            var user = model.Accounts.FirstOrDefault(u => u.Email.Equals(email));/*ADMIN.FirstOrDefault(u => u.email.Equals(email));*/
             if(user != null)
             {
                 if (user.Password.Equals(password))
