@@ -17,8 +17,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbProduct()
         {
-            this.Cart = new HashSet<Cart>();
-            this.KhoHang = new HashSet<KhoHang>();
+            this.Carts = new HashSet<Cart>();
+            this.KhoHangs = new HashSet<KhoHang>();
         }
     
         public int product_id { get; set; }
@@ -42,10 +42,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     
         public virtual Brand Brand { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cart> Cart { get; set; }
+        public virtual ICollection<Cart> Carts { get; set; }
         public virtual Category Category { get; set; }
         public virtual CommentProduct CommentProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhoHang> KhoHang { get; set; }
+        public virtual ICollection<KhoHang> KhoHangs { get; set; }
     }
 }
