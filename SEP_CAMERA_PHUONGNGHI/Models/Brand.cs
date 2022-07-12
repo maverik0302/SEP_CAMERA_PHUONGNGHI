@@ -17,13 +17,13 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Brand()
         {
-            this.tbProduct = new HashSet<tbProduct>();
+            this.tbProducts = new HashSet<tbProduct>();
         }
     
         public int brand_id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbProduct> tbProduct { get; set; }
+        public virtual ICollection<tbProduct> tbProducts { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ContactForm()
         {
-            this.Contact = new HashSet<Contact>();
+            this.Contacts = new HashSet<Contact>();
         }
     
         public int ct_form_id { get; set; }
@@ -27,6 +27,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public int ct_from_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Contact> Contact { get; set; }
+        public virtual ICollection<Contact> Contacts { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CUSTOMER()
         {
-            this.Oder = new HashSet<Oder>();
+            this.Oders = new HashSet<Oder>();
         }
     
         public int customer_id { get; set; }
@@ -27,6 +27,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Oder> Oder { get; set; }
+        public virtual ICollection<Oder> Oders { get; set; }
     }
 }
