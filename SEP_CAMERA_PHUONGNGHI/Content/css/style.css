@@ -5087,14 +5087,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     background: #e52e2e
 }
 
-.footer-newsletter__social-link--instagram a {
-    background: #815dc7
-}
-
-.footer-newsletter__social-link--rss a {
-    background: #ffc338
-}
-
 .footer-newsletter__form {
     display: -ms-flexbox;
     display: flex;
