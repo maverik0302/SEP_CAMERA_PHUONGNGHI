@@ -3495,7 +3495,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     font-size: 15px;
     width: 320px;
     font-weight: 400;
-    color: #ffffff;
+    color: black;
     background: #fff;
     box-shadow: 0 1px 15px rgba(0, 0, 0, .25)
 }
@@ -3668,6 +3668,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .indicator__dropdown {
     top: 100%;
     right: 0;
+    color: rgba(0, 0, 0, .15);
     position: absolute;
     visibility: hidden;
     transform-origin: top;
@@ -5084,14 +5085,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .footer-newsletter__social-link--youtube a {
     background: #e52e2e
-}
-
-.footer-newsletter__social-link--instagram a {
-    background: #815dc7
-}
-
-.footer-newsletter__social-link--rss a {
-    background: #ffc338
 }
 
 .footer-newsletter__form {
