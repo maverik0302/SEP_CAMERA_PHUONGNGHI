@@ -25,15 +25,24 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ADMIN> ADMIN { get; set; }
-        public virtual DbSet<CATEGORY> CATEGORY { get; set; }
+        public virtual DbSet<About> About { get; set; }
+        public virtual DbSet<Account> Account { get; set; }
+        public virtual DbSet<Brand> Brand { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<CommentPost> CommentPost { get; set; }
+        public virtual DbSet<CommentProduct> CommentProduct { get; set; }
+        public virtual DbSet<ContactForm> ContactForm { get; set; }
         public virtual DbSet<CUSTOMER> CUSTOMER { get; set; }
-        public virtual DbSet<GALLERY> GALLERY { get; set; }
-        public virtual DbSet<ORDER> ORDER { get; set; }
-        public virtual DbSet<ORDER_DETAIL> ORDER_DETAIL { get; set; }
-        public virtual DbSet<PRODUCT> PRODUCT { get; set; }
-        public virtual DbSet<RANK> RANK { get; set; }
-        public virtual DbSet<ROLE> ROLE { get; set; }
+        public virtual DbSet<footer> footer { get; set; }
+        public virtual DbSet<KhoHang> KhoHang { get; set; }
+        public virtual DbSet<Oder> Oder { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
+        public virtual DbSet<Post> Post { get; set; }
+        public virtual DbSet<Slide> Slide { get; set; }
+        public virtual DbSet<SysConfig> SysConfig { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<tbProduct> tbProduct { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
     }
 }

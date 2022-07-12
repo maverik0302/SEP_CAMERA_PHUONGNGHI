@@ -9,7 +9,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
     
     public class AuthController : Controller
     {
-        PhuongNghiEntities model = new PhuongNghiEntities();
+        SEP25Team01Entities model = new SEP25Team01Entities();
         // GET: Admin/Auth
         public ActionResult Login()
         {
@@ -20,13 +20,13 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-            var user = model.ADMIN.FirstOrDefault(u => u.email.Equals(email));/*ADMIN.FirstOrDefault(u => u.email.Equals(email));*/
+            var user = model.Account.FirstOrDefault(u => u.Email.Equals(email));/*ADMIN.FirstOrDefault(u => u.email.Equals(email));*/
             if(user != null)
             {
-                if (user.password.Equals(password))
+                if (user.Password.Equals(password))
                 {
-                    Session["user-username"] = user.username;
-                    Session["user-id"] = user.id_admin;
+                    Session["user-username"] = user.Username;
+                    Session["user-id"] = user.user_id;
                     return RedirectToAction("Index", "HomeAdmin");
                 }
                 else

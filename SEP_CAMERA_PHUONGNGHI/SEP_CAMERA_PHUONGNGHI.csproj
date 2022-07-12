@@ -132,7 +132,6 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PRODUCTsController.cs" />
     <Compile Include="Areas\Admin\Middleware\LoginVerification.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
@@ -146,46 +145,40 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\About.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ADMIN.cs">
-      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Brand.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CATEGORY.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CommentPost.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CommentProduct.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactForm.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CUSTOMER.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\footer.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GALLERY.cs">
-      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhoHang.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -202,74 +195,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model3.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Oder.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ORDER.cs">
-      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderDetail.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ORDER_DETAIL.cs">
-      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PhuongNghiModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhuongNghiModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PhuongNghiModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PhuongNghiModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhuongNghiModel.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Post.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PRODUCT.cs">
-      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RANK.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ROLE.cs">
+    <Compile Include="Models\Slide.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SLIDE.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SysConfig.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>PhuongNghiModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbProduct.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -310,33 +255,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model3.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model3.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\PhuongNghiModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PhuongNghiModel.edmx</DependentUpon>
-      <LastGenOutput>PhuongNghiModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\PhuongNghiModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PhuongNghiModel.edmx</DependentUpon>
-      <LastGenOutput>PhuongNghiModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -360,32 +285,13 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_mLayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\PhuongNghiModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PhuongNghiModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\PhuongNghiModel.edmx.diagram">
-      <DependentUpon>PhuongNghiModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
-    <Content Include="Areas\Admin\Views\PRODUCTs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\PRODUCTs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\PRODUCTs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\PRODUCTs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\PRODUCTs\Index.cshtml" />
-    <EntityDeploy Include="Models\Model3.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model3.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model3.edmx.diagram">
-      <DependentUpon>Model3.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

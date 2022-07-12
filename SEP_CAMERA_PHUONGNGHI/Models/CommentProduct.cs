@@ -17,7 +17,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CommentProduct()
         {
-            this.tbProducts = new HashSet<tbProduct>();
+            this.tbProduct = new HashSet<tbProduct>();
         }
     
         public int comment_id { get; set; }
@@ -30,6 +30,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public Nullable<System.DateTime> UpdateDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbProduct> tbProducts { get; set; }
+        public virtual ICollection<tbProduct> tbProduct { get; set; }
     }
 }
