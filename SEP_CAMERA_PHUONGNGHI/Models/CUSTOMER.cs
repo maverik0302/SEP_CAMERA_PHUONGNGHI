@@ -14,10 +14,19 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     
     public partial class CUSTOMER
     {
-        public int id_customer { get; set; }
-        public string name_customer { get; set; }
-        public string address { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CUSTOMER()
+        {
+            this.Oders = new HashSet<Oder>();
+        }
+    
+        public int customer_id { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> Phone { get; set; }
+        public string Address { get; set; }
         public string email { get; set; }
-        public string phone { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Oder> Oders { get; set; }
     }
 }

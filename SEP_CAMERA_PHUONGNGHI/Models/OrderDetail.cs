@@ -12,13 +12,17 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Slide
+    public partial class OrderDetail
     {
-        public int slide_id { get; set; }
-        public string Name { get; set; }
-        public string Image { get; set; }
-        public Nullable<int> Sort { get; set; }
-        public string Link { get; set; }
-        public Nullable<bool> Status { get; set; }
+        public int detail_id { get; set; }
+        public Nullable<int> product_id { get; set; }
+        public Nullable<int> price_product { get; set; }
+        public Nullable<int> num { get; set; }
+        public Nullable<int> total_price_product { get; set; }
+        public Nullable<int> order_id { get; set; }
+        public Nullable<int> card_id { get; set; }
+    
+        public virtual Cart Cart { get; set; }
+        public virtual Oder Oder { get; set; }
     }
 }

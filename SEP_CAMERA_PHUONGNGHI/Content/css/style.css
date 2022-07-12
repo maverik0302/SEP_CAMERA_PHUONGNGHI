@@ -2212,7 +2212,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     margin-top: 14px;
     line-height: 1;
     font-weight: 700;
-    color: #ffffff
+    color: #555555
 }
 
 .product-card__new-price {

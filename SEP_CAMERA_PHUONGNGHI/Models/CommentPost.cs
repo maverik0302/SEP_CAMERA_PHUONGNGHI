@@ -12,26 +12,24 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class CommentPost
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
+        public CommentPost()
         {
-            this.tbProducts = new HashSet<tbProduct>();
+            this.Posts = new HashSet<Post>();
         }
     
-        public int category_id { get; set; }
+        public int comment_id { get; set; }
         public string Name { get; set; }
-        public string SeoTitle { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<int> sort { get; set; }
-        public Nullable<int> ParentID { get; set; }
-        public string MetaKey { get; set; }
-        public string MetaDescription { get; set; }
+        public string Email { get; set; }
+        public string Detail { get; set; }
+        public Nullable<bool> status { get; set; }
+        public Nullable<int> post_id { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbProduct> tbProducts { get; set; }
+        public virtual ICollection<Post> Posts { get; set; }
     }
 }

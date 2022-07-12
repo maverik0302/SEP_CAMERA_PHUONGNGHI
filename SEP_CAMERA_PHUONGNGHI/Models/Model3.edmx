@@ -1,0 +1,1155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PhuongNghiModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="about_id" />
+          </Key>
+          <Property Name="about_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Owner" Type="nvarchar" MaxLength="100" />
+          <Property Name="MetaKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="nchar" MaxLength="10" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="30" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="brand_id" />
+          </Key>
+          <Property Name="brand_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="Cart_id" />
+          </Key>
+          <Property Name="Cart_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="SeoTitle" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="sort" Type="int" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="MetaKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CommentPost">
+          <Key>
+            <PropertyRef Name="comment_id" />
+          </Key>
+          <Property Name="comment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="Detail" Type="nvarchar" MaxLength="500" />
+          <Property Name="status" Type="bit" />
+          <Property Name="post_id" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CommentProduct">
+          <Key>
+            <PropertyRef Name="comment_id" />
+          </Key>
+          <Property Name="comment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="Detail" Type="nvarchar" MaxLength="500" />
+          <Property Name="status" Type="bit" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SEP25Team01.dbo.Contact' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contact_id" />
+          </Key>
+          <Property Name="contact_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="250" />
+          <Property Name="address" Type="nvarchar" MaxLength="250" />
+          <Property Name="phone" Type="nvarchar" MaxLength="250" />
+          <Property Name="ct_from_id" Type="int" />
+        </EntityType>
+        <EntityType Name="ContactForm">
+          <Key>
+            <PropertyRef Name="ct_from_id" />
+          </Key>
+          <Property Name="ct_form_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Message" Type="nvarchar" MaxLength="1000" />
+          <Property Name="emai" Type="nvarchar" MaxLength="150" />
+          <Property Name="ct_from_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="email" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="footer">
+          <Key>
+            <PropertyRef Name="footer_id" />
+          </Key>
+          <Property Name="footer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hotline" Type="char" MaxLength="10" />
+          <Property Name="worktime" Type="nchar" MaxLength="10" />
+          <Property Name="start_time" Type="time" Precision="7" />
+          <Property Name="end_time" Type="time" Precision="7" />
+          <Property Name="chutaikhoan" Type="nvarchar" MaxLength="100" />
+          <Property Name="sotaikhoan" Type="nchar" MaxLength="20" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="KhoHang">
+          <Key>
+            <PropertyRef Name="invoice_id" />
+          </Key>
+          <Property Name="invoice_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="num" Type="int" />
+        </EntityType>
+        <EntityType Name="Oder">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orderdate" Type="datetime" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Delivered" Type="bit" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="customer_id" Type="int" />
+          <Property Name="total_price" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="detail_id" />
+          </Key>
+          <Property Name="detail_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="price_product" Type="int" />
+          <Property Name="num" Type="int" />
+          <Property Name="total_price_product" Type="int" />
+          <Property Name="order_id" Type="int" />
+          <Property Name="card_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="post_id" />
+          </Key>
+          <Property Name="post_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="SeoTitle" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Detail" Type="ntext" />
+          <Property Name="MetaKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="comment_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Slide">
+          <Key>
+            <PropertyRef Name="slide_id" />
+          </Key>
+          <Property Name="slide_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Link" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="SysConfig">
+          <Key>
+            <PropertyRef Name="config_id" />
+          </Key>
+          <Property Name="config_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tbProduct">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SeoTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Thumnail" Type="nvarchar" MaxLength="250" />
+          <Property Name="Price" Type="int" />
+          <Property Name="PromotionPrice" Type="int" />
+          <Property Name="TonKho" Type="nchar" MaxLength="10" />
+          <Property Name="BaoHanh" Type="int" />
+          <Property Name="Desciption" Type="nvarchar(max)" />
+          <Property Name="category_id" Type="int" />
+          <Property Name="brand_id" Type="int" />
+          <Property Name="MetaKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="rank" Type="int" />
+          <Property Name="comment_id" Type="int" />
+        </EntityType>
+        <Association Name="FK_Cart_tbProduct">
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbProduct">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_ContactForm">
+          <End Role="ContactForm" Type="Self.ContactForm" Multiplicity="0..1" />
+          <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactForm">
+              <PropertyRef Name="ct_from_id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="ct_from_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KhoHang_tbProduct">
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="0..1" />
+          <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbProduct">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="KhoHang">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oder_CUSTOMER">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+          <End Role="Oder" Type="Self.Oder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="Oder">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Cart">
+          <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cart">
+              <PropertyRef Name="Cart_id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="card_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Oder">
+          <End Role="Oder" Type="Self.Oder" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oder">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Post_CommentPost">
+          <End Role="CommentPost" Type="Self.CommentPost" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentPost">
+              <PropertyRef Name="comment_id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbProduct_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="brand_id" />
+            </Principal>
+            <Dependent Role="tbProduct">
+              <PropertyRef Name="brand_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbProduct_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="tbProduct">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbProduct_CommentProduct">
+          <End Role="CommentProduct" Type="Self.CommentProduct" Multiplicity="0..1" />
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentProduct">
+              <PropertyRef Name="comment_id" />
+            </Principal>
+            <Dependent Role="tbProduct">
+              <PropertyRef Name="comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PhuongNghiModel3StoreContainer">
+          <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommentPost" EntityType="Self.CommentPost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommentProduct" EntityType="Self.CommentProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactForm" EntityType="Self.ContactForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="footer" EntityType="Self.footer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhoHang" EntityType="Self.KhoHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oder" EntityType="Self.Oder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysConfig" EntityType="Self.SysConfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbProduct" EntityType="Self.tbProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Contact].[contact_id] AS [contact_id], 
+    [Contact].[email] AS [email], 
+    [Contact].[address] AS [address], 
+    [Contact].[phone] AS [phone], 
+    [Contact].[ct_from_id] AS [ct_from_id]
+    FROM [dbo].[Contact] AS [Contact]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Cart_tbProduct" Association="Self.FK_Cart_tbProduct">
+            <End Role="tbProduct" EntitySet="tbProduct" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_ContactForm" Association="Self.FK_Contact_ContactForm">
+            <End Role="ContactForm" EntitySet="ContactForm" />
+            <End Role="Contact" EntitySet="Contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KhoHang_tbProduct" Association="Self.FK_KhoHang_tbProduct">
+            <End Role="tbProduct" EntitySet="tbProduct" />
+            <End Role="KhoHang" EntitySet="KhoHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oder_CUSTOMER" Association="Self.FK_Oder_CUSTOMER">
+            <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+            <End Role="Oder" EntitySet="Oder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Cart" Association="Self.FK_OrderDetail_Cart">
+            <End Role="Cart" EntitySet="Cart" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Oder" Association="Self.FK_OrderDetail_Oder">
+            <End Role="Oder" EntitySet="Oder" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Post_CommentPost" Association="Self.FK_Post_CommentPost">
+            <End Role="CommentPost" EntitySet="CommentPost" />
+            <End Role="Post" EntitySet="Post" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbProduct_Brand" Association="Self.FK_tbProduct_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="tbProduct" EntitySet="tbProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbProduct_Category" Association="Self.FK_tbProduct_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="tbProduct" EntitySet="tbProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbProduct_CommentProduct" Association="Self.FK_tbProduct_CommentProduct">
+            <End Role="CommentProduct" EntitySet="CommentProduct" />
+            <End Role="tbProduct" EntitySet="tbProduct" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PhuongNghiModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="about_id" />
+          </Key>
+          <Property Name="about_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Owner" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MetaKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MetaDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="brand_id" />
+          </Key>
+          <Property Name="brand_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbProducts" Relationship="Self.FK_tbProduct_Brand" FromRole="Brand" ToRole="tbProduct" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="Cart_id" />
+          </Key>
+          <Property Name="Cart_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="Int32" />
+          <NavigationProperty Name="tbProduct" Relationship="Self.FK_Cart_tbProduct" FromRole="Cart" ToRole="tbProduct" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetail_Cart" FromRole="Cart" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SeoTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="MetaKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MetaDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbProducts" Relationship="Self.FK_tbProduct_Category" FromRole="Category" ToRole="tbProduct" />
+        </EntityType>
+        <EntityType Name="CommentPost">
+          <Key>
+            <PropertyRef Name="comment_id" />
+          </Key>
+          <Property Name="comment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="post_id" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK_Post_CommentPost" FromRole="CommentPost" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="CommentProduct">
+          <Key>
+            <PropertyRef Name="comment_id" />
+          </Key>
+          <Property Name="comment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="product_id" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbProducts" Relationship="Self.FK_tbProduct_CommentProduct" FromRole="CommentProduct" ToRole="tbProduct" />
+        </EntityType>
+        <EntityType Name="ContactForm">
+          <Key>
+            <PropertyRef Name="ct_from_id" />
+          </Key>
+          <Property Name="ct_form_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="emai" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ct_from_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Contacts" Relationship="Self.FK_Contact_ContactForm" FromRole="ContactForm" ToRole="Contact" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oders" Relationship="Self.FK_Oder_CUSTOMER" FromRole="CUSTOMER" ToRole="Oder" />
+        </EntityType>
+        <EntityType Name="footer">
+          <Key>
+            <PropertyRef Name="footer_id" />
+          </Key>
+          <Property Name="footer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hotline" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="worktime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="start_time" Type="Time" Precision="7" />
+          <Property Name="end_time" Type="Time" Precision="7" />
+          <Property Name="chutaikhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sotaikhoan" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="KhoHang">
+          <Key>
+            <PropertyRef Name="invoice_id" />
+          </Key>
+          <Property Name="invoice_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="product_id" Type="Int32" />
+          <Property Name="num" Type="Int32" />
+          <NavigationProperty Name="tbProduct" Relationship="Self.FK_KhoHang_tbProduct" FromRole="KhoHang" ToRole="tbProduct" />
+        </EntityType>
+        <EntityType Name="Oder">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderdate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Delivered" Type="Boolean" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="customer_id" Type="Int32" />
+          <Property Name="total_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_Oder_CUSTOMER" FromRole="Oder" ToRole="CUSTOMER" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetail_Oder" FromRole="Oder" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="detail_id" />
+          </Key>
+          <Property Name="detail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="Int32" />
+          <Property Name="price_product" Type="Int32" />
+          <Property Name="num" Type="Int32" />
+          <Property Name="total_price_product" Type="Int32" />
+          <Property Name="order_id" Type="Int32" />
+          <Property Name="card_id" Type="Int32" />
+          <NavigationProperty Name="Cart" Relationship="Self.FK_OrderDetail_Cart" FromRole="OrderDetail" ToRole="Cart" />
+          <NavigationProperty Name="Oder" Relationship="Self.FK_OrderDetail_Oder" FromRole="OrderDetail" ToRole="Oder" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="post_id" />
+          </Key>
+          <Property Name="post_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SeoTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MetaKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MetaDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="comment_id" Type="Int32" />
+          <NavigationProperty Name="CommentPost" Relationship="Self.FK_Post_CommentPost" FromRole="Post" ToRole="CommentPost" />
+        </EntityType>
+        <EntityType Name="Slide">
+          <Key>
+            <PropertyRef Name="slide_id" />
+          </Key>
+          <Property Name="slide_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Link" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SysConfig">
+          <Key>
+            <PropertyRef Name="config_id" />
+          </Key>
+          <Property Name="config_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbProduct">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SeoTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Thumnail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="PromotionPrice" Type="Int32" />
+          <Property Name="TonKho" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="BaoHanh" Type="Int32" />
+          <Property Name="Desciption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="category_id" Type="Int32" />
+          <Property Name="brand_id" Type="Int32" />
+          <Property Name="MetaKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MetaDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="rank" Type="Int32" />
+          <Property Name="comment_id" Type="Int32" />
+          <NavigationProperty Name="Brand" Relationship="Self.FK_tbProduct_Brand" FromRole="tbProduct" ToRole="Brand" />
+          <NavigationProperty Name="Carts" Relationship="Self.FK_Cart_tbProduct" FromRole="tbProduct" ToRole="Cart" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_tbProduct_Category" FromRole="tbProduct" ToRole="Category" />
+          <NavigationProperty Name="CommentProduct" Relationship="Self.FK_tbProduct_CommentProduct" FromRole="tbProduct" ToRole="CommentProduct" />
+          <NavigationProperty Name="KhoHangs" Relationship="Self.FK_KhoHang_tbProduct" FromRole="tbProduct" ToRole="KhoHang" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contact_id" />
+          </Key>
+          <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ct_from_id" Type="Int32" />
+          <NavigationProperty Name="ContactForm" Relationship="Self.FK_Contact_ContactForm" FromRole="Contact" ToRole="ContactForm" />
+        </EntityType>
+        <Association Name="FK_tbProduct_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="brand_id" />
+            </Principal>
+            <Dependent Role="tbProduct">
+              <PropertyRef Name="brand_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_tbProduct">
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbProduct">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Cart">
+          <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cart">
+              <PropertyRef Name="Cart_id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="card_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbProduct_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="tbProduct">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Post_CommentPost">
+          <End Role="CommentPost" Type="Self.CommentPost" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentPost">
+              <PropertyRef Name="comment_id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbProduct_CommentProduct">
+          <End Role="CommentProduct" Type="Self.CommentProduct" Multiplicity="0..1" />
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentProduct">
+              <PropertyRef Name="comment_id" />
+            </Principal>
+            <Dependent Role="tbProduct">
+              <PropertyRef Name="comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_ContactForm">
+          <End Role="ContactForm" Type="Self.ContactForm" Multiplicity="0..1" />
+          <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactForm">
+              <PropertyRef Name="ct_from_id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="ct_from_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oder_CUSTOMER">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+          <End Role="Oder" Type="Self.Oder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="Oder">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KhoHang_tbProduct">
+          <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="0..1" />
+          <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbProduct">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="KhoHang">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Oder">
+          <End Role="Oder" Type="Self.Oder" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oder">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PhuongNghiEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Abouts" EntityType="Self.About" />
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Brands" EntityType="Self.Brand" />
+          <EntitySet Name="Carts" EntityType="Self.Cart" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="CommentPosts" EntityType="Self.CommentPost" />
+          <EntitySet Name="CommentProducts" EntityType="Self.CommentProduct" />
+          <EntitySet Name="ContactForms" EntityType="Self.ContactForm" />
+          <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+          <EntitySet Name="footers" EntityType="Self.footer" />
+          <EntitySet Name="KhoHangs" EntityType="Self.KhoHang" />
+          <EntitySet Name="Oders" EntityType="Self.Oder" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="Posts" EntityType="Self.Post" />
+          <EntitySet Name="Slides" EntityType="Self.Slide" />
+          <EntitySet Name="SysConfigs" EntityType="Self.SysConfig" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbProducts" EntityType="Self.tbProduct" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <AssociationSet Name="FK_tbProduct_Brand" Association="Self.FK_tbProduct_Brand">
+            <End Role="Brand" EntitySet="Brands" />
+            <End Role="tbProduct" EntitySet="tbProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_tbProduct" Association="Self.FK_Cart_tbProduct">
+            <End Role="tbProduct" EntitySet="tbProducts" />
+            <End Role="Cart" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Cart" Association="Self.FK_OrderDetail_Cart">
+            <End Role="Cart" EntitySet="Carts" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbProduct_Category" Association="Self.FK_tbProduct_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="tbProduct" EntitySet="tbProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Post_CommentPost" Association="Self.FK_Post_CommentPost">
+            <End Role="CommentPost" EntitySet="CommentPosts" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbProduct_CommentProduct" Association="Self.FK_tbProduct_CommentProduct">
+            <End Role="CommentProduct" EntitySet="CommentProducts" />
+            <End Role="tbProduct" EntitySet="tbProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_ContactForm" Association="Self.FK_Contact_ContactForm">
+            <End Role="ContactForm" EntitySet="ContactForms" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oder_CUSTOMER" Association="Self.FK_Oder_CUSTOMER">
+            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+            <End Role="Oder" EntitySet="Oders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KhoHang_tbProduct" Association="Self.FK_KhoHang_tbProduct">
+            <End Role="tbProduct" EntitySet="tbProducts" />
+            <End Role="KhoHang" EntitySet="KhoHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Oder" Association="Self.FK_OrderDetail_Oder">
+            <End Role="Oder" EntitySet="Oders" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PhuongNghiModel3StoreContainer" CdmEntityContainer="PhuongNghiEntities3">
+          <EntitySetMapping Name="Abouts">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="about_id" ColumnName="about_id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="MetaKey" ColumnName="MetaKey" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.Cart">
+              <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="Cart_id" ColumnName="Cart_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="MetaKey" ColumnName="MetaKey" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentPosts">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.CommentPost">
+              <MappingFragment StoreEntitySet="CommentPost">
+                <ScalarProperty Name="comment_id" ColumnName="comment_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="post_id" ColumnName="post_id" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentProducts">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.CommentProduct">
+              <MappingFragment StoreEntitySet="CommentProduct">
+                <ScalarProperty Name="comment_id" ColumnName="comment_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactForms">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.ContactForm">
+              <MappingFragment StoreEntitySet="ContactForm">
+                <ScalarProperty Name="ct_form_id" ColumnName="ct_form_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="emai" ColumnName="emai" />
+                <ScalarProperty Name="ct_from_id" ColumnName="ct_from_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMERs">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.CUSTOMER">
+              <MappingFragment StoreEntitySet="CUSTOMER">
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="footers">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.footer">
+              <MappingFragment StoreEntitySet="footer">
+                <ScalarProperty Name="footer_id" ColumnName="footer_id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Hotline" ColumnName="Hotline" />
+                <ScalarProperty Name="worktime" ColumnName="worktime" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="chutaikhoan" ColumnName="chutaikhoan" />
+                <ScalarProperty Name="sotaikhoan" ColumnName="sotaikhoan" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhoHangs">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.KhoHang">
+              <MappingFragment StoreEntitySet="KhoHang">
+                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="num" ColumnName="num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oders">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.Oder">
+              <MappingFragment StoreEntitySet="Oder">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="orderdate" ColumnName="orderdate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Delivered" ColumnName="Delivered" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="total_price" ColumnName="total_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="price_product" ColumnName="price_product" />
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="total_price_product" ColumnName="total_price_product" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="card_id" ColumnName="card_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="post_id" ColumnName="post_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="MetaKey" ColumnName="MetaKey" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="comment_id" ColumnName="comment_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slides">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.Slide">
+              <MappingFragment StoreEntitySet="Slide">
+                <ScalarProperty Name="slide_id" ColumnName="slide_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysConfigs">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.SysConfig">
+              <MappingFragment StoreEntitySet="SysConfig">
+                <ScalarProperty Name="config_id" ColumnName="config_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbProducts">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.tbProduct">
+              <MappingFragment StoreEntitySet="tbProduct">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Thumnail" ColumnName="Thumnail" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PromotionPrice" ColumnName="PromotionPrice" />
+                <ScalarProperty Name="TonKho" ColumnName="TonKho" />
+                <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
+                <ScalarProperty Name="Desciption" ColumnName="Desciption" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+                <ScalarProperty Name="MetaKey" ColumnName="MetaKey" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="rank" ColumnName="rank" />
+                <ScalarProperty Name="comment_id" ColumnName="comment_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="PhuongNghiModel3.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="ct_from_id" ColumnName="ct_from_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -12,13 +12,14 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Slide
+    public partial class Contact
     {
-        public int slide_id { get; set; }
-        public string Name { get; set; }
-        public string Image { get; set; }
-        public Nullable<int> Sort { get; set; }
-        public string Link { get; set; }
-        public Nullable<bool> Status { get; set; }
+        public int contact_id { get; set; }
+        public string email { get; set; }
+        public string address { get; set; }
+        public string phone { get; set; }
+        public Nullable<int> ct_from_id { get; set; }
+    
+        public virtual ContactForm ContactForm { get; set; }
     }
 }

@@ -12,26 +12,40 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class tbProduct
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
+        public tbProduct()
         {
-            this.tbProducts = new HashSet<tbProduct>();
+            this.Carts = new HashSet<Cart>();
+            this.KhoHangs = new HashSet<KhoHang>();
         }
     
-        public int category_id { get; set; }
+        public int product_id { get; set; }
         public string Name { get; set; }
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
-        public Nullable<int> sort { get; set; }
-        public Nullable<int> ParentID { get; set; }
+        public string Thumnail { get; set; }
+        public Nullable<int> Price { get; set; }
+        public Nullable<int> PromotionPrice { get; set; }
+        public string TonKho { get; set; }
+        public Nullable<int> BaoHanh { get; set; }
+        public string Desciption { get; set; }
+        public Nullable<int> category_id { get; set; }
+        public Nullable<int> brand_id { get; set; }
         public string MetaKey { get; set; }
         public string MetaDescription { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
+        public Nullable<int> rank { get; set; }
+        public Nullable<int> comment_id { get; set; }
     
+        public virtual Brand Brand { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbProduct> tbProducts { get; set; }
+        public virtual ICollection<Cart> Carts { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual CommentProduct CommentProduct { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KhoHang> KhoHangs { get; set; }
     }
 }

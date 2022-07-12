@@ -12,13 +12,17 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Slide
+    public partial class footer
     {
-        public int slide_id { get; set; }
-        public string Name { get; set; }
-        public string Image { get; set; }
-        public Nullable<int> Sort { get; set; }
-        public string Link { get; set; }
-        public Nullable<bool> Status { get; set; }
+        public int footer_id { get; set; }
+        public string Title { get; set; }
+        public string Email { get; set; }
+        public string Hotline { get; set; }
+        public string worktime { get; set; }
+        public Nullable<System.TimeSpan> start_time { get; set; }
+        public Nullable<System.TimeSpan> end_time { get; set; }
+        public string chutaikhoan { get; set; }
+        public string sotaikhoan { get; set; }
+        public Nullable<bool> status { get; set; }
     }
 }

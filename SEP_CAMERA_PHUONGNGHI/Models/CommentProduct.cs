@@ -12,22 +12,20 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class CommentProduct
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
+        public CommentProduct()
         {
             this.tbProducts = new HashSet<tbProduct>();
         }
     
-        public int category_id { get; set; }
+        public int comment_id { get; set; }
         public string Name { get; set; }
-        public string SeoTitle { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<int> sort { get; set; }
-        public Nullable<int> ParentID { get; set; }
-        public string MetaKey { get; set; }
-        public string MetaDescription { get; set; }
+        public string Email { get; set; }
+        public string Detail { get; set; }
+        public Nullable<bool> status { get; set; }
+        public Nullable<int> product_id { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
     
