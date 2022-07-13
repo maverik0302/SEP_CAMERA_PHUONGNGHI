@@ -1,0 +1,155 @@
+﻿@model SEP_CAMERA_PHUONGNGHI.Models.tbProduct
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeoTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeoTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thumnail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thumnail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PromotionPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PromotionPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TonKho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TonKho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaoHanh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaoHanh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desciption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desciption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentProduct.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentProduct.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.product_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
