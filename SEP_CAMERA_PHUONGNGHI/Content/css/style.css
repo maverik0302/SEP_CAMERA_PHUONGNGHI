@@ -709,8 +709,8 @@ h6 {
 .btn-secondary,
 .btn-secondary.disabled,
 .btn-secondary:disabled {
-    border-color: #f0f0f0;
-    background: #f0f0f0;
+    border-color: #252424;
+    background: #110f0f;
     color: #ffffff;
     fill: #ffffff
 }
@@ -6371,7 +6371,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: -.03em;
-    color: #ffffff
+    color: #000000
 }
 
 .product__new-price {
