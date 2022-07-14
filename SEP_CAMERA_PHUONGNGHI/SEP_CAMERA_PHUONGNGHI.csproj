@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\tbProductsController.cs" />
     <Compile Include="Areas\Admin\Middleware\LoginVerification.cs" />
@@ -305,6 +306,11 @@
     <Content Include="Areas\Admin\Views\tbProducts\Details.cshtml" />
     <Content Include="Areas\Admin\Views\tbProducts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\tbProducts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
