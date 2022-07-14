@@ -6,48 +6,50 @@
 }
 
 <!--Content Wrapper-->
-<div class="content-wrapper">
-    <!--Main content-->
-    <section class="content my-2">
-        <!-- Default box-->
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-md-6">
-                        <strong>DANH SÁCH HÃNG SẢN PHẨM</strong>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        @Html.ActionLink("Thêm mới hãng sản phẩm", "Create")
+<main>
+
+    <div class="content-wrapper">
+        <!--Main content-->
+        <section class="content my-2">
+            <!-- Default box-->
+            <div style="padding-top: 30px" class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>DANH SÁCH HÃNG SẢN PHẨM</strong>
+                        </div>
+                        <div style="padding-left: 550px" class="col-md-6 text-right">
+                            @Html.ActionLink("Thêm mới hãng sản phẩm", "Create")
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-body table-bordered table-striped">
-                <table class="table">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Name)
-                        </th>
-                        <th>ID</th>
-                    </tr>
-                    @foreach (var item in Model)
-                    {
+                <div class="card-body ">
+                    <table class="table table-bordered table-striped">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Name)
-                            </td>
-                            <td>@item.brand_id</td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.brand_id }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.brand_id }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.brand_id })
-                            </td>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>ID</th>
                         </tr>
-                    }
-                </table>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>@item.brand_id</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.brand_id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.brand_id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.brand_id })
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
-
+        </section>
+    </div>
+</main>
 
 
