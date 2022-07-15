@@ -8,13 +8,20 @@
 
 <div class="page-inner">
     <div class="page-header">
-        <h4 class="page-title">DataTables.Net</h4>
+        <Strong class="page-title">QUẢN LÍ HÃNG SẢN PHẨM</Strong>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Basic</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Danh sách hãng sản phẩm</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a style="font-size:16px" href="@Url.Action("Create")">Tạo mới hãng sản phẩm</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -57,22 +64,7 @@
     </div>
 </div>
 
-<!--   Core JS Files   -->
-<script src="~/assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="~/assets/js/core/popper.min.js"></script>
-<script src="~/assets/js/core/bootstrap.min.js"></script>
-<!-- jQuery UI -->
-<script src="~/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="~/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
-<!-- jQuery Scrollbar -->
-<script src="~/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<!-- Datatables -->
-<script src="~/assets/js/plugin/datatables/datatables.min.js"></script>
-<!-- Atlantis JS -->
-<script src="~/assets/js/atlantis.min.js"></script>
-<!-- Atlantis DEMO methods, don't include it in your project! -->
-<script src="~/assets/js/setting-demo2.js"></script>
 <script>
     $(document).ready(function () {
         $('#basic-datatables').DataTable({
@@ -122,20 +114,3 @@
     });
 </script>
 
-
-
-
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
-</table>
