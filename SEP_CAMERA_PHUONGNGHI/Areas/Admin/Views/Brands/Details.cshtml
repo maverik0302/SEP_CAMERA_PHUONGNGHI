@@ -5,23 +5,44 @@
     Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Brand</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+<div class="page-inner">
+    <div class="page-header">
+        <Strong class="page-title">QUẢN LÍ HÃNG SẢN PHẨM</Strong>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Mô tả hãng sản phẩm</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a style="font-size:16px" href="@Url.Action("Edit",  new { id = Model.brand_id })">Chỉnh sửa hãng sản phẩm</a>
+                        </div>
+                    </div>
+                </div>
 
-    </dl>
+                <div class="card-body">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                    </dl>
+                </div>
+
+                <div class="card-action">
+                    <a style="font-size:16px" href="@Url.Action("Index")">Quay lại</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.brand_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
