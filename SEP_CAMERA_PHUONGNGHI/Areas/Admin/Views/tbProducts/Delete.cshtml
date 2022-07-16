@@ -5,157 +5,177 @@
     Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
 }
 
-<h2>Delete</h2>
+<div class="page-inner">
+    <div class="page-header">
+        <Strong class="page-title">QUẢN LÍ SẢN PHẨM</Strong>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Xóa sản phẩm</h3>
+                            <strong>Bạn có chắc muốn xóa sản phẩm không?</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a style="font-size:16px" href="@Url.Action("Index")">Quay lại</a>
+                        </div>
+                    </div>
+                </div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>tbProduct</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+                <div class="card-body">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SeoTitle)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.SeoTitle)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SeoTitle)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.SeoTitle)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Status)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Thumnail)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Thumnail)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Thumnail)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Thumnail)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PromotionPrice)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PromotionPrice)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PromotionPrice)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.PromotionPrice)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TonKho)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TonKho)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TonKho)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.TonKho)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BaoHanh)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.BaoHanh)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BaoHanh)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.BaoHanh)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Desciption)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Desciption)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Desciption)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Desciption)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaKey)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.MetaKey)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaKey)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.MetaKey)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaDescription)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.MetaDescription)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaDescription)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.MetaDescription)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CreateDate)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreateDate)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.CreateDate)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdateDate)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UpdateDate)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UpdateDate)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.UpdateDate)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.rank)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.rank)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.rank)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.rank)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Brand.Name)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Brand.Name)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Brand.Name)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Brand.Name)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.Name)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Category.Name)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Category.Name)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CommentProduct.Name)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CommentProduct.Name)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CommentProduct.Name)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.CommentProduct.Name)
+                        </dd>
 
-    </dl>
+                    </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="card-action">
+                        <div class="form-actions">
+                            <input type="submit" value="Delete" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
-    }
+    </div>
 </div>
