@@ -619,6 +619,16 @@
     <Content Include="Content\fonts\stroyka\stroyka.css" />
     <Content Include="Content\fonts\stroyka\stroyka.svg" />
     <Content Include="Content\image\icon-zalo.png" />
+    <Content Include="Content\image\ImgProduct\DAHUA1.jpg" />
+    <Content Include="Content\image\ImgProduct\DAHUA2.jpg" />
+    <Content Include="Content\image\ImgProduct\DauHIK.jpg" />
+    <Content Include="Content\image\ImgProduct\DauKBV.jpg" />
+    <Content Include="Content\image\ImgProduct\HIK1.jpg" />
+    <Content Include="Content\image\ImgProduct\HIK2.jpg" />
+    <Content Include="Content\image\ImgProduct\HIK3.jpg" />
+    <Content Include="Content\image\ImgProduct\KBV1.jpg" />
+    <Content Include="Content\image\ImgProduct\KBV2.jpg" />
+    <Content Include="Content\image\ImgProduct\ManKBV.jpg" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\number.js" />
     <Content Include="Content\PagedList.css" />
