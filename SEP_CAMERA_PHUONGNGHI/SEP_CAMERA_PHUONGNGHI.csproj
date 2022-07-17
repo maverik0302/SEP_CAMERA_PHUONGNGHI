@@ -139,6 +139,7 @@
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\tbProductsController.cs" />
     <Compile Include="Areas\Admin\Middleware\LoginVerification.cs" />
     <Compile Include="Controllers\AboutController.cs" />
@@ -770,6 +771,11 @@
     <Content Include="assets\sass\atlantis\_typography.scss" />
     <Content Include="assets\sass\atlantis\_variables.scss" />
     <Content Include="Areas\Admin\Views\Brands\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

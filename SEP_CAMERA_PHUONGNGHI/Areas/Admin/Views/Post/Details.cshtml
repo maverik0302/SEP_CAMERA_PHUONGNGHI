@@ -1,13 +1,13 @@
-﻿@model SEP_CAMERA_PHUONGNGHI.Models.tbProduct
+﻿@model SEP_CAMERA_PHUONGNGHI.Models.Post
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
 }
 
 <div class="page-inner">
     <div class="page-header">
-        <Strong class="page-title">QUẢN LÍ SẢN PHẨM</Strong>
+        <Strong class="page-title">QUẢN LÍ BÀI VIẾT</Strong>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -15,11 +15,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
-                            <h3>Xóa sản phẩm</h3>
-                            <strong>Bạn có chắc muốn xóa sản phẩm không?</strong>
+                            <strong>Mô tả bài viết</strong>
                         </div>
                         <div class="col-md-6 text-right">
-                            <a style="font-size:16px" href="@Url.Action("Index")">Quay lại</a>
+                            <a style="font-size:16px" href="@Url.Action("Edit", new { id = Model.post_id})">Chỉnh sửa bài viết</a>
                         </div>
                     </div>
                 </div>
@@ -51,51 +50,27 @@
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.Thumnail)
+                            @Html.DisplayNameFor(model => model.Image)
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.Thumnail)
+                            @Html.DisplayFor(model => model.Image)
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.Price)
+                            @Html.DisplayNameFor(model => model.Description)
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.Price)
+                            @Html.DisplayFor(model => model.Description)
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.PromotionPrice)
+                            @Html.DisplayNameFor(model => model.Detail)
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.PromotionPrice)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.TonKho)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.TonKho)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.BaoHanh)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.BaoHanh)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Desciption)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Desciption)
+                            @Html.DisplayFor(model => model.Detail)
                         </dd>
 
                         <dt>
@@ -131,51 +106,19 @@
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.rank)
+                            @Html.DisplayNameFor(model => model.CommentPost.Name)
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.rank)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Brand.Name)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Brand.Name)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Category.Name)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Category.Name)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.CommentProduct.Name)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.CommentProduct.Name)
+                            @Html.DisplayFor(model => model.CommentPost.Name)
                         </dd>
 
                     </dl>
-
-
                 </div>
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="card-action">
-                        <div class="form-actions">
-                            <input type="submit" value="Xóa" class="btn btn-default" />
-                        </div>
-                    </div>
-                }
+            <div class="card-action">
+                <a style="font-size:16px" href="@Url.Action("Index")">Quay lại</a>
             </div>
+
         </div>
     </div>
 </div>
