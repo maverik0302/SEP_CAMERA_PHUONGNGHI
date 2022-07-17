@@ -12,9 +12,11 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
     public class SearchController : Controller
     {
         // GET: Search
-        public ActionResult Index()
+        SEP25Team01Entities db = new SEP25Team01Entities();
+        public ActionResult SearchReult(String keyword)
         {
-            return View();
+            var lstProduct = db.tbProducts.Where(x => x.Name.Contains(keyword));
+            return View(lstProduct.OrderBy(x=>x.Name));
         }
     }
 }

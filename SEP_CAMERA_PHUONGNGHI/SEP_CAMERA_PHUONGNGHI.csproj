@@ -795,11 +795,11 @@
     <Content Include="Views\ShopGrid\ShopGrid.cshtml" />
     <Content Include="Views\Pay\Pay.cshtml" />
     <Content Include="Views\ShopGrid\ProductDetail.cshtml" />
+    <Content Include="Views\Search\SearchReult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

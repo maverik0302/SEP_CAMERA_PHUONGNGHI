@@ -1,0 +1,48 @@
+﻿@model List<SEP_CAMERA_PHUONGNGHI.Models.tbProduct>
+
+
+@{
+    ViewBag.Title = "SearchReult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchReult</h2>
+
+<div class="products-view__list products-list" data-layout="grid-4-full"
+     data-with-features="false">
+    <div class="products-list__body">
+        @foreach (var item in Model)
+        {
+            <div class="products-list__item">
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                            <img src="images/products/product-1.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="product-card__info">
+                        <div class="product-card__name">
+                            <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                                @item.Name
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card__actions">
+                        <div class="product-card__prices">@item.Price đ</div>
+                        <div class="product-card__buttons">
+                            <button class="btn btn-primary product-card__addtocart"
+                                    type="button">
+                                Thêm vào giỏ
+                            </button>
+                            <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">
+                                Thêm vào giỏ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
