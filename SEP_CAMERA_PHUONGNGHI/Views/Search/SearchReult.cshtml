@@ -1,4 +1,5 @@
-﻿@model List<SEP_CAMERA_PHUONGNGHI.Models.tbProduct>
+﻿@using SEP_CAMERA_PHUONGNGHI.Models;
+@model IEnumerable<SEP_CAMERA_PHUONGNGHI.Models.tbProduct>
 
 
 @{
@@ -6,7 +7,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SearchReult</h2>
+<h2>Search Reult</h2>
 
 <div class="products-view__list products-list" data-layout="grid-4-full"
      data-with-features="false">
