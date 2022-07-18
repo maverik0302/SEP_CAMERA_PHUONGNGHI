@@ -557,6 +557,7 @@ h6 {
 }
 
     .btn-sm.btn-svg-icon {
+        color: black;
         width: calc(1.875rem + 2px)
     }
 
@@ -862,7 +863,10 @@ h6 {
 }
 
 .card-body {
-    padding: 2rem
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
 }
 
 .card-title {
@@ -3570,10 +3574,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .dropcart__product-remove {
+    color: black;
     margin-right: -6px;
     margin-top: -6px;
     -ms-flex-negative: 0;
     flex-shrink: 0
+    
 }
 
 .dropcart__totals {
