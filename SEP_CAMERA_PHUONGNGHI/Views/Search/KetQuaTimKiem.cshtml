@@ -1,0 +1,193 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<SEP_CAMERA_PHUONGNGHI.Models.tbProduct>
+
+@{
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>Camera Huỳnh Thức</title>
+<link rel="icon" type="image/png" href="~Content/images/favicon.png"><!-- fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i"><!-- css -->
+<link rel="stylesheet" href="~/Content/vendor/bootstrap-4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/vendor/owl-carousel-2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="~/Content/css/style.css">
+<!-- js -->
+
+<script src="~/Content/vendor/jquery-3.3.1/jquery.min.js"></script>
+
+<script src="~/Content/vendor/bootstrap-4.2.1/js/bootstrap.bundle.min.js"></script>
+
+<script src="~/Content/vendor/owl-carousel-2.3.4/owl.carousel.min.js"></script>
+<script src="~/Content/vendor/nouislider-12.1.0/nouislider.min.js"></script>
+<script src="~/Content/js/number.js"></script>
+<script src="~/Content/js/main.js"></script>
+<script src="~/Content/vendor/svg4everybody-2.1.9/svg4everybody.min.js"></script>
+<script>svg4everybody();</script>
+
+<h2>Kết quả tìm kiếm</h2>
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().product_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().SeoTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Thumnail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PromotionPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().TonKho)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().BaoHanh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Desciption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().category_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().brand_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().MetaKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().MetaDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().UpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().rank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().comment_id)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.product_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeoTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Thumnail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PromotionPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TonKho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BaoHanh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desciption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.brand_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MetaKey)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MetaDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rank)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.comment_id)
+                </td>
+
+            </tr>
+        }
+
+    </table>*@
+
+
+<div class="products-view__list products-list" data-layout="grid-4-full"
+     data-with-features="false">
+    <div class="products-list__body">
+        @foreach (var item in Model)
+        {
+            <div class="products-list__item">
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                            <img src="@Url.Content("~/Content/image/ImgProduct/"+item.Thumnail)" alt="Image">
+                        </a>
+                    </div>
+                    <div class="product-card__info">
+                        <div class="product-card__name">
+                            <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                                @item.Name
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card__actions">
+                        <div class="product-card__prices">@item.Price đ</div>
+                        <div class="product-card__buttons">
+                            <button class="btn btn-primary product-card__addtocart"
+                                    type="button">
+                                Thêm vào giỏ
+                            </button>
+                            <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">
+                                Thêm vào giỏ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
