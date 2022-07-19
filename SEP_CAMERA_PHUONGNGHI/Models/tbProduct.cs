@@ -26,7 +26,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         }
         
         public int product_id { get; set; }
-        [Display(Name = "Tên s?n ph?m")]
         public string Name { get; set; }
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
