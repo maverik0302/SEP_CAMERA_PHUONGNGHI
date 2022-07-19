@@ -105,15 +105,15 @@
                                             @item.CreateDate
                                         </td>
                                         <td>
-                                            @item.Brand.Name
+                                            @Html.DisplayFor(modelItem => item.Brand.Name)
                                         </td>
                                         <td>
-                                            @item.Category.Name
+                                            @Html.DisplayFor(modelItem => item.Category.Name)
                                         </td>
                                         <td>
-                                            <a href="@Url.Action("Edit", "Brands", new { id = item.product_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>
-                                            <a href="@Url.Action("Details", "Brands", new { id = item.product_id })"><i class="fa-solid fa-circle-info fa-2x"> | </i></a>
-                                            <a href="@Url.Action("Delete", "Brands", new { id = item.product_id })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
+                                            <a href="@Url.Action("Edit", "tbProducts", new { id = item.product_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Details", "tbProducts", new { id = item.product_id })"><i class="fa-solid fa-circle-info fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Delete", "tbProducts", new { id = item.product_id })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
                                         </td>
                                     </tr>
                                 }
