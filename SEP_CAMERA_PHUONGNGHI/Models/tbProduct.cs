@@ -30,23 +30,17 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public string Name { get; set; }
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
-        [Display(Name = "Hình ?nh")]
         public string Thumnail { get; set; }
-        [Display(Name = "Giá")]
         public Nullable<int> Price { get; set; }
-        [Display(Name = "Giá khuy?n mãi")]
         public Nullable<int> PromotionPrice { get; set; }
         public string TonKho { get; set; }
         public Nullable<int> BaoHanh { get; set; }
-        [Display(Name = "Miêu t?")]
         public string Desciption { get; set; }
         public Nullable<int> category_id { get; set; }
         public Nullable<int> brand_id { get; set; }
         public string MetaKey { get; set; }
         public string MetaDescription { get; set; }
-        [Display(Name = "Ngày t?o s?n ph?m")]
         public Nullable<System.DateTime> CreateDate { get; set; }
-        [Display(Name = "Ngày c?p nh?t s?n ph?m")]
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<int> rank { get; set; }
         public Nullable<int> comment_id { get; set; }

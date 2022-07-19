@@ -72,9 +72,9 @@
                                             @Html.DisplayFor(modelItem => item.CreateDate)
                                         </td>
                                         <td>
-                                            @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.post_id }) |
-                                            @Html.ActionLink("Mô tả", "Details", new { id = item.post_id }) |
-                                            @Html.ActionLink("Xóa", "Delete", new { id = item.post_id })
+                                            <a href="@Url.Action("Edit", "Brands", new { id = item.post_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Details", "Brands", new { id = item.post_id })"><i class="fa-solid fa-circle-info fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Delete", "Brands", new { id = item.post_id })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
                                         </td>
                                     </tr>
                                 }
