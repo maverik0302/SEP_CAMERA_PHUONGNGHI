@@ -27,6 +27,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                 {
                     Session["user-username"] = user.Username;
                     Session["user-id"] = user.user_id;
+                   
                     return RedirectToAction("Index", "HomeAdmin");
                 }
                 else
