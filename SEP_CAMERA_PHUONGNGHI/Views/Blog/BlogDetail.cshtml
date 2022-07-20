@@ -1,0 +1,44 @@
+﻿@using SEP_CAMERA_PHUONGNGHI.Models;
+@model SEP_CAMERA_PHUONGNGHI.Models.Post
+
+    @{
+        ViewBag.Title = "BlogDetail";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+
+    @if (Model == null)
+    {
+        <div class="center_title_bar">Bài viết không tồn tại</div>
+    }
+    else
+    {
+        <div class="site__body">
+            <div class="page-header">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-lg-9 col-xl-8">
+                        <div class="block post post--layout--full">
+                            <div class="post__header post-header post-header--layout--full">
+                                <h1 class="post-header__title">
+                                    @Model.Name
+                                </h1>
+                            </div>
+                            <div class="post__featured">
+                                <a href="#">
+                                    <img src="@Url.Content("~/Content/image/ImgPost/"+Model.Image)"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="post__content typography typography--expanded">
+                                <p>
+                                    @Model.Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
