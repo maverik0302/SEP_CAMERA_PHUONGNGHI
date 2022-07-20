@@ -1,4 +1,4 @@
-﻿
+﻿@model List<SEP_CAMERA_PHUONGNGHI.Models.Post>
 @{
     ViewBag.Title = "Blog";
 }
@@ -7,23 +7,6 @@
     <div class="page-header">
         <div class="page-header__container container">
             <div class="page-header__breadcrumb">
-                <nav aria-label="breadcrumb">
-                    @*<ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="index.html">Home</a> <svg class="breadcrumb-arrow"
-                                                                   width="6px" height="9px">
-                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
-                                </svg>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="#">Breadcrumb</a> <svg class="breadcrumb-arrow"
-                                                                width="6px" height="9px">
-                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
-                                </svg>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">Latest News</li>
-                        </ol>*@
-                </nav>
             </div>
             <div class="page-header__title">
                 <h1>Blog</h1>
@@ -37,94 +20,32 @@
                     <div class="posts-view">
                         <div class="posts-view__list posts-list posts-list--layout--list">
                             <div class="posts-list__body">
-                                <div class="posts-list__item">
-                                    <div class="post-card post-card--layout--list post-card--size--nl">
-                                        <div class="post-card__image">
-                                            <a href="#">
-                                                <img src="images/posts/post-1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="post-card__info">
-                                            <div class="post-card__category">
-                                                <a href="#">Ưu đãi đặc biệt</a>
-                                            </div>
-                                            <div class="post-card__name">
+                                @foreach (var items in Model)
+                                {
+                                    <div class="posts-list__item">
+                                        <div class="post-card post-card--layout--list post-card--size--nl">
+                                            <div class="post-card__image">
                                                 <a href="#">
-                                                    Philosophy That Addresses
-                                                    Topics Such As Goodness
+                                                    <img src="@Url.Content("~/Content/image/ImgPost/"+items.Image)" alt="">
                                                 </a>
                                             </div>
-                                            <div class="post-card__date">October 19, 2019</div>
-                                            <div class="post-card__content">
-                                                In one general sense, philosophy is
-                                                associated with wisdom, intellectual culture and a search for
-                                                knowledge. In that sense, all cultures...
-                                            </div>
-                                            <div class="post-card__read-more">
-                                                <a href="#"
-                                                   class="btn btn-secondary btn-sm">Read More</a>
+                                            <div class="post-card__info">
+                                                <div class="post-card__name">
+                                                    <a href="~/Blog/BlogDetail?id=@items.post_id">
+                                                        @items.Name
+                                                    </a>
+                                                </div>
+                                                <div class="post-card__content">
+                                                    @items.Description
+                                                </div>
+                                                <div class="post-card__read-more">
+                                                    <a href="~/Blog/BlogDetail?id=@items.post_id"
+                                                       class="btn btn-secondary btn-sm">Xem ngay</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="posts-list__item">
-                                    <div class="post-card post-card--layout--list post-card--size--nl">
-                                        <div class="post-card__image">
-                                            <a href="#">
-                                                <img src="images/posts/post-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="post-card__info">
-                                            <div class="post-card__category"><a href="#">Latest News</a></div>
-                                            <div class="post-card__name">
-                                                <a href="#">
-                                                    Logic Is The Study Of
-                                                    Reasoning And Argument Part 2
-                                                </a>
-                                            </div>
-                                            <div class="post-card__date">September 5, 2019</div>
-                                            <div class="post-card__content">
-                                                In one general sense, philosophy is
-                                                associated with wisdom, intellectual culture and a search for
-                                                knowledge. In that sense, all cultures...
-                                            </div>
-                                            <div class="post-card__read-more">
-                                                <a href="#"
-                                                   class="btn btn-secondary btn-sm">Read More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="posts-list__item">
-                                    <div class="post-card post-card--layout--list post-card--size--nl">
-                                        <div class="post-card__image">
-                                            <a href="#">
-                                                <img src="images/posts/post-10.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="post-card__info">
-                                            <div class="post-card__category">
-                                                <a href="#">Special Offers</a>
-                                            </div>
-                                            <div class="post-card__name">
-                                                <a href="#">
-                                                    Engineers Use Many Methods
-                                                    To Minimize Logic Functions
-                                                </a>
-                                            </div>
-                                            <div class="post-card__date">January 1, 2019</div>
-                                            <div class="post-card__content">
-                                                In one general sense, philosophy is
-                                                associated with wisdom, intellectual culture and a search for
-                                                knowledge. In that sense, all cultures...
-                                            </div>
-                                            <div class="post-card__read-more">
-                                                <a href="#"
-                                                   class="btn btn-secondary btn-sm">Read More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                }
                             </div>
                         </div>
                         <div class="posts-view__pagination">

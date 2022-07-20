@@ -662,6 +662,11 @@
     <Content Include="Content\fonts\stroyka\stroyka.css" />
     <Content Include="Content\fonts\stroyka\stroyka.svg" />
     <Content Include="Content\image\icon-zalo.png" />
+    <Content Include="Content\image\ImgPost\p1.jpg" />
+    <Content Include="Content\image\ImgPost\p2.jpg" />
+    <Content Include="Content\image\ImgPost\p3.jpg" />
+    <Content Include="Content\image\ImgPost\p4.jpg" />
+    <Content Include="Content\image\ImgPost\p5.jpg" />
     <Content Include="Content\image\ImgProduct\DAHUA1.jpg" />
     <Content Include="Content\image\ImgProduct\DAHUA2.jpg" />
     <Content Include="Content\image\ImgProduct\DauHIK.jpg" />
@@ -914,6 +919,7 @@
     <Content Include="Views\ShopGrid\ShopGrid.cshtml" />
     <Content Include="Views\Pay\Pay.cshtml" />
     <Content Include="Views\ShopGrid\ProductDetail.cshtml" />
+    <Content Include="Views\Blog\BlogDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
