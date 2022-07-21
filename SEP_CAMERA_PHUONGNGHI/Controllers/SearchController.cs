@@ -27,7 +27,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
                 return View(db.tbProducts.OrderBy(x => x.Name).ToPagedList(pageNumber, pageSize));
             }
             ViewBag.Thongbao = "Đã tìm thấy" + ketQuaTK.Count + "Kết quả";
-            
             return View(ketQuaTK.OrderBy(x=>x.Name).ToPagedList(pageNumber, pageSize));
         }
     }
