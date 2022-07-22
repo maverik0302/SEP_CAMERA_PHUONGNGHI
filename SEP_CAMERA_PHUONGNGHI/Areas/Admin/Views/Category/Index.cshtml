@@ -1,0 +1,93 @@
+﻿
+@model IEnumerable<SEP_CAMERA_PHUONGNGHI.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
+}
+
+<div class="page-inner">
+    <div class="page-header">
+        <Strong class="page-title">QUẢN LÍ DANH MỤC</Strong>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Danh sách danh mục</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a style="font-size:16px" href="@Url.Action("Create")">Tạo mới danh mục</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="basic-datatables" class="display table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>
+                                        Tên danh mục
+                                    </th>
+
+                                    <th>
+                                        Tình trạng
+                                    </th>
+
+                                    <th>
+                                        Ngày tạo danh mục
+                                    </th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>
+                                        Tên danh mục
+                                    </th>
+
+                                    <th>
+                                        Tình trạng
+                                    </th>
+
+                                    <th>
+                                        Ngày tạo danh mục
+                                    </th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.category_id</td>
+                                        <td>
+                                            @*@Html.DisplayFor(modelItem => item.Name)*@
+                                            @item.Name
+                                        </td>
+                                        <td>
+                                            @item.Status
+                                        </td>
+                                        <td>
+                                            @item.CreateDate
+                                        </td>
+
+                                        <td>
+                                            <a href="@Url.Action("Edit", "Category", new { id = item.category_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Details", "Category", new { id = item.category_id })"><i class="fa-solid fa-circle-info fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Delete", "Category", new { id = item.category_id })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

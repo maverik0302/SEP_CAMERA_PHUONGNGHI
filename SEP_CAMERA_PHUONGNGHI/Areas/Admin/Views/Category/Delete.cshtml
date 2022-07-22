@@ -1,0 +1,116 @@
+﻿@model SEP_CAMERA_PHUONGNGHI.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
+}
+<div class="page-inner">
+    <div class="page-header">
+        <Strong class="page-title">QUẢN LÍ DANH MỤC</Strong>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Xóa danh mục</h3>
+                            <strong>Bạn có chắc muốn xóa danh mục này không?</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a style="font-size:16px" href="@Url.Action("Index")">Quay lại</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.SeoTitle)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.SeoTitle)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Status)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.sort)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.sort)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ParentID)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ParentID)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.MetaKey)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.MetaKey)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.MetaDescription)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.MetaDescription)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CreateDate)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CreateDate)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UpdateDate)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.UpdateDate)
+                        </dd>
+
+                    </dl>
+                </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="card-action">
+                        <div class="form-actions">
+                            <input type="submit" value="Xóa" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
