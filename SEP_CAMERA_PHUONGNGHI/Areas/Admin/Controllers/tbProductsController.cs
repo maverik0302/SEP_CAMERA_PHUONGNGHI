@@ -56,10 +56,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.tbProducts.Add(tbProduct);
+                tbProduct.CreateDate = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.brand_id = new SelectList(db.Brands, "brand_id", "Name", tbProduct.brand_id);
             ViewBag.category_id = new SelectList(db.Categories, "category_id", "Name", tbProduct.category_id);
             ViewBag.comment_id = new SelectList(db.CommentProducts, "comment_id", "Name", tbProduct.comment_id);
@@ -81,6 +81,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             ViewBag.brand_id = new SelectList(db.Brands, "brand_id", "Name", tbProduct.brand_id);
             ViewBag.category_id = new SelectList(db.Categories, "category_id", "Name", tbProduct.category_id);
             ViewBag.comment_id = new SelectList(db.CommentProducts, "comment_id", "Name", tbProduct.comment_id);
+
             return View(tbProduct);
         }
 
@@ -93,13 +94,17 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Entry(tbProduct).State = EntityState.Modified;
+                tbProduct.UpdateDate = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.brand_id = new SelectList(db.Brands, "brand_id", "Name", tbProduct.brand_id);
             ViewBag.category_id = new SelectList(db.Categories, "category_id", "Name", tbProduct.category_id);
             ViewBag.comment_id = new SelectList(db.CommentProducts, "comment_id", "Name", tbProduct.comment_id);
+            tbProduct.CreateDate = DateTime.Now;
+
             return View(tbProduct);
         }
 
