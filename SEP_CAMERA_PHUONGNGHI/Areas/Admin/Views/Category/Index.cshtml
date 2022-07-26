@@ -31,6 +31,7 @@
                                     <th>ID</th>
                                     <th>
                                         Tên danh mục
+                                        @*@Html.DisplayNameFor(model => model.Name)*@
                                     </th>
 
                                     <th>
@@ -48,6 +49,7 @@
                                     <th>ID</th>
                                     <th>
                                         Tên danh mục
+                                        @*@Html.DisplayNameFor(model => model.Name)*@
                                     </th>
 
                                     <th>
@@ -66,7 +68,6 @@
                                     <tr>
                                         <td>@item.category_id</td>
                                         <td>
-                                            @*@Html.DisplayFor(modelItem => item.Name)*@
                                             @item.Name
                                         </td>
                                         <td>

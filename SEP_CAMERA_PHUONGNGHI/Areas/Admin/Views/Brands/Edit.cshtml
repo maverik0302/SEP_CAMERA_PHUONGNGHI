@@ -13,7 +13,7 @@
     @Html.HiddenFor(model => model.brand_id)
     <div class="page-inner">
         <div class="page-header">
-            <Strong class="page-title">QUẢN LÍ SẢN PHẨM</Strong>
+            <Strong class="page-title">QUẢN LÍ HÃNG SẢN PHẨM</Strong>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -21,7 +21,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-6">
-                                <strong>Chỉnh sửa sản phẩm</strong>
+                                <strong>Chỉnh sửa hãng sản phẩm</strong>
                             </div>
                             <div class="col-md-6 text-right">
 
@@ -33,9 +33,9 @@
                     <div class="card-body">
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <label>Tên hãng sản phẩm</label>
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                             </div>
                         </div>

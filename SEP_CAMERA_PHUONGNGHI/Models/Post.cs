@@ -11,14 +11,18 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+
     public partial class Post
     {
         public int post_id { get; set; }
         public string Name { get; set; }
+        [StringLength(1000, MinimumLength = 1)]
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
         public string Image { get; set; }
+        [StringLength(1000, MinimumLength = 1)]
         public string Description { get; set; }
         public string Detail { get; set; }
         public string MetaKey { get; set; }

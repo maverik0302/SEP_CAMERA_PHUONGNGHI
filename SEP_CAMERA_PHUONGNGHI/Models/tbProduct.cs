@@ -17,7 +17,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 
     public partial class tbProduct
     {
-        
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbProduct()
         {
@@ -34,6 +34,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public Nullable<int> PromotionPrice { get; set; }
         public string TonKho { get; set; }
         public Nullable<int> BaoHanh { get; set; }
+        [StringLength(1000, MinimumLength = 1)]
         public string Desciption { get; set; }
         public Nullable<int> category_id { get; set; }
         public Nullable<int> brand_id { get; set; }
@@ -43,7 +44,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<int> rank { get; set; }
         public Nullable<int> comment_id { get; set; }
-    
+
         public virtual Brand Brand { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }
