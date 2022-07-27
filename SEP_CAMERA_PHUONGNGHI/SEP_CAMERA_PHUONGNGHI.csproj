@@ -930,6 +930,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="assets\admin\images\Products\" />
     <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>

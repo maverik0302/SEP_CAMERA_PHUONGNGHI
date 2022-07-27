@@ -11,7 +11,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
+            <div cl ass="card">
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
@@ -31,7 +31,7 @@
                                     <th>
                                         Tên sản phẩm
                                     </th>
-                                    <th>
+                                    <th style="width: 100px">
                                         Hình ảnh
                                     </th>
                                     <th>
@@ -93,7 +93,7 @@
                                             @item.Name
                                         </td>
                                         <td>
-                                            @item.Thumnail
+                                            <img src="~/assets/admin/images/Products/@item.Thumnail" class="img-fluid" alt="" />
                                         </td>
                                         <td>
                                             @item.Status
@@ -102,7 +102,7 @@
                                             @item.TonKho
                                         </td>
                                         <td>
-                                            @item.CreateDate
+                                            @Html.DisplayFor(modelItem => item.CreateDate)
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Brand.Name)
