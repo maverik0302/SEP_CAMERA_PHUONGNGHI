@@ -3579,7 +3579,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     margin-top: -6px;
     -ms-flex-negative: 0;
     flex-shrink: 0
-    
 }
 
 .dropcart__totals {
@@ -9578,8 +9577,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .block-products-carousel .owl-stage-outer {
-    margin-bottom: -56px;
-    margin-left: 260px
+    margin-bottom: -65px;
+    /* margin-left: 260px*/
 }
 
 .block-products-carousel__slider {
