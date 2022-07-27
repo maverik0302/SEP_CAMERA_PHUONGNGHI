@@ -71,7 +71,7 @@ else
                     <!-- .product__sidebar -->
                     <div class="product__sidebar">
                         <div class="product__availability">Availability: <span class="text-success">In Stock</span></div>
-                        <div class="product__prices">@Model.Price đ</div><!-- .product__options -->
+                        <div class="product__prices">@String.Format("{0:0,0}", Model.Price) đ</div><!-- .product__options -->
                         <form class="product__options">
                             <div class="form-group product__option">
                                 <label class="product__option-label"
