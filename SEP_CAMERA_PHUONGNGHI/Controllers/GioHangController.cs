@@ -7,7 +7,7 @@ using SEP_CAMERA_PHUONGNGHI.Models;
 
 namespace SEP_CAMERA_PHUONGNGHI.Controllers
 {
-    public class CartController : Controller
+    public class GioHangController : Controller
     {
         SEP25Team01Entities db = new SEP25Team01Entities();
         // GET: Cart
@@ -17,7 +17,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             if (lstCart != null)
             {
                 lstCart = new List<GioHang>();
-                Session["Ca"] = lstCart;
+                Session["GioHang"] = lstCart;
             }
             return lstCart;
         }
@@ -34,7 +34,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
             List<GioHang> lstCart = LayGioHang();
             GioHang sp = lstCart.Find(n => n.iMaProduct == iMaProduct);
-            if(sp == null)
+            if (sp == null)
             {
                 sp = new GioHang(iMaProduct);
                 return Redirect(strUrl);
@@ -43,7 +43,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             {
                 sp.sAmount++;
                 return Redirect(strUrl);
-            }    
+            }
         }
 
         //update cart
@@ -61,7 +61,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             {
                 sp.sAmount = int.Parse(f["txtSoLuong"].ToString());
             }
-            return View("Cart");
+            return View("GioHang");
 
         }
         public ActionResult Xoagiohang(int iMaProduct)
@@ -83,11 +83,11 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("Cart");
+            return RedirectToAction("GioHang");
         }
 
         //built cart
-        public ActionResult Cart()
+        public ActionResult GioHang()
         {
             if (Session["GioHang"] == null)
             {
@@ -123,9 +123,9 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         }
 
 
-        //public ActionResult Cart()
-        //{
-        //    return View();
-        //}
+        public ActionResult Cart()
+        {
+            return View("GioHang");
+        }
     }
 }

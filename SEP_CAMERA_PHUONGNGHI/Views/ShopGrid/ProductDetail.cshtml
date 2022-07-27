@@ -87,9 +87,14 @@ else
                                         </div>
                                     </div>
                                     <div class="product__actions-item product__actions-item--addtocart">
-                                        <button class="btn btn-primary btn-lg">
-                                            Thêm vào giỏ
-                                        </button>
+                                        @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaProduct = Model.product_id, @strUrl = Request.Url.ToString() }))
+                                        {
+                                            <input id="btnGioHang" type="button" value="Thêm vào giỏ" class="btn btn-primary btn-lg" />
+
+                                        }
+                                        @*<button class="btn btn-primary btn-lg">
+            Thêm vào giỏ
+        </button>*@
                                     </div>
                                 </div>
                             </div>
