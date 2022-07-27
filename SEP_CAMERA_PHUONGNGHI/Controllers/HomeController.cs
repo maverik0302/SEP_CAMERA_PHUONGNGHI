@@ -11,7 +11,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            SEP25Team01Entities db = new SEP25Team01Entities();
+            List<tbProduct> ketqua = db.tbProducts.ToList();
+
+            return View(ketqua);
         }
     }
 }
