@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -56,6 +57,24 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.tbProducts.Add(tbProduct);
+                // Upload file
+                var img = Request.Files["img"]; // lay thong tin file
+                if (img.ContentLength != 0)
+                {
+                    string[] FileExtentions = new string[] { ".jpg", ".jepg", ".png", ".gif" };
+                    // Kiem tra tap tin
+                    if(FileExtentions.Contains(img.FileName.Substring(img.FileName.LastIndexOf("."))))
+                    {
+                        string slug = tbProduct.Name;
+                        //
+                        string imgName = slug + img.FileName.Substring(img.FileName.LastIndexOf("."));
+                        tbProduct.Thumnail = imgName;
+                        string PathDir = "~/assets/admin/images/Products/";
+                        string PathFile = Path.Combine(Server.MapPath(PathDir), imgName);
+                        img.SaveAs(PathFile);
+                    }
+                }
+                // end Upload file
                 tbProduct.CreateDate = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -96,6 +115,31 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             {
 
                 db.Entry(tbProduct).State = EntityState.Modified;
+                // Upload file
+                var img = Request.Files["img"]; // lay thong tin file
+                if (img.ContentLength != 0)
+                {
+                    string[] FileExtentions = new string[] { ".jpg", ".jepg", ".png", ".gif" };
+                    // Kiem tra tap tin
+                    if (FileExtentions.Contains(img.FileName.Substring(img.FileName.LastIndexOf("."))))
+                    {
+                        string slug = tbProduct.Name;
+                        //
+                        string imgName = slug + img.FileName.Substring(img.FileName.LastIndexOf("."));
+                        tbProduct.Thumnail = imgName;
+                        string PathDir = "~/assets/admin/images/Products/";
+                        string PathFile = Path.Combine(Server.MapPath(PathDir), imgName);
+                        // Xoa file
+                        if (System.IO.File.Exists(tbProduct.Thumnail))
+                        {
+                            string DelPath = Path.Combine(Server.MapPath(PathDir), tbProduct.Thumnail);
+                            System.IO.File.Delete(DelPath); // xoa hinh
+                        }
+                        img.SaveAs(PathFile);
+
+                    }
+                }
+                // end Upload file
                 tbProduct.UpdateDate = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -103,8 +147,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             ViewBag.brand_id = new SelectList(db.Brands, "brand_id", "Name", tbProduct.brand_id);
             ViewBag.category_id = new SelectList(db.Categories, "category_id", "Name", tbProduct.category_id);
             ViewBag.comment_id = new SelectList(db.CommentProducts, "comment_id", "Name", tbProduct.comment_id);
-            tbProduct.CreateDate = DateTime.Now;
-
             return View(tbProduct);
         }
 
