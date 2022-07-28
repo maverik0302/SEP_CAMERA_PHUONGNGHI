@@ -1,0 +1,113 @@
+﻿@model IEnumerable<SEP_CAMERA_PHUONGNGHI.Models.Oder>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
+}
+
+
+<div class="page-inner">
+    <div class="page-header">
+        <Strong class="page-title">QUẢN LÍ ĐƠN HÀNG</Strong>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Danh sách đơn hàng</strong>
+                        </div>
+                        @*<div class="col-md-6 text-right">
+                            <a style="font-size:16px" href="@Url.Action("Create")">Tạo mới danh mục</a>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="basic-datatables" class="display table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>
+                                        Ngày đặt hàng
+                                    </th>
+                                    <th>
+                                        Trạng thái
+                                    </th>
+                                    <th>
+                                        Tình trạng giao hàng
+                                    </th>
+                                    <th>
+                                        Ngày giao hàng
+                                    </th>
+                                    <th>
+                                        Tổng giá trị
+                                    </th>
+                                    <th>
+                                        Tên khách hàng
+                                    </th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>
+                                        Ngày đặt hàng
+                                    </th>
+                                    <th>
+                                        Trạng thái
+                                    </th>
+                                    <th>
+                                        Tình trạng giao hàng
+                                    </th>
+                                    <th>
+                                        Ngày giao hàng
+                                    </th>
+                                    <th>
+                                        Tổng giá trị
+                                    </th>
+                                    <th>
+                                        Tên khách hàng
+                                    </th>
+                                    <th>Action</th>
+                            </tfoot>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.order_id</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.orderdate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Delivered)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DeliveryDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_price)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CUSTOMER.Name)
+                                        </td>
+                                        <td>
+                                            @*<a href="@Url.Action("Edit", "Order", new { id = item.order_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>*@
+                                            <a href="@Url.Action("Details", "Order", new { id = item.order_id })"><i class="fa-solid fa-circle-info fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Delete", "Order", new { id = item.order_id })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
