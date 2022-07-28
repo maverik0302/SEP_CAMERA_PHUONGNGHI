@@ -248,6 +248,7 @@
     <Content Include="assets\admin\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\admin\images\bg-01.jpg" />
     <Content Include="assets\admin\images\icons\favicon.ico" />
+    <Content Include="assets\admin\images\Products\bg-01.jpg" />
     <Content Include="assets\admin\js\main.js" />
     <Content Include="assets\admin\vendor\animate\animate.css" />
     <Content Include="assets\admin\vendor\animsition\css\animsition.css" />
@@ -934,7 +935,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="assets\admin\images\Products\" />
     <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
