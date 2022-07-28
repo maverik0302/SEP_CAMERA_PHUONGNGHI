@@ -1,0 +1,284 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<SEP_CAMERA_PHUONGNGHI.Models.tbProduct>
+
+@{
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>Camera Huỳnh Thức</title>
+<link rel="icon" type="image/png" href="~Content/images/favicon.png"><!-- fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i"><!-- css -->
+<link rel="stylesheet" href="~/Content/vendor/bootstrap-4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/vendor/owl-carousel-2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="~/Content/css/style.css">
+<!-- js -->
+
+<script src="~/Content/vendor/jquery-3.3.1/jquery.min.js"></script>
+
+<script src="~/Content/vendor/bootstrap-4.2.1/js/bootstrap.bundle.min.js"></script>
+
+<script src="~/Content/vendor/owl-carousel-2.3.4/owl.carousel.min.js"></script>
+<script src="~/Content/vendor/nouislider-12.1.0/nouislider.min.js"></script>
+<script src="~/Content/js/number.js"></script>
+<script src="~/Content/js/main.js"></script>
+<script src="~/Content/vendor/svg4everybody-2.1.9/svg4everybody.min.js"></script>
+<script>svg4everybody();</script>
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().product_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().SeoTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Thumnail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PromotionPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().TonKho)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().BaoHanh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Desciption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().category_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().brand_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().MetaKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().MetaDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().UpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().rank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().comment_id)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.product_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeoTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Thumnail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PromotionPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TonKho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BaoHanh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desciption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.brand_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MetaKey)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MetaDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rank)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.comment_id)
+                </td>
+
+            </tr>
+        }
+
+    </table>*@
+
+
+<div class="site__body">
+    <div class="page-header">
+        <div class="page-header__container container">
+            <div class="page-header__breadcrumb">
+            </div>
+            <div class="page-header__title">
+                <h1>Kết quả tìm kiếm</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block">
+                    <div class="products-view">
+                        <div class="products-view__options">
+                            <div class="view-options">
+                                <div class="view-options__layout">
+                                    <div class="layout-switcher">
+                                        <div class="layout-switcher__list">
+                                            <button data-layout="grid-4-full"
+                                                    data-with-features="false" title="Grid" type="button"
+                                                    class="layout-switcher__button layout-switcher__button--active">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+                                                    <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
+                                                </svg>
+                                            </button>
+                                            <button data-layout="list"
+                                                    data-with-features="false" title="List" type="button"
+                                                    class="layout-switcher__button">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
+                                                    <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="view-options__divider"></div>
+                                <div class="view-options__control">
+                                    <label for="">Sort By</label>
+                                    <div>
+                                        <select class="form-control form-control-sm" name="" id="">
+                                            <option value="">Default</option>
+                                            <option value="">Name (A-Z)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="view-options__control">
+                                    <label for="">Show</label>
+                                    <div>
+                                        <select class="form-control form-control-sm" name="" id="">
+                                            <option value="">12</option>
+                                            <option value="">24</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="products-view__list products-list" data-layout="grid-4-full"
+                             data-with-features="false">
+                            <div class="products-list__body">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="products-list__item">
+                                        <div class="product-card">
+                                            <div class="product-card__image">
+                                                <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                                                    <img src="@Url.Content("~/Content/image/ImgProduct/"+item.Thumnail)" alt="Image">
+                                                </a>
+                                            </div>
+                                            <div class="product-card__info">
+                                                <div class="product-card__name">
+                                                    <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                                                        @item.Name
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-card__actions">
+                                                <div class="product-card__prices">@item.Price đ</div>
+                                                <div class="product-card__buttons">
+                                                    <button class="btn btn-primary product-card__addtocart"
+                                                            type="button">
+                                                        Thêm vào giỏ
+                                                    </button>
+                                                    <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">
+                                                        Thêm vào giỏ
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="products-view__pagination">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link page-link--with-arrow"
+                                       href="#" aria-label="Previous">
+                                        <svg class="page-link__arrow page-link__arrow--left" aria-hidden="true"
+                                             width="8px" height="13px">
+                                            <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">
+                                        2 <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link page-link--with-arrow" href="#"
+                                       aria-label="Next">
+                                        <svg class="page-link__arrow page-link__arrow--right"
+                                             aria-hidden="true" width="8px" height="13px">
+                                            <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
