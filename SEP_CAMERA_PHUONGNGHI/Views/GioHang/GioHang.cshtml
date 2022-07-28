@@ -1,7 +1,12 @@
-﻿
+﻿@using SEP_CAMERA_PHUONGNGHI.Models;
+@model List<GioHang>
 @{
-    ViewBag.Title = "Cart";
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+
 
 <div class="site__body">
     <div class="page-header">
@@ -11,12 +16,8 @@
             </div>
         </div>
     </div>
-
     <div class="cart block">
         <div class="container">
-
-
-
             <table class="cart__table cart-table">
                 <thead class="cart-table__head">
                     <tr class="cart-table__row">
@@ -28,9 +29,8 @@
                         <th class="cart-table__column cart-table__column--remove"></th>
                     </tr>
                 </thead>
-
-                
-                    @foreach (var iteam in Model)
+                <tbody class="cart-table__body">
+                    @foreach (var item in Model)
                     {
 
                         <tr class="cart-table__row">
@@ -41,9 +41,9 @@
                             </td>
                             <td class="cart-table__column cart-table__column--product">
                                 <a href="#"
-                                   class="cart-table__product-name">Electric Planer Brandix KL370090G 300 Watts</a>
+                                   class="cart-table__product-name">@item.sName</a>
                             </td>
-                            <td class="cart-table__column cart-table__column--price" data-title="Price">$699.00</td>
+                            <td class="cart-table__column cart-table__column--price" data-title="Price">chu co gia</td>
                             <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
                                 <div class="input-number">
                                     <input class="form-control input-number__input"
@@ -53,7 +53,7 @@
                                 </div>
                             </td>
                             <td class="cart-table__column cart-table__column--total" data-title="Total">
-                                $1,398.00
+                                @item.ThanhTien
                             </td>
                             <td class="cart-table__column cart-table__column--remove">
                                 <button type="button"
@@ -65,10 +65,10 @@
                                 </button>
                             </td>
                         </tr>
-  
-                }
 
-                </table>
+                    }
+                </tbody>
+            </table>
 
 
 
@@ -93,5 +93,11 @@
             </div>
         </div>
     </div>
-
 </div>
+
+
+
+
+
+
+

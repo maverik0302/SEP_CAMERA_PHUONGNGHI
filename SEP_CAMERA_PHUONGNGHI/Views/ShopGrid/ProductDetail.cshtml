@@ -71,7 +71,7 @@ else
                     <!-- .product__sidebar -->
                     <div class="product__sidebar">
                         <div class="product__availability">Availability: <span class="text-success">In Stock</span></div>
-                        <div class="product__prices">@Model.Price đ</div><!-- .product__options -->
+                        <div class="product__prices">@String.Format("{0:0,0}", Model.Price) đ</div><!-- .product__options -->
                         <form class="product__options">
                             <div class="form-group product__option">
                                 <label class="product__option-label"
@@ -86,11 +86,13 @@ else
                                             <div class="input-number__sub"></div>
                                         </div>
                                     </div>
-                                    <div class="product__actions-item product__actions-item--addtocart">
-                                        <button class="btn btn-primary btn-lg">
-                                            Thêm vào giỏ
-                                        </button>
-                                    </div>
+                                    
+                                        @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaProduct = Model.product_id, @strUrl = Request.Url.ToString() }))
+                                        {
+                                            <input style="cursor:pointer" type="submit" value="Thêm vào giỏ" class="btn btn-primary btn-lg" />
+
+                                        }
+                                    
                                 </div>
                             </div>
                         </form><!-- .product__options / end -->
