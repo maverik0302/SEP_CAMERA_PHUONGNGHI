@@ -248,6 +248,7 @@
     <Content Include="assets\admin\fonts\iconic\css\material-design-iconic-font.min.css" />
     <Content Include="assets\admin\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\admin\images\bg-01.jpg" />
+    <Content Include="assets\admin\images\LogoAdmin.png" />
     <Content Include="assets\admin\images\icons\favicon.ico" />
     <Content Include="assets\admin\images\Products\lovely.jpg" />
     <Content Include="assets\admin\js\main.js" />
