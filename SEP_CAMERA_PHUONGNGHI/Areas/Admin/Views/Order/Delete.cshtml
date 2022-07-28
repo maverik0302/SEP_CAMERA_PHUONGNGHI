@@ -1,12 +1,13 @@
-﻿@model SEP_CAMERA_PHUONGNGHI.Models.Category
+﻿@model SEP_CAMERA_PHUONGNGHI.Models.Oder
 
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
 }
+
 <div class="page-inner">
     <div class="page-header">
-        <Strong class="page-title">QUẢN LÍ DANH MỤC</Strong>
+        <Strong class="page-title">QUẢN LÍ ĐƠN HÀNG</Strong>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -14,8 +15,8 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
-                            <h3>Xóa danh mục</h3>
-                            <strong>Bạn có chắc muốn xóa danh mục này không?</strong>
+                            <h3>Xóa đơn hàng</h3>
+                            <strong>Bạn có chắc muốn xóa đơn hàng này không?</strong>
                         </div>
                         <div class="col-md-6 text-right">
                             <a style="font-size:16px" href="@Url.Action("Index")">Quay lại</a>
@@ -24,27 +25,19 @@
                 </div>
 
                 <div class="card-body">
-
-
                     <dl class="dl-horizontal">
                         <dt>
-                            <strong>Tên danh mục</strong>
+                            <strong>Ngày đặt hàng</strong>
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.Name)
+                            @Html.DisplayFor(model => model.orderdate)
                         </dd>
 
                         <dt>
-                            <strong>Tiêu đề SEO</strong>
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.SeoTitle)
-                        </dd>
-
-                        <dt>
-                            <strong>Trạng thái</strong>
+                            <strong>
+                                Trạng thái
+                            </strong>
                         </dt>
 
                         <dd>
@@ -52,51 +45,47 @@
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.sort)
+                            <strong>
+                                Tình trạng giao hàng
+                            </strong>
+
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.sort)
+                            @Html.DisplayFor(model => model.Delivered)
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.ParentID)
+                            <strong>
+                                Ngày giao hàng
+                            </strong>
+
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.ParentID)
+                            @Html.DisplayFor(model => model.DeliveryDate)
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.MetaKey)
+                            <strong>
+                                Tổng giá trị
+                            </strong>
+
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.MetaKey)
+                            @Html.DisplayFor(model => model.total_price)
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.MetaDescription)
+                            <strong>
+                                Tên khách hàng
+                            </strong>
+
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.MetaDescription)
-                        </dd>
-
-                        <dt>
-                            <strong>Ngày tạo danh mục</strong>
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.CreateDate)
-                        </dd>
-
-                        <dt>
-                            <strong>Ngày cập nhật</strong>
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.UpdateDate)
+                            @Html.DisplayFor(model => model.CUSTOMER.Name)
                         </dd>
 
                     </dl>
@@ -114,3 +103,4 @@
         </div>
     </div>
 </div>
+
