@@ -188,6 +188,7 @@
     <Compile Include="Models\footer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\KhoHang.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -678,6 +679,7 @@
     <Content Include="Content\image\ImgProduct\KBV1.jpg" />
     <Content Include="Content\image\ImgProduct\KBV2.jpg" />
     <Content Include="Content\image\ImgProduct\ManKBV.jpg" />
+    <Content Include="Content\image\Logo\CAMERA PHƯƠNG NGHI.png" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\number.js" />
     <Content Include="Content\PagedList.css" />
