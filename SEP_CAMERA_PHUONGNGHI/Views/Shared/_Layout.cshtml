@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using SEP_CAMERA_PHUONGNGHI.Models
+@{SEP25Team01Entities db = new SEP25Team01Entities();
+    var category = db.Categories.ToList();
+}
+
+<!DOCTYPE html>
 
 <html lang="en" dir="ltr">
 <head>
@@ -634,18 +639,12 @@
                                         <div class="departments__body">
                                             <div class="departments__links-wrapper" style="">
                                                 <ul class="departments__links">
-                                                    <li class="departments__item">
-                                                        @Html.ActionLink("CAMERA TRỌN BỘ", "ShopGrid", "ShopGrid")
-                                                    </li>
-                                                    <li class="departments__item">
-                                                        <a href="#">CAMERA GIÁM SÁT</a>
-                                                    </li>
-                                                    <li class="departments__item">
-                                                        <a href="#">CAMERA AN NINH</a>
-                                                    </li>
-                                                    <li class="departments__item">
-                                                        <a href="#">THIẾT BỊ NHÀ THÔNG MINH</a>
-                                                    </li>
+                                                    @foreach (var item in category)
+                                                    {
+                                                        <li class="departments__item">
+                                                            <a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">@item.Name</a>
+                                                        </li>
+                                                    }
                                                 </ul>
                                             </div>
                                         </div><button class="departments__button">
