@@ -66,7 +66,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                         //
                         string imgName = slug + img.FileName.Substring(img.FileName.LastIndexOf("."));
                         post.Image = imgName;
-                        string PathDir = "~/assets/admin/images/Posts/";
+                        string PathDir = "~/Content/image/ImgPost/";
                         string PathFile = Path.Combine(Server.MapPath(PathDir), imgName);
                         img.SaveAs(PathFile);
                     }
@@ -119,7 +119,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                         //
                         string imgName = slug + img.FileName.Substring(img.FileName.LastIndexOf("."));
                         post.Image = imgName;
-                        string PathDir = "~/assets/admin/images/Posts/";
+                        string PathDir = "~/Content/image/ImgPost/";
                         string PathFile = Path.Combine(Server.MapPath(PathDir), imgName);
                         // Xoa file
                         if (System.IO.File.Exists(post.Image))
