@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Post", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -49,19 +49,18 @@
                         <div class="form-group">
                             <label>Hình ảnh</label>
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                <input name="img" type="file" class="form-control" />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>Miêu tả</label>
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" }, required = "required" })
+                                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @row = "3", required = "required" })
                                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                      
+
                     </div>
                     <div class="card-action">
                         <button class="btn btn-success">Tạo mới</button>

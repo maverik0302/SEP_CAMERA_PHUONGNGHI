@@ -22,14 +22,15 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         }
     
         public int category_id { get; set; }
+        [StringLength(250, MinimumLength = 1)]
         public string Name { get; set; }
-        [StringLength(1000, MinimumLength = 1)]
+        [StringLength(250, MinimumLength = 1)]
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> sort { get; set; }
         public Nullable<int> ParentID { get; set; }
         public string MetaKey { get; set; }
-        [StringLength(1000, MinimumLength = 1)]
+        [StringLength(250, MinimumLength = 1)]
         public string MetaDescription { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
