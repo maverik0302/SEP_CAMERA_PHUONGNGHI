@@ -35,6 +35,9 @@
                                         Trạng thái
                                     </th>
                                     <th>
+                                        Hình ảnh
+                                    </th>
+                                    <th>
                                         Ngày tạo bài viết
                                     </th>
                                     <th>Action</th>
@@ -48,6 +51,9 @@
                                     </th>
                                     <th>
                                         Trạng thái
+                                    </th>
+                                    <th>
+                                        Hình ảnh
                                     </th>
                                     <th>
                                         Ngày tạo bài viết
@@ -67,6 +73,9 @@
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                        <td>
+                                            <img src="~/assets/admin/images/Posts/@item.Image" class="img-fluid" alt="" />
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.CreateDate)

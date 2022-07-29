@@ -250,6 +250,7 @@
     <Content Include="assets\admin\images\bg-01.jpg" />
     <Content Include="assets\admin\images\LogoAdmin.png" />
     <Content Include="assets\admin\images\icons\favicon.ico" />
+    <Content Include="assets\admin\images\Posts\lovely.jpg" />
     <Content Include="assets\admin\images\Products\lovely.jpg" />
     <Content Include="assets\admin\js\main.js" />
     <Content Include="assets\admin\vendor\animate\animate.css" />

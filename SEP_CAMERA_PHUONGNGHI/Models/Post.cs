@@ -17,8 +17,9 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     public partial class Post
     {
         public int post_id { get; set; }
+        [StringLength(250, MinimumLength = 1)]
         public string Name { get; set; }
-        [StringLength(1000, MinimumLength = 1)]
+        [StringLength(250, MinimumLength = 1)]
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
         public string Image { get; set; }

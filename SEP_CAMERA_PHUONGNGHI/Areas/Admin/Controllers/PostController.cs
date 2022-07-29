@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -53,6 +54,24 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.Posts.Add(post);
+                // Upload file
+                var img = Request.Files["img"]; // lay thong tin file
+                if (img.ContentLength != 0)
+                {
+                    string[] FileExtentions = new string[] { ".jpg", ".jepg", ".png", ".gif" };
+                    // Kiem tra tap tin
+                    if (FileExtentions.Contains(img.FileName.Substring(img.FileName.LastIndexOf("."))))
+                    {
+                        string slug = post.Name;
+                        //
+                        string imgName = slug + img.FileName.Substring(img.FileName.LastIndexOf("."));
+                        post.Image = imgName;
+                        string PathDir = "~/assets/admin/images/Posts/";
+                        string PathFile = Path.Combine(Server.MapPath(PathDir), imgName);
+                        img.SaveAs(PathFile);
+                    }
+                }
+                // end Upload file
                 post.CreateDate = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -88,6 +107,30 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(post).State = EntityState.Modified;
+                // Upload file
+                var img = Request.Files["img"]; // lay thong tin file
+                if (img.ContentLength != 0)
+                {
+                    string[] FileExtentions = new string[] { ".jpg", ".jepg", ".png", ".gif" };
+                    // Kiem tra tap tin
+                    if (FileExtentions.Contains(img.FileName.Substring(img.FileName.LastIndexOf("."))))
+                    {
+                        string slug = post.Name;
+                        //
+                        string imgName = slug + img.FileName.Substring(img.FileName.LastIndexOf("."));
+                        post.Image = imgName;
+                        string PathDir = "~/assets/admin/images/Posts/";
+                        string PathFile = Path.Combine(Server.MapPath(PathDir), imgName);
+                        // Xoa file
+                        if (System.IO.File.Exists(post.Image))
+                        {
+                            string DelPath = Path.Combine(Server.MapPath(PathDir), post.Image);
+                            System.IO.File.Delete(DelPath); // xoa hinh
+                        }
+                        img.SaveAs(PathFile);
+                    }
+                }
+                // end Upload file
                 post.UpdateDate = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
