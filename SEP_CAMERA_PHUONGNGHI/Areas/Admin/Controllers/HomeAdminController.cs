@@ -15,5 +15,9 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult MyProfile()
+        {
+            return View();
+        }
     }
 }

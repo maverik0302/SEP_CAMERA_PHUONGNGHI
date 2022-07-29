@@ -249,8 +249,6 @@
     <Content Include="assets\admin\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\admin\images\bg-01.jpg" />
     <Content Include="assets\admin\images\icons\favicon.ico" />
-    <Content Include="assets\admin\images\Posts\lovely.jpg" />
-    <Content Include="assets\admin\images\Products\lovely.jpg" />
     <Content Include="assets\admin\js\main.js" />
     <Content Include="assets\admin\vendor\animate\animate.css" />
     <Content Include="assets\admin\vendor\animsition\css\animsition.css" />
@@ -898,6 +896,7 @@
     <Content Include="Areas\Admin\Views\Order\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Order\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\MyProfile.cshtml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
