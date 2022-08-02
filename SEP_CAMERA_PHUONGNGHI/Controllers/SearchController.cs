@@ -21,6 +21,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             //phantrang
             int pageNumber = (page ?? 1);
             int pageSize = 9;
+
             if (ketQuaTK.Count == 0)
             {
                 ViewBag.Thongbao = "Không tìm thấy sản phẩm nào";

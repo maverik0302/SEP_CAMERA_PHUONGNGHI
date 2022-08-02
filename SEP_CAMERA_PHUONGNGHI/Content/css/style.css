@@ -4633,6 +4633,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .search__form {
     position: relative;
     height: 42px;
+    width: fit-content;
     display: -ms-flexbox;
     display: flex
 }
