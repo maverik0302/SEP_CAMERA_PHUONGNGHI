@@ -36,7 +36,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public string Thumnail { get; set; }
         [Required]
         public Nullable<int> Price { get; set; }
-        [Required]
         public Nullable<int> PromotionPrice { get; set; }
         [Required]
         public string TonKho { get; set; }
