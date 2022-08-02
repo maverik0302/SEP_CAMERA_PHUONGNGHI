@@ -1,6 +1,8 @@
-﻿@model List<SEP_CAMERA_PHUONGNGHI.Models.tbProduct>
+﻿@using SEP_CAMERA_PHUONGNGHI.Models
+@{SEP25Team01Entities db = new SEP25Team01Entities();
+    var category = db.Categories.ToList();
+    var post = db.Posts.ToList();
 
-@{
     ViewBag.Title = "Home Page";
 
 }
@@ -88,7 +90,6 @@
                 {
                     <div class="block-products-carousel__column">
                         <div class="block-products-carousel__cell">
-
                             <div class="product-card" style="margin-bottom:1px">
                                 <div class="product-card__image">
                                     <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
@@ -103,18 +104,17 @@
                                     </div>
                                 </div>
                                 <div class="product-card__actions">
-                                    <div class="product-card__prices">@String.Format("{0:0,0}", item.Price) đ</div>
+                                    <div class="product-card__prices">@item.Price đ</div>
                                     <div class="product-card__buttons">
                                         <button class="btn btn-primary product-card__addtocart" type="button">
-                                            Add To
-                                            Cart
+                                            Thêm vòa giỏ
                                         </button>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                    </div>}
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -141,25 +141,26 @@
             <div class="owl-carousel owl-loaded owl-drag">
                 <div class="owl-stage-outer">
                     <div class="owl-stage" style="transform: translate3d(-2400px, 0px, 0px); transition: all 0s ease 0s; width: 9600px;">
-
-                        <div class="owl-item cloned" style="width: 450px; margin-right: 30px;">
-                            <div class="post-card">
-                                <div class="post-card__image">
-                                    <a href="#"><img src="#" alt=""></a>
-                                </div>
-                                <div class="post-card__info">
-                                    <div class="post-card__category"><a href="#">Xem tin</a></div>
-                                    <div class="post-card__name">
-                                        <a href="#">
-                                            Giá Lắp Camera Quan Sát Bao Nhiêu?
-                                        </a>
+                        @foreach (var item in post)
+                        {
+                            <div class="owl-item cloned" style="width: 450px; margin-right: 30px;">
+                                <div class="post-card">
+                                    <div class="post-card__image">
+                                        <a href="#"><img src="@Url.Content("~/Content/image/ImgPost/" + item.Image)" alt=""></a>
                                     </div>
-                                    <div class="post-card__content">
-                                        Lắp Camera An Ninh Gia Đình giá rẻ chính hãng giám sát 24/24 từ xa qua Smartphone, máy tính cả ngày lẫn đêm đảm bảo an ninh hiệu quả cho gia đình.
+                                    <div class="post-card__info">
+                                        <div class="post-card__category"><a href="#">Xem tin</a></div>
+                                        <div class="post-card__name">
+                                            <a href="#">
+                                                @item.Name
+                                            </a>
+                                        </div>
+                                        <div class="post-card__content">
+                                            @item.Description
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         }
                     </div>
                 </div>

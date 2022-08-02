@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using SEP_CAMERA_PHUONGNGHI.Models
+@{SEP25Team01Entities db = new SEP25Team01Entities();
+    var category = db.Categories.ToList();
+    var brand = db.Brands.ToList();
+}
+
+<!DOCTYPE html>
 
 <html lang="en" dir="ltr">
 <head>
@@ -640,18 +646,24 @@
                                         <div class="departments__body">
                                             <div class="departments__links-wrapper" style="">
                                                 <ul class="departments__links">
-                                                    <li class="departments__item">
-                                                        @Html.ActionLink("CAMERA TRỌN BỘ", "ShopGrid", "ShopGrid")
-                                                    </li>
-                                                    <li class="departments__item">
-                                                        <a href="#">CAMERA GIÁM SÁT</a>
-                                                    </li>
-                                                    <li class="departments__item">
-                                                        <a href="#">CAMERA AN NINH</a>
-                                                    </li>
-                                                    <li class="departments__item">
-                                                        <a href="#">THIẾT BỊ NHÀ THÔNG MINH</a>
-                                                    </li>
+                                                    @foreach (var item in category)
+                                                    {
+                                                        <li class="departments__item">
+                                                            <a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">@item.Name</a>
+
+                                                            <div class="departments__menu">
+                                                                <!-- .menu brand -->
+                                                                @foreach (var items in brand)
+                                                                {
+                                                                    <ul class="menu menu--layout--classic">
+                                                                        <li>
+                                                                            <a href="@Url.Action("Brand", "ShopGrid", new {idbrand = items.brand_id, idcategory = item.category_id})">@items.Name</a>
+                                                                        </li>
+                                                                    </ul><!-- .menu brand / end -->
+                                                                }
+                                                            </div>
+                                                        </li>
+                                                    }
                                                 </ul>
                                             </div>
                                         </div><button class="departments__button">
@@ -779,6 +791,7 @@
 
         </div>
         <!-- site__body / end -->
+
         <!-- site__footer -->
         <footer class="site__footer">
             <div class="site-footer">

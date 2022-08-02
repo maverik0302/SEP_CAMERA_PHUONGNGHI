@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+@Html.AntiForgeryToken()
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -34,8 +35,11 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="blue">
 
-                <a href="../index.html" class="logo">
-                    <img src="/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+                <a href="@Url.Action("Index", "HomeAdmin")" class="logo">
+                    <img height="11px" src="~/assets/admin/images/LogoAdmin.png" >
+
+                    @*<img width="108px" height="35px" src="~/Content/image/Logo/CAMERA PHƯƠNG NGHI.png" />*@
+
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -306,7 +310,7 @@
                         <div class="collapse in" id="collapseExample">
                             <ul class="nav">
                                 <li>
-                                    <a href="#profile">
+                                    <a href="@Url.Action("MyProfile", "HomeAdmin")">
                                         <span class="link-collapse">My Profile</span>
                                     </a>
                                 </li>
