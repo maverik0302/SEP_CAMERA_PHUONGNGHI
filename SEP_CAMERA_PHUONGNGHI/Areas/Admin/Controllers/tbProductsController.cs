@@ -19,8 +19,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var model = db.tbProducts.ToList();
-            //var tbProducts = db.tbProducts.Include(t => t.Brand).Include(t => t.Category).Include(t => t.CommentProduct);
-            return View(model); /*tbProducts.ToList()*/
+            return View(model);
         }
 
         // GET: Admin/tbProducts/Details/5

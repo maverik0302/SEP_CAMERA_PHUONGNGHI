@@ -125,6 +125,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.9\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.9\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -256,20 +262,30 @@
     <Content Include="assets\admin\vendor\animsition\css\animsition.min.css" />
     <Content Include="assets\admin\vendor\animsition\js\animsition.js" />
     <Content Include="assets\admin\vendor\animsition\js\animsition.min.js" />
+    <Content Include="assets\admin\vendor\apexchart\apexcharts.min.js" />
     <Content Include="assets\admin\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="assets\admin\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="assets\admin\vendor\bootstrap\css\bootstrap-icons.css" />
     <Content Include="assets\admin\vendor\bootstrap\css\bootstrap-reboot.css" />
     <Content Include="assets\admin\vendor\bootstrap\css\bootstrap-reboot.min.css" />
     <Content Include="assets\admin\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="assets\admin\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\admin\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="assets\admin\vendor\bootstrap\js\bootstrap.js" />
     <Content Include="assets\admin\vendor\bootstrap\js\bootstrap.min.js" />
     <Content Include="assets\admin\vendor\bootstrap\js\popper.js" />
     <Content Include="assets\admin\vendor\bootstrap\js\popper.min.js" />
     <Content Include="assets\admin\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="assets\admin\vendor\boxicons\boxicons.min.css" />
+    <Content Include="assets\admin\vendor\chart.js\chart.min.js" />
     <Content Include="assets\admin\vendor\countdowntime\countdowntime.js" />
     <Content Include="assets\admin\vendor\css-hamburgers\hamburgers.css" />
     <Content Include="assets\admin\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="assets\admin\vendor\echarts\echarts.min.js" />
+    <Content Include="assets\admin\vendor\php-email-form\validate.js" />
+    <Content Include="assets\admin\vendor\quill\quill.min.js" />
+    <Content Include="assets\admin\vendor\simple-data\simple-datatables.js" />
+    <Content Include="assets\admin\vendor\simple-data\style.css" />
     <Content Include="assets\admin\vendor\daterangepicker\daterangepicker.css" />
     <Content Include="assets\admin\vendor\daterangepicker\daterangepicker.js" />
     <Content Include="assets\admin\vendor\daterangepicker\moment.js" />
@@ -277,10 +293,14 @@
     <Content Include="assets\admin\vendor\jquery\jquery-3.2.1.min.js" />
     <Content Include="assets\admin\vendor\perfect-scrollbar\perfect-scrollbar.css" />
     <Content Include="assets\admin\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="assets\admin\vendor\quill\quill.bubble.css" />
+    <Content Include="assets\admin\vendor\quill\quill.snow.css" />
+    <Content Include="assets\admin\vendor\remixicon\remixicon.css" />
     <Content Include="assets\admin\vendor\select2\select2.css" />
     <Content Include="assets\admin\vendor\select2\select2.js" />
     <Content Include="assets\admin\vendor\select2\select2.min.css" />
     <Content Include="assets\admin\vendor\select2\select2.min.js" />
+    <Content Include="assets\admin\vendor\tinymce\tinymce.min.js" />
     <Content Include="assets\css\atlantis.css" />
     <Content Include="assets\css\atlantis.min.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -898,6 +918,8 @@
     <Content Include="Areas\Admin\Views\Order\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\MyProfile.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\EditProfile.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\ChangePassword.cshtml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
