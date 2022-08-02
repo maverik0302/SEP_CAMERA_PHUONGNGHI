@@ -19,7 +19,12 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         }
         public ActionResult ProductDetail(int id)
         { 
-            tbProduct detail = db.tbProducts.Find(id);
+            tbProduct detail = db.tbProducts.SingleOrDefault(n=>n.product_id == id);
+            if(detail == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
 
             return View(detail);
         }

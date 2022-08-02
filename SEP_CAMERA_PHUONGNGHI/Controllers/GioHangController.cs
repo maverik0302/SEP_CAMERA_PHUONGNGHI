@@ -89,10 +89,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         //built cart
         public ActionResult GioHang()
         {
-            if (Session["GioHang"] == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            //if (Session["GioHang"] == null)
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
             List<GioHang> lstCart = LayGioHang();
             return View(lstCart);
 
