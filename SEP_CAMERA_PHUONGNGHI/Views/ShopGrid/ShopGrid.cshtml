@@ -71,7 +71,7 @@
                                     <div class="product-card">
                                         <div class="product-card__image">
                                             <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
-                                                <img src="@Url.Content("~/Content/image/ImgProduct/"+item.Thumnail)" alt="Image">
+                                                <img src="~/Content/image/ImgProduct/@item.Thumnail" alt="Image">
                                             </a>
                                         </div>
                                         <div class="product-card__info">
@@ -82,12 +82,13 @@
                                             </div>
                                         </div>
                                         <div class="product-card__actions">
-                                            <div class="product-card__prices">@String.Format("{0:0,0}", item.Price) đ</div>
+                                            <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
+                                            <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
                                             <div class="product-card__buttons">
                                                 <button class="btn btn-primary product-card__addtocart"
                                                         type="button">
                                                     Thêm vào giỏ
-                                                </button> 
+                                                </button>
                                                 <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">
                                                     Thêm vào giỏ
                                                 </button>
@@ -112,7 +113,7 @@
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item active">
                                     <a class="page-link" href="#">
-                                        2 <span class="sr-only">(current)</span>
+                                        1 <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>

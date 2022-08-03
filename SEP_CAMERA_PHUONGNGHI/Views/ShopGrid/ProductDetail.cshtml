@@ -1,21 +1,22 @@
 ﻿@using SEP_CAMERA_PHUONGNGHI.Models;
 @model SEP_CAMERA_PHUONGNGHI.Models.tbProduct
+
 @{
     ViewBag.Title = "ProductDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     SEP25Team01Entities db = new SEP25Team01Entities();
     Brand brand = db.Brands.Find(Model.brand_id);
-    var category = db.Categories.ToList();
+    var category = Model.category_id;
     var product = db.tbProducts.ToList();
 }
 
-@if (Model == null)
+@*@if (Model == null)
 {
     <div class="center_title_bar">Sản phẩm không tồn tại</div>
 }
 else
-{
+{*@
     <div class="page-header">
         <div class="page-header__container container">
             <div class="page-header__breadcrumb">
@@ -63,7 +64,7 @@ else
                         </div>
                         <h1 class="product__name">@Model.Name</h1>
                         <h5 class="product__brand">
-                            Thương hiệu:
+                            Thương hiệu: 
                             @if (brand != null)
                             {
                                 <span class="blue">@brand.Name</span>
@@ -72,7 +73,6 @@ else
                     </div><!-- .product__info / end -->
                     <!-- .product__sidebar -->
                     <div class="product__sidebar">
-                        <div class="product__availability">Availability: <span class="text-success">In Stock</span></div>
                         <div class="product__prices">@String.Format("{0:0,0}", Model.Price) đ</div><!-- .product__options -->
                         <form class="product__options">
                             <div class="form-group product__option">
@@ -104,7 +104,8 @@ else
             <div class="product-tabs">
                 <div class="product-tabs__list">
                     <a href="#tab-description" class="product-tabs__item product-tabs__item--active">Mô tả</a>
-                    <a href="#tab-reviews" class="product-tabs__item">Reviews</a>
+                    <a href="#tab-specification" class="product-tabs__item">Thông số kỹ thuật</a>
+                    <a href="#tab-reviews" class="product-tabs__item">Đánh giá</a>
                 </div>
                 <div class="product-tabs__content">
                     <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
@@ -114,10 +115,37 @@ else
                             </p>
                         </div>
                     </div>
+                    <div class="product-tabs__pane" id="tab-specification">
+                        <div class="spec">
+                            <h3 class="spec__header">Thông số kỹ thuật</h3>
+                            <div class="spec__section">
+                                <div class="spec__row">
+                                    <div class="spec__name">Cảm biến ảnh:</div>
+                                    <div class="spec__value">Aluminium, Plastic</div>
+                                </div>
+                                <div class="spec__row">
+                                    <div class="spec__name">Độ phân giải:</div>
+                                    <div class="spec__value">Brushless</div>
+                                </div>
+                                <div class="spec__row">
+                                    <div class="spec__name">Ống kính</div>
+                                    <div class="spec__value">18 V</div>
+                                </div>
+                                <div class="spec__row">
+                                    <div class="spec__name">Góc nhìn:</div>
+                                    <div class="spec__value">Li-lon</div>
+                                </div>
+                                <div class="spec__row">
+                                    <div class="spec__name">Chuẩn nén video:</div>
+                                    <div class="spec__value">2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="product-tabs__pane" id="tab-reviews">
                         <div class="reviews-view">
                             <div class="reviews-view__list">
-                                <h3 class="reviews-view__header">Customer Reviews</h3>
+                                <h3 class="reviews-view__header">Đánh giá</h3>
                                 <div class="reviews-list">
                                     <ol class="reviews-list__content">
                                         <li class="reviews-list__item">
@@ -126,103 +154,7 @@ else
                                                     <img src="images/avatars/avatar-1.jpg" alt="">
                                                 </div>
                                                 <div class="review__content">
-                                                    <div class="review__author">Samantha Smith</div>
-                                                    <div class="review__rating">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <svg class="rating__star rating__star--active" width="13px"
-                                                                     height="12px">
-                                                                    <g class="rating__fill">
-                                                                        <use xlink:href="images/sprite.svg#star-normal">
-                                                                        </use>
-                                                                    </g>
-                                                                    <g class="rating__stroke">
-                                                                        <use xlink:href="images/sprite.svg#star-normal-stroke">
-                                                                        </use>
-                                                                    </g>
-                                                                </svg>
-                                                                <div class="rating__star rating__star--only-edge rating__star--active">
-                                                                    <div class="rating__fill">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                    <div class="rating__stroke">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                </div><svg class="rating__star rating__star--active"
-                                                                           width="13px" height="12px">
-                                                                    <g class="rating__fill">
-                                                                        <use xlink:href="images/sprite.svg#star-normal">
-                                                                        </use>
-                                                                    </g>
-                                                                    <g class="rating__stroke">
-                                                                        <use xlink:href="images/sprite.svg#star-normal-stroke">
-                                                                        </use>
-                                                                    </g>
-                                                                </svg>
-                                                                <div class="rating__star rating__star--only-edge rating__star--active">
-                                                                    <div class="rating__fill">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                    <div class="rating__stroke">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                </div><svg class="rating__star rating__star--active"
-                                                                           width="13px" height="12px">
-                                                                    <g class="rating__fill">
-                                                                        <use xlink:href="images/sprite.svg#star-normal">
-                                                                        </use>
-                                                                    </g>
-                                                                    <g class="rating__stroke">
-                                                                        <use xlink:href="images/sprite.svg#star-normal-stroke">
-                                                                        </use>
-                                                                    </g>
-                                                                </svg>
-                                                                <div class="rating__star rating__star--only-edge rating__star--active">
-                                                                    <div class="rating__fill">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                    <div class="rating__stroke">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                </div><svg class="rating__star rating__star--active"
-                                                                           width="13px" height="12px">
-                                                                    <g class="rating__fill">
-                                                                        <use xlink:href="images/sprite.svg#star-normal">
-                                                                        </use>
-                                                                    </g>
-                                                                    <g class="rating__stroke">
-                                                                        <use xlink:href="images/sprite.svg#star-normal-stroke">
-                                                                        </use>
-                                                                    </g>
-                                                                </svg>
-                                                                <div class="rating__star rating__star--only-edge rating__star--active">
-                                                                    <div class="rating__fill">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                    <div class="rating__stroke">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                </div><svg class="rating__star" width="13px" height="12px">
-                                                                    <g class="rating__fill">
-                                                                        <use xlink:href="images/sprite.svg#star-normal">
-                                                                        </use>
-                                                                    </g>
-                                                                    <g class="rating__stroke">
-                                                                        <use xlink:href="images/sprite.svg#star-normal-stroke">
-                                                                        </use>
-                                                                    </g>
-                                                                </svg>
-                                                                <div class="rating__star rating__star--only-edge">
-                                                                    <div class="rating__fill">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                    <div class="rating__stroke">
-                                                                        <div class="fake-svg-icon"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <div class="review__author">Name</div>
                                                     <div class="review__text">
                                                         Phasellus id mattis nulla. Mauris velit nisi,
                                                         imperdiet vitae sodales in, maximus ut lectus. Vivamus commodo
@@ -265,6 +197,39 @@ else
                                     </div>
                                 </div>
                             </div>
+                            <form class="reviews-view__form">
+                                <h3 class="reviews-view__header">Write A Review</h3>
+                                <div class="row">
+                                    <div class="col-12 col-lg-9 col-xl-8">
+                                        @*<div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="review-author">
+                                                    Your
+                                                    Name
+                                                </label> <input type="text" class="form-control"
+                                                                id="review-author" placeholder="Your Name">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="review-email">
+                                                    Email
+                                                    Address
+                                                </label> <input type="text" class="form-control"
+                                                                id="review-email" placeholder="Email Address">
+                                            </div>
+                                        </div>*@
+                                        <div class="form-group">
+                                            <label for="review-text">Your Review</label>
+                                            <textarea class="form-control" id="review-text" rows="6"></textarea>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <button type="submit"
+                                                    class="btn btn-primary btn-lg">
+                                                Post Your Review
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -295,25 +260,26 @@ else
             <div class="block-products-carousel__slider">
                 <div class="block-products-carousel__preloader"></div>
                 <div class="owl-carousel">
-                    @foreach (var item in product)
+                    @foreach (var item in product.Where(c => c.category_id == category).ToList())
                     {
                         <div class="block-products-carousel__column" style="margin-bottom: 70px">
                             <div class="block-products-carousel__cell">
                                 <div class="product-card">
                                     <div class="product-card__image">
-                                        <a href="product.html">
-                                            <img src="images/products/product-1.jpg" alt="">
+                                        <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                                            <img src="~/Content/image/ImgProduct/@item.Thumnail" alt="">
                                         </a>
                                     </div>
                                     <div class="product-card__info">
                                         <div class="product-card__name">
-                                            <a href="product.html">
+                                            <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
                                                 @item.Name
                                             </a>
                                         </div>
                                     </div>
                                     <div class="product-card__actions">
-                                        <div class="product-card__prices">$749.00</div>
+                                        <div class="product-card__prices">@String.Format("{0:0,0}", item.Price) đ</div>
+                                        <span class="product-card__old-price">@String.Format("{0:0,0}", item.PromotionPrice) đ</span>
                                         <div class="product-card__buttons">
                                             <button class="btn btn-primary product-card__addtocart" type="button">
                                                 Thêm vào giỏ
@@ -328,4 +294,4 @@ else
             </div>
         </div>
     </div><!-- sản phẩm liên quan / end -->
-}
+@*}*@
