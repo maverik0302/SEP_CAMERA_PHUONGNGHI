@@ -93,7 +93,7 @@
                             <div class="product-card" style="margin-bottom:1px">
                                 <div class="product-card__image">
                                     <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
-                                        <img src="@Url.Content("~/Content/image/ImgProduct/" + item.Thumnail)" alt="">
+                                        <img src="~/Content/image/ImgProduct/@item.Thumnail" alt="">
                                     </a>
                                 </div>
                                 <div class="product-card__info">
@@ -104,7 +104,8 @@
                                     </div>
                                 </div>
                                 <div class="product-card__actions">
-                                    <div class="product-card__prices">@item.Price đ</div>
+                                    <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
+                                    <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
                                     <div class="product-card__buttons">
                                         <button class="btn btn-primary product-card__addtocart" type="button">
                                             Thêm vòa giỏ

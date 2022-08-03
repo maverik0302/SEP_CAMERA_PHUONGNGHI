@@ -36,5 +36,12 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
             return View("ShopGrid", lstBrand);
         }
+
+        public ActionResult ProductCate(int id)
+        {
+            var lstProduct = db.tbProducts.Where(P => P.category_id == id).ToList();
+
+            return View("ShopGrid", lstProduct);
+        }
     }
 }
