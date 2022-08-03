@@ -20,13 +20,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        //[Required]
-        //[DataType(DataType.Password)]
-        //public string NewPassword { get; set; }
-        //[Required]
-        //[Compare(otherProperty: "NewPassword", ErrorMessage = "Nh?p l?i m?t kh?u không chính xác")]
-        //[DataType(DataType.Password)]
-        //public string RenewPassword { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
         public string FirstName { get; set; }
