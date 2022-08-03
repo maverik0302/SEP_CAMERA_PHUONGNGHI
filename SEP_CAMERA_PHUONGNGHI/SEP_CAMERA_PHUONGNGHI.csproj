@@ -255,6 +255,7 @@
     <Content Include="assets\admin\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\admin\images\bg-01.jpg" />
     <Content Include="assets\admin\images\icons\favicon.ico" />
+    <Content Include="assets\admin\images\logo.jpg" />
     <Content Include="assets\admin\js\main.js" />
     <Content Include="assets\admin\vendor\animate\animate.css" />
     <Content Include="assets\admin\vendor\animsition\css\animsition.css" />
