@@ -240,6 +240,11 @@ warning 6002: The table/view 'SEP25Team01.dbo.Contact' does not have a primary k
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="rank" Type="int" />
           <Property Name="comment_id" Type="int" />
+          <Property Name="CambienAnh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dophangiai" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ongkinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gocnhin" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChuannenVideo" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Cart_tbProduct">
           <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="0..1" />
@@ -703,6 +708,11 @@ warning 6002: The table/view 'SEP25Team01.dbo.Contact' does not have a primary k
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="rank" Type="Int32" />
           <Property Name="comment_id" Type="Int32" />
+          <Property Name="CambienAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dophangiai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ongkinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gocnhin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChuannenVideo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Brand" Relationship="Self.FK_tbProduct_Brand" FromRole="tbProduct" ToRole="Brand" />
           <NavigationProperty Name="Carts" Relationship="Self.FK_Cart_tbProduct" FromRole="tbProduct" ToRole="Cart" />
           <NavigationProperty Name="Category" Relationship="Self.FK_tbProduct_Category" FromRole="tbProduct" ToRole="Category" />
@@ -1187,6 +1197,11 @@ warning 6002: The table/view 'SEP25Team01.dbo.Contact' does not have a primary k
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="rank" ColumnName="rank" />
                 <ScalarProperty Name="comment_id" ColumnName="comment_id" />
+                <ScalarProperty Name="CambienAnh" ColumnName="CambienAnh" />
+                <ScalarProperty Name="Dophangiai" ColumnName="Dophangiai" />
+                <ScalarProperty Name="Ongkinh" ColumnName="Ongkinh" />
+                <ScalarProperty Name="Gocnhin" ColumnName="Gocnhin" />
+                <ScalarProperty Name="ChuannenVideo" ColumnName="ChuannenVideo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

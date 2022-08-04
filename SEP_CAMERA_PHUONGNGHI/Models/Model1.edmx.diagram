@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="47d21cddf45846919d05d61756ade9ac" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="SEP25Team01Model.About" Width="1.5" PointX="9.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.Account" Width="1.5" PointX="11.75" PointY="2.625" IsExpanded="true" />
+      <Diagram DiagramId="9668a4a80d2c4c1da389b70df5e22d86" Name="Diagram1">
+        <EntityTypeShape EntityType="SEP25Team01Model.About" Width="1.5" PointX="7.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.Account" Width="1.5" PointX="9.75" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SEP25Team01Model.Brand" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SEP25Team01Model.Cart" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SEP25Team01Model.Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.CommentPost" Width="1.5" PointX="7.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.CommentPost" Width="1.5" PointX="9.75" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SEP25Team01Model.CommentProduct" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.ContactForm" Width="1.5" PointX="7.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.ContactForm" Width="1.5" PointX="7.75" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SEP25Team01Model.CUSTOMER" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.footer" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.footer" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SEP25Team01Model.KhoHang" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="SEP25Team01Model.Oder" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="SEP25Team01Model.OrderDetail" Width="1.5" PointX="7.5" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.Post" Width="1.5" PointX="10" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.Slide" Width="1.5" PointX="2.75" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.SysConfig" Width="1.5" PointX="4.75" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.sysdiagram" Width="1.5" PointX="12.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.tbProduct" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEP25Team01Model.Contact" Width="1.5" PointX="10" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.Post" Width="1.5" PointX="12" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.Slide" Width="1.5" PointX="11.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.SysConfig" Width="1.5" PointX="2.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.sysdiagram" Width="1.5" PointX="4.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.tbProduct" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEP25Team01Model.Contact" Width="1.5" PointX="10" PointY="7.625" IsExpanded="true" />
         <AssociationConnector Association="SEP25Team01Model.FK_tbProduct_Brand" ManuallyRouted="false" />
         <AssociationConnector Association="SEP25Team01Model.FK_Cart_tbProduct" ManuallyRouted="false" />
         <AssociationConnector Association="SEP25Team01Model.FK_OrderDetail_Cart" ManuallyRouted="false" />

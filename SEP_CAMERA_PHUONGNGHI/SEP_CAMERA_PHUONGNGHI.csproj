@@ -764,13 +764,6 @@
     <Content Include="Content\vendor\fontawesome-5.6.1\webfonts\fa-solid-900d41d.eot" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\tbProducts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\tbProducts\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\tbProducts\Details.cshtml" />
@@ -932,6 +925,13 @@
     <Content Include="Areas\Admin\Views\HomeAdmin\MyProfile.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\EditProfile.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\ChangePassword.cshtml" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

@@ -11,37 +11,25 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Runtime.InteropServices;
-
-
+    
     public partial class tbProduct
     {
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbProduct()
         {
             this.Carts = new HashSet<Cart>();
             this.KhoHangs = new HashSet<KhoHang>();
         }
-        
+    
         public int product_id { get; set; }
-        [StringLength(250, MinimumLength = 1)]
-
         public string Name { get; set; }
-        [StringLength(250, MinimumLength = 1)]
-
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
         public string Thumnail { get; set; }
-        [Required]
         public Nullable<int> Price { get; set; }
         public Nullable<int> PromotionPrice { get; set; }
-        [Required]
         public string TonKho { get; set; }
-        [Required]
         public Nullable<int> BaoHanh { get; set; }
-        [StringLength(1000, MinimumLength = 1)]
         public string Desciption { get; set; }
         public Nullable<int> category_id { get; set; }
         public Nullable<int> brand_id { get; set; }
@@ -51,7 +39,12 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<int> rank { get; set; }
         public Nullable<int> comment_id { get; set; }
-
+        public string CambienAnh { get; set; }
+        public string Dophangiai { get; set; }
+        public string Ongkinh { get; set; }
+        public string Gocnhin { get; set; }
+        public string ChuannenVideo { get; set; }
+    
         public virtual Brand Brand { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }
