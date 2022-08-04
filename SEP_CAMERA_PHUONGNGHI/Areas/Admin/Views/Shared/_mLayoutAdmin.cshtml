@@ -37,9 +37,6 @@
 
                 <a href="@Url.Action("Index", "HomeAdmin")" class="logo">
                     <img height="11px" src="~/assets/admin/images/logo/CAMERA PHƯƠNG NGHI1.png" alt="navbar brand" class="navbar-brand">
-
-                    @*<img width="108px" height="35px" src="~/Content/image/Logo/CAMERA PHƯƠNG NGHI.png" />*@
-
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -86,18 +83,15 @@
                                 @*<div class="dropdown-user-scroll scrollbar-outer">*@
                                 <li>
                                     <div class="user-box">
-                                        <div class="avatar-lg"><img src="~/assets/admin/images/logo.jpg" alt="image profile" class="avatar-img rounded"></div>
+                                        <div class="avatar-lg"><img src="~/assets/admin/images/logo.jpg" alt="image profile" class="avatar-img"></div>
                                         <div class="u-text">
                                             <h4>@Session["user-username"]</h4>
-                                            <p class="text-muted">@Session["user-email"]</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                            <p class="text-muted">@Session["user-email"]</p>
+                                            <a href="@Url.Action("MyProfile","HomeAdmin")" class="btn btn-xs btn-secondary btn-sm">Thông tin cá nhân</a>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">My Profile</a>
-                                    <a class="dropdown-item" href="#">My Balance</a>
-                                    <a class="dropdown-item" href="#">Inbox</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href=@Url.Action("Logout", "Auth")>Đăng xuất</a>
                                 </li>
@@ -132,7 +126,7 @@
                             <ul class="nav">
                                 <li>
                                     <a href="@Url.Action("MyProfile", "HomeAdmin")">
-                                        <span class="link-collapse">My Profile</span>
+                                        <span class="link-collapse">Thông tin cá nhân</span>
                                     </a>
                                 </li>
                             </ul>
