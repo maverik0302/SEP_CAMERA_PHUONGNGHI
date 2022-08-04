@@ -1,0 +1,61 @@
+﻿<div class="nav-panel__indicators">
+    <div class="indicator indicator--trigger--click">
+        <a href="cart.html"
+           class="indicator__button">
+            <span class="indicator__area">
+                <svg xmlns="http://www.w3.org/2000/svg" width=20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg> <span class="indicator__value">@ViewBag.Total</span>
+            </span>
+        </a>
+        <div class="indicator__dropdown">
+            <div class="dropcart">
+                <div class="dropcart__products-list">
+                    <div class="dropcart__product">
+                        <div class="dropcart__product-image">
+                            <a href="product.html">
+                                <img src="images/products/product-1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="dropcart__product-info">
+                            <div class="dropcart__product-name">
+                                <a href="product.html">
+                                    Electric Planer Brandix
+                                    KL370090G 300 Watts
+                                </a>
+                            </div>
+                            <ul class="dropcart__product-options">
+                            </ul>
+                            <div class="dropcart__product-meta">
+                                <span class="dropcart__product-quantity">2</span> x <span class="dropcart__product-price">$699.00</span>
+                            </div>
+                        </div><button type="button"
+                                      class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="dropcart__totals">
+                    <table>
+                        <tr>
+                            <th>Shipping</th>
+                            <td>$25.00</td>
+                        </tr>
+                        <tr>
+                            <th>Tổng</th>
+                            <td>$5,902.00</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dropcart__buttons">
+                    <a class="btn btn-secondary"
+                       href="~/GioHang/GioHang">Xem giỏ</a>
+                    <a class="btn btn-primary" href="~/Checkout/Checkout">Thanh toán</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
