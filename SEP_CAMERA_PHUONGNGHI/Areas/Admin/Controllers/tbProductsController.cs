@@ -51,11 +51,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "product_id,Name,SeoTitle,Status,Thumnail,Price,PromotionPrice,TonKho,BaoHanh,Desciption,category_id,brand_id,MetaKey,MetaDescription,CreateDate,UpdateDate,rank,comment_id")] tbProduct tbProduct)
+        public ActionResult Create( tbProduct tbProduct)
         {
             if (ModelState.IsValid)
             {
-                db.tbProducts.Add(tbProduct);
                 // Upload file
                 var img = Request.Files["img"]; // lay thong tin file
                 if (img.ContentLength != 0)
@@ -75,6 +74,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                 }
                 // end Upload file
                 tbProduct.CreateDate = DateTime.Now;
+                db.tbProducts.Add(tbProduct);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -108,12 +108,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "product_id,Name,SeoTitle,Status,Thumnail,Price,PromotionPrice,TonKho,BaoHanh,Desciption,category_id,brand_id,MetaKey,MetaDescription,CreateDate,UpdateDate,rank,comment_id")] tbProduct tbProduct)
+        public ActionResult Edit( tbProduct tbProduct)
         {
             if (ModelState.IsValid)
             {
-
-                db.Entry(tbProduct).State = EntityState.Modified;
                 // Upload file
                 var img = Request.Files["img"]; // lay thong tin file
                 if (img.ContentLength != 0)
@@ -140,6 +138,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                 }
                 // end Upload file
                 tbProduct.UpdateDate = DateTime.Now;
+                db.Entry(tbProduct).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
