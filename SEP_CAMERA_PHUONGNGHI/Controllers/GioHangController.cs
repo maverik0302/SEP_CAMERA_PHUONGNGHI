@@ -37,6 +37,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             if (sp == null)
             {
                 sp = new GioHang(iMaProduct);
+                //add sản phẩm
+                lstCart.Add(sp);
                 return Redirect(strUrl);
             }
             else
@@ -49,15 +51,18 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         //update cart
         public ActionResult CapNhatGioHang(int iMaProduct, FormCollection f)
         {
+            //Check ID Product
             tbProduct prod = db.tbProducts.SingleOrDefault(n => n.product_id == iMaProduct);
+            //if get wrong product, response error code
             if (prod == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
+            //get cart from session
             List<GioHang> lstCart = LayGioHang();
-            GioHang sp = lstCart.Find(n => n.iMaProduct == iMaProduct);
-            if (prod == null)
+            GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMaProduct);
+            if (prod != null)
             {
                 sp.sAmount = int.Parse(f["txtSoLuong"].ToString());
             }
@@ -73,7 +78,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
                 return null;
             }
             List<GioHang> lstCart = LayGioHang();
-            GioHang sp = lstCart.Find(n => n.iMaProduct == iMaProduct);
+            GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMaProduct);
 
             if (prod == null)
             {
