@@ -147,12 +147,12 @@
                             <div class="owl-item cloned" style="width: 450px; margin-right: 30px;">
                                 <div class="post-card">
                                     <div class="post-card__image">
-                                        <a href="#"><img src="@Url.Content("~/Content/image/ImgPost/" + item.Image)" alt=""></a>
+                                        <a href="~/Blog/BlogDetail?id=@item.post_id"><img src="@Url.Content("~/Content/image/ImgPost/" + item.Image)" alt=""></a>
                                     </div>
                                     <div class="post-card__info">
-                                        <div class="post-card__category"><a href="#">Xem tin</a></div>
+                                        <div class="post-card__category"><a href="~/Blog/BlogDetail?id=@item.post_id">Xem tin</a></div>
                                         <div class="post-card__name">
-                                            <a href="#">
+                                            <a href="~/Blog/BlogDetail?id=@item.post_id">
                                                 @item.Name
                                             </a>
                                         </div>
