@@ -6376,7 +6376,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     font-size: 30px;
     font-weight: 700;
     letter-spacing: -.03em;
-    color: #000000
+    color: red
 }
 
 .product__new-price {
