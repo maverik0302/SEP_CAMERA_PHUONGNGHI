@@ -1,0 +1,107 @@
+﻿@using SEP_CAMERA_PHUONGNGHI.Models;
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="site__body">
+    <div class="page-header">
+        <div class="page-header__container container">
+            <div class="page-header__title">
+                <h1>Giỏ hàng</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="cart block">
+        <div class="container">
+            <table class="cart__table cart-table">
+                <thead class="cart-table__head">
+                    <tr class="cart-table__row">
+                        <th class="cart-table__column cart-table__column--image">Ảnh</th>
+                        <th class="cart-table__column cart-table__column--product">Thông tin</th>
+                        <th class="cart-table__column cart-table__column--price">Giá</th>
+                        <th class="cart-table__column cart-table__column--quantity">Số lượng</th>
+                        <th class="cart-table__column cart-table__column--total">Thành Tiền</th>
+                        <th class="cart-table__column cart-table__column--remove">Xoá</th>
+                    </tr>
+                </thead>
+
+
+
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr class="cart-table__row">
+                            <td class="cart-table__column cart-table__column--image">
+                                <a href="#">
+                                    <img src="@Url.Content("~/Content/image/ImgProduct/"+item.sThumbnail)" alt="">
+                                </a>
+                            </td>
+                            <td class="cart-table__column cart-table__column--product">
+                                <a href="#"
+                                   class="cart-table__product-name">@item.sName</a>
+                            </td>
+                            <td class="cart-table__column cart-table__column--price" data-title="Price">@String.Format("{0:0,0}", item.sPrice)</td>
+                            <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
+                                
+                                <div class="input-number">
+                                    @*<input class="form-control input-number__input"
+                                           type="number" min="1" value="1">*@
+                                    @using (Html.BeginForm("CapNhatGioHang", "GioHang", new {@iMaProduct = item.iMaProduct }))
+                                    <div class="input-number__add"></div>
+                                    <div class="input-number__sub"></div>
+
+                                </div>
+                            </td>
+                            <td class="cart-table__column cart-table__column--total" data-title="Total">
+                                @item.ThanhTien
+                            </td>
+                            <td class="cart-table__column cart-table__column--remove">
+
+                                <button type="button"
+                                        class="btn btn-light btn-sm btn-svg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+
+
+
+            <div class="row justify-content-end pt-5">
+                <div class="col-12 col-md-7 col-lg-6 col-xl-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <tfoot class="cart__totals-footer">
+                                <tr>
+                                    <th>Tổng: </th>
+                                    <td>đ</td>
+                                </tr>
+                            </tfoot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart__actions">
+                <div class="cart__buttons">
+                    <a href="~/Home/Index" class="btn btn-light">Tiếp tục mua sắm</a> <a href="~/Checkout/Checkout" class="btn btn-primary cart__update-button">Thanh toán</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
