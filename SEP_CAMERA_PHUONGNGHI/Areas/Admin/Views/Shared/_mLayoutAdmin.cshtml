@@ -89,15 +89,11 @@
                                         <div class="avatar-lg"><img src="~/assets/admin/images/logo.jpg" alt="image profile" class="avatar-img rounded"></div>
                                         <div class="u-text">
                                             <h4>@Session["user-username"]</h4>
-                                            <p class="text-muted">@Session["user-email"]</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                            <p class="text-muted">@Session["user-email"]</p><a href="@Url.Action("MyProfile","HomeAdmin")" class="btn btn-xs btn-secondary btn-sm">Thông tin cá nhân</a>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">My Profile</a>
-                                    <a class="dropdown-item" href="#">My Balance</a>
-                                    <a class="dropdown-item" href="#">Inbox</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href=@Url.Action("Logout", "Auth")>Đăng xuất</a>
                                 </li>
@@ -132,7 +128,7 @@
                             <ul class="nav">
                                 <li>
                                     <a href="@Url.Action("MyProfile", "HomeAdmin")">
-                                        <span class="link-collapse">My Profile</span>
+                                        <span class="link-collapse">Thông tin cá nhân</span>
                                     </a>
                                 </li>
                             </ul>
@@ -242,27 +238,8 @@
         </div>
         <footer class="footer">
             <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.themekita.com">
-                                ThemeKita
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Help
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
                 <div class="copyright ml-auto">
-                    2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+                    2022, made with <i class="fa fa-heart heart text-danger"></i> by <a>TEAM 1 - SEP</a>
                 </div>
             </div>
         </footer>
