@@ -11,7 +11,9 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+
     public partial class Post
     {
         public int post_id { get; set; }

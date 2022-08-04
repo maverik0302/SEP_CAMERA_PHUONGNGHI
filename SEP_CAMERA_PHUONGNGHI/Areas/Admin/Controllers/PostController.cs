@@ -53,7 +53,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Posts.Add(post);
                 // Upload file
                 var img = Request.Files["img"]; // lay thong tin file
                 if (img.ContentLength != 0)
@@ -73,6 +72,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                 }
                 // end Upload file
                 post.CreateDate = DateTime.Now;
+                db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -106,7 +106,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(post).State = EntityState.Modified;
                 // Upload file
                 var img = Request.Files["img"]; // lay thong tin file
                 if (img.ContentLength != 0)
@@ -132,6 +131,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                 }
                 // end Upload file
                 post.UpdateDate = DateTime.Now;
+                db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
