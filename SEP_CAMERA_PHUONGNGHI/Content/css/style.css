@@ -2215,7 +2215,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     margin-top: 14px;
     line-height: 1;
     font-weight: 700;
-    color: #555555
+    color: red;
 }
 
 .product-card__new-price {
@@ -6371,9 +6371,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .product__prices {
-    margin-top: 18px;
-    margin-bottom: 14px;
-    font-size: 28px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 30px;
     font-weight: 700;
     letter-spacing: -.03em;
     color: #000000

@@ -73,7 +73,12 @@ else
                     </div><!-- .product__info / end -->
                     <!-- .product__sidebar -->
                     <div class="product__sidebar">
-                        <div class="product__prices">@String.Format("{0:0,0}", Model.Price) đ</div><!-- .product__options -->
+                        <div class="product__prices">
+                            @String.Format("{0:0,0}", Model.PromotionPrice) đ
+                                                <span class="product-card__old-price" style="font-size: 20px">@String.Format("{0:0,0}", Model.Price) đ</span>
+                                            </div>
+                        
+                        <!-- .product__options -->
                         <form class="product__options">
                             <div class="form-group product__option">
                                 <label class="product__option-label"
@@ -121,23 +126,23 @@ else
                             <div class="spec__section">
                                 <div class="spec__row">
                                     <div class="spec__name">Cảm biến ảnh:</div>
-                                    <div class="spec__value">Aluminium, Plastic</div>
+                                    <div class="spec__value">@Model.CambienAnh</div>
                                 </div>
                                 <div class="spec__row">
                                     <div class="spec__name">Độ phân giải:</div>
-                                    <div class="spec__value">Brushless</div>
+                                    <div class="spec__value">@Model.Dophangiai</div>
                                 </div>
                                 <div class="spec__row">
                                     <div class="spec__name">Ống kính</div>
-                                    <div class="spec__value">18 V</div>
+                                    <div class="spec__value">@Model.Ongkinh</div>
                                 </div>
                                 <div class="spec__row">
                                     <div class="spec__name">Góc nhìn:</div>
-                                    <div class="spec__value">Li-lon</div>
+                                    <div class="spec__value">@Model.Gocnhin</div>
                                 </div>
                                 <div class="spec__row">
                                     <div class="spec__name">Chuẩn nén video:</div>
-                                    <div class="spec__value">2</div>
+                                    <div class="spec__value">@Model.ChuannenVideo</div>
                                 </div>
                             </div>
                         </div>
@@ -278,8 +283,8 @@ else
                                         </div>
                                     </div>
                                     <div class="product-card__actions">
-                                        <div class="product-card__prices">@String.Format("{0:0,0}", item.Price) đ</div>
-                                        <span class="product-card__old-price">@String.Format("{0:0,0}", item.PromotionPrice) đ</span>
+                                        <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
+                                        <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
                                         <div class="product-card__buttons">
                                             <button class="btn btn-primary product-card__addtocart" type="button">
                                                 Thêm vào giỏ
