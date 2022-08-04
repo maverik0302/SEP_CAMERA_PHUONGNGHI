@@ -8,27 +8,29 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 {
     public class GioHang
     {
-        //private int _idProduct;
-
-        //public int IdProduct { get => _idProduct; set => _idProduct = value; }
         SEP25Team01Entities db = new SEP25Team01Entities();
-        public int iProduct { get; set; }
-        public string sNameProduct { get; set; }
+
+
+        public int iMaProduct { get; set; }
+        public string sName { get; set; }
         public string sThumbnail { get; set; }
-        public int sDongia { get; set; }
+        public int sPrice { get; set; }
         public int sAmount { get; set; }
-        public int sThanhTien
+        public int ThanhTien
         {
-            get { return sAmount * sDongia; }
+            get { return sAmount * sPrice; }
         }
-        public GioHang(int idProduct)
+
+        public GioHang(int MaProduct)
         {
-            iProduct = idProduct;
-            tbProduct sanpham = db.tbProducts.Single(n => n.product_id == iProduct);
-            sNameProduct = sanpham.Name;
-            sThumbnail = sanpham.Thumnail;
-            sDongia = (int)sanpham.Price;
+            iMaProduct = MaProduct;
+            tbProduct prod = db.tbProducts.Single(n => n.product_id == iMaProduct);
+            sName = prod.Name;
+            sThumbnail = prod.Thumnail;
+            sPrice = (int)prod.Price;
             sAmount = 1;
+
         }
+
     }
 }

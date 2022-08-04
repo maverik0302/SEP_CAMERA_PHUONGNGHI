@@ -19,7 +19,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     background: #fff;
-    color: d;
+    color: #3d464d;
     text-align: left;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -206,7 +206,7 @@ h6 {
 
 .site__footer {
     -ms-flex-negative: 0;
-    flex-shrink: 0
+    flexT-shrink: 0
 }
 
 .alert {
@@ -369,7 +369,7 @@ h6 {
 .block-header__group--active:focus,
 .block-header__group--active:hover {
     cursor: default;
-    box-shadow: inset 0 0 0 2px #555555
+    box-shadow: inset 0 0 0 2px #ffd333
 }
 
 .block-header__arrow,
@@ -401,14 +401,14 @@ h6 {
 
     .block-header__arrow:focus,
     .block-header__arrow:hover {
-        background: #555555;
-        fill: #ffffff
+        background: #ffd333;
+        fill: #3d464d
     }
 
     .block-header__arrow:active {
         transition-duration: 0s;
         background: #ffdc5c;
-        fill: #ffffff
+        fill: #3d464d
     }
 
     .block-header__arrow + .block-header__arrow {
@@ -557,7 +557,6 @@ h6 {
 }
 
     .btn-sm.btn-svg-icon {
-        color: black;
         width: calc(1.875rem + 2px)
     }
 
@@ -611,8 +610,8 @@ h6 {
 .btn-primary.focus,
 .btn-primary:focus,
 .btn-primary:hover {
-    border-color: #ffffff;
-    background: #ffffff;
+    border-color: #3d464d;
+    background: #3d464d;
     color: #fff;
     fill: #fff
 }
@@ -649,31 +648,31 @@ h6 {
 .btn-primary,
 .btn-primary.disabled,
 .btn-primary:disabled {
-    border-color: #555555;
-    background: #555555;
-    color: #ffffff;
-    fill: #ffffff
+    border-color: #ffd333;
+    background: #ffd333;
+    color: #3d464d;
+    fill: #3d464d
 }
 
     .btn-primary.disabled .fake-svg-icon,
     .btn-primary .fake-svg-icon,
     .btn-primary:disabled .fake-svg-icon {
-        color: #ffffff
+        color: #3d464d
     }
 
     .btn-primary.btn-loading:not(:disabled):not(.disabled),
     .btn-primary.btn-loading:not(:disabled):not(.disabled).active,
     .btn-primary.btn-loading:not(:disabled):not(.disabled):active {
         cursor: default;
-        border-color: #555555;
-        background: #555555
+        border-color: #ffd333;
+        background: #ffd333
     }
 
 .btn-secondary.focus,
 .btn-secondary:focus,
 .btn-secondary:hover {
-    border-color: #ffffff;
-    background: #ffffff;
+    border-color: #3d464d;
+    background: #3d464d;
     color: #fff;
     fill: #fff
 }
@@ -710,16 +709,16 @@ h6 {
 .btn-secondary,
 .btn-secondary.disabled,
 .btn-secondary:disabled {
-    border-color: #252424;
-    background: #110f0f;
-    color: #ffffff;
-    fill: #ffffff
+    border-color: #f0f0f0;
+    background: #f0f0f0;
+    color: #3d464d;
+    fill: #3d464d
 }
 
     .btn-secondary.disabled .fake-svg-icon,
     .btn-secondary .fake-svg-icon,
     .btn-secondary:disabled .fake-svg-icon {
-        color: #ffffff
+        color: #3d464d
     }
 
     .btn-secondary.btn-loading:not(:disabled):not(.disabled),
@@ -735,14 +734,14 @@ h6 {
 .btn-light:hover {
     border-color: #f0f0f0;
     background: #f0f0f0;
-    color: #ffffff;
-    fill: #ffffff
+    color: #3d464d;
+    fill: #3d464d
 }
 
     .btn-light.focus .fake-svg-icon,
     .btn-light:focus .fake-svg-icon,
     .btn-light:hover .fake-svg-icon {
-        color: #ffffff
+        color: #3d464d
     }
 
 .btn-light.focus,
@@ -754,13 +753,13 @@ h6 {
 .btn-light:not(:disabled):not(.disabled):active {
     border-color: #e5e5e5;
     background: #e5e5e5;
-    color: #ffffff;
-    fill: #ffffff
+    color: #3d464d;
+    fill: #3d464d
 }
 
     .btn-light:not(:disabled):not(.disabled).active .fake-svg-icon,
     .btn-light:not(:disabled):not(.disabled):active .fake-svg-icon {
-        color: #ffffff
+        color: #3d464d
     }
 
     .btn-light:not(:disabled):not(.disabled).active:focus,
@@ -773,7 +772,7 @@ h6 {
 .btn-light:disabled {
     border-color: transparent;
     background: transparent;
-    color: #ffffff;
+    color: #3d464d;
     fill: #ccc
 }
 
@@ -863,9 +862,7 @@ h6 {
 }
 
 .card-body {
-    padding: 1rem;
-    font-weight: inherit;
-    font-size: 18px;
+    padding: 2rem
 }
 
 .card-title {
@@ -994,12 +991,12 @@ select.form-control-lg:valid {
 }
 
 .input-check__input:checked ~ .input-check__box {
-    background: #555555;
+    background: #ffd333;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .05)
 }
 
 .input-check__input:checked ~ .input-check__icon {
-    fill: #ffffff;
+    fill: #3d464d;
     transition-delay: 0s, 0s, 0s;
     transform: scale(1)
 }
@@ -1084,7 +1081,7 @@ select.form-control-lg:valid {
     }
 
 .input-check-color--light .input-check-color__icon {
-    fill: #ffffff
+    fill: #3d464d
 }
 
 .input-check-color--white .input-check-color__box {
@@ -1214,12 +1211,12 @@ select.form-control-lg:valid {
     }
 
 .input-radio__input:checked ~ .input-radio__circle {
-    background: #555555;
+    background: #ffd333;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08)
 }
 
     .input-radio__input:checked ~ .input-radio__circle:after {
-        background: #ffffff;
+        background: #3d464d;
         visibility: visible;
         transition-delay: 0s, 0s, 0s;
         transform: scale(1)
@@ -1367,19 +1364,19 @@ select.form-control-lg:valid {
         padding: .3125rem 1rem;
         border-radius: 2px;
         background: #f0f0f0;
-        color: #ffffff;
+        color: #3d464d;
         transition: background-color .2s, color .2s
     }
 
     .input-radio-label__list input:not(:checked):not(:disabled) ~ span:hover {
         background: #e0e0e0;
-        color: #ffffff
+        color: #3d464d
     }
 
     .input-radio-label__list input:checked ~ span {
         cursor: default;
-        background: #555555;
-        color: #ffffff;
+        background: #ffd333;
+        color: #3d464d;
         transition-duration: .08s, .08s
     }
 
@@ -1415,7 +1412,7 @@ select.form-control-lg:valid {
     .layout-switcher__button:hover {
         border-color: #e5e5e5;
         background: #f2f2f2;
-        fill: #ffffff
+        fill: #3d464d
     }
 
     .layout-switcher__button:first-child {
@@ -1435,9 +1432,9 @@ select.form-control-lg:valid {
 .layout-switcher__button--active,
 .layout-switcher__button--active:hover {
     cursor: default;
-    border-color: #555555;
-    background: #555555;
-    fill: #ffffff;
+    border-color: #ffd333;
+    background: #ffd333;
+    fill: #3d464d;
     z-index: 1
 }
 
@@ -1563,7 +1560,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .noUi-connect {
     border-radius: 2px;
-    background: #555555
+    background: #ffd333
 }
 
 .noUi-horizontal .noUi-handle {
@@ -1571,7 +1568,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     width: 16px;
     height: 16px;
     border-radius: 8px;
-    background: #ffffff;
+    background: #3d464d;
     box-shadow: 0 0 0 0 rgba(61, 70, 77, 0);
     transition: box-shadow .2s
 }
@@ -1584,7 +1581,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
         height: 6px;
         margin: 5px;
         border-radius: 3px;
-        background: #555555;
+        background: #ffd333;
         transition: transform .2s
     }
 
@@ -1614,14 +1611,14 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     padding: 9px 10px 8px;
     height: 33px;
     background: transparent;
-    color: #ffffff
+    color: #3d464d
 }
 
     .page-link:focus,
     .page-link:hover {
         box-shadow: none;
         background: #ebebeb;
-        color: #ffffff
+        color: #3d464d
     }
 
 .page-link--with-arrow {
@@ -1659,8 +1656,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
     .page-item.active .page-link {
-        background: #555555;
-        color: #ffffff
+        background: #ffd333;
+        color: #3d464d
     }
 
 .page-item.disabled .page-link {
@@ -2072,16 +2069,16 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
     .product-card:hover .product-card__quickview {
         transition-duration: 0s, 0s;
-        background: #555555
+        background: #ffd333
     }
 
         .product-card:hover .product-card__quickview:not(.product-card__quickview--preload) {
-            color: #ffffff
+            color: #3d464d
         }
 
             .product-card:hover .product-card__quickview:not(.product-card__quickview--preload):hover {
                 transition-duration: .2s, .2s;
-                background: #ffffff;
+                background: #3d464d;
                 color: #fff
             }
 
@@ -2215,7 +2212,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     margin-top: 14px;
     line-height: 1;
     font-weight: 700;
-    color: #555555
+    color: #3d464d
 }
 
 .product-card__new-price {
@@ -2710,7 +2707,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .rating__star--active .rating__fill {
-    color: #555555
+    color: #ffd333
 }
 
 .rating__star--active .rating__stroke {
@@ -2835,7 +2832,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
         display: block;
         background: transparent;
         border: 1px solid #e5e5e5;
-        color: #ffffff;
+        color: #3d464d;
         border-radius: 1.5px;
         padding: 3px 8px 2px;
         margin: 2px;
@@ -2844,9 +2841,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
         .tags__list a:focus,
         .tags__list a:hover {
-            background: #555555;
-            border: 1px solid #555555;
-            color: #ffffff
+            background: #ffd333;
+            border: 1px solid #ffd333;
+            color: #3d464d
         }
 
 .tags--lg .tags__list {
@@ -2869,7 +2866,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     }
 
 .tooltip-inner {
-    background: #ffffff;
+    background: #3d464d;
     color: #fff;
     border-radius: 1.5px;
     position: relative;
@@ -2886,7 +2883,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
         height: 8px;
         border-radius: 1px;
         border: none;
-        background: #ffffff;
+        background: #3d464d;
         transform: rotate(45deg) scale(.7619)
     }
 
@@ -3321,7 +3318,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     width: 100%;
     padding-top: 42px;
     position: absolute;
-    background: #555555;
+    background: #3d464d;
     box-shadow: none;
     border-radius: 2px
 }
@@ -3442,7 +3439,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .drop-search {
-    color: #ffffff;
+    color: #3d464d;
     background: #fff;
     box-shadow: 0 1px 15px rgba(0, 0, 0, .25)
 }
@@ -3491,14 +3488,14 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
     .drop-search__button:hover {
-        fill: #ffffff
+        fill: #3d464d
     }
 
 .dropcart {
     font-size: 15px;
     width: 320px;
     font-weight: 400;
-    color: black;
+    color: #3d464d;
     background: #fff;
     box-shadow: 0 1px 15px rgba(0, 0, 0, .25)
 }
@@ -3573,7 +3570,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .dropcart__product-remove {
-    color: black;
     margin-right: -6px;
     margin-top: -6px;
     -ms-flex-negative: 0;
@@ -3664,15 +3660,14 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     top: -11px;
     margin-left: -5px;
     margin-right: -8px;
-    background: #eb0606;
-    color: #f0f0f0;
+    background: #fff;
+    color: #3d464d;
     font-weight: 700
 }
 
 .indicator__dropdown {
     top: 100%;
     right: 0;
-    color: rgba(0, 0, 0, .15);
     position: absolute;
     visibility: hidden;
     transform-origin: top;
@@ -3695,7 +3690,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .indicator--trigger--click.indicator--opened .indicator__value,
 .indicator:hover .indicator__value {
     background: #fff;
-    color: #ffffff
+    color: #3d464d
 }
 
 .indicator--trigger--click.indicator--opened .indicator__dropdown,
@@ -3734,7 +3729,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .megamenu {
     background: #fff;
-    color: #ffffff;
+    color: #3d464d;
     box-shadow: 0 1px 15px rgba(0, 0, 0, .25);
     min-height: 100%;
     width: 100%;
@@ -3806,16 +3801,16 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     }
 
 .menu {
-    color: #b3b3b3;
-    background: #555555;
-    box-shadow: 0 1px 10px rgb(0 0 0 / 10%);
+    color: #3d464d;
+    background: #fff;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, .25);
     list-style: none;
     width: 190px;
-    padding: 0px 0;
-    font-size: 15px;
-    line-height: 17px;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 16px;
     letter-spacing: .02em;
-    font-weight: 500;
+    font-weight: 500
 }
 
 @media (-ms-high-contrast:none), screen and (-ms-high-contrast:active) {
@@ -3905,9 +3900,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .mobile-header__panel {
-    background: #02A7F0;
+    background: #ffd333;
     box-shadow: 0 1px rgba(0, 0, 0, .04), inset 0 -1px rgba(0, 0, 0, .04);
-    color: #ffffff;
+    color: #3d464d;
     position: relative
 }
 
@@ -3930,7 +3925,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     height: 36px;
     border-radius: 2px;
     background: transparent;
-    fill: #ffffff;
+    fill: #3d464d;
     border: none;
     padding: 0;
     margin: 0;
@@ -3947,7 +3942,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     .mobile-header__menu-button:focus,
     .mobile-header__menu-button:hover {
         background: hsla(0, 0%, 100%, .5);
-        fill: #ffffff
+        fill: #3d464d
     }
 
 .mobile-header__indicators {
@@ -4050,7 +4045,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
                 .mobile-header__search input:hover ~ .mobile-header__search-button:focus,
                 .mobile-header__search input:hover ~ .mobile-header__search-button:hover {
-                    fill: #ffffff
+                    fill: #3d464d
                 }
 
             .mobile-header__search input:hover ~ div {
@@ -4064,7 +4059,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
                 .mobile-header__search input:focus ~ .mobile-header__search-button:focus,
                 .mobile-header__search input:focus ~ .mobile-header__search-button:hover {
-                    fill: #ffffff
+                    fill: #3d464d
                 }
 
             .mobile-header__search input:focus ~ div {
@@ -4118,7 +4113,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
         .mobile-header__search-button:focus,
         .mobile-header__search-button:hover {
-            fill: #ffffff
+            fill: #3d464d
         }
 
     .mobile-header__search-button--close {
@@ -4204,7 +4199,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
         .mobile-header__search-button:focus,
         .mobile-header__search-button:hover {
-            fill: #ffffff
+            fill: #3d464d
         }
 
     .mobile-header__search-button--close {
@@ -4233,7 +4228,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .mobile-links__item-link {
     -ms-flex-positive: 1;
     flex-grow: 1;
-    color: #ffffff
+    color: #3d464d
 }
 
     .mobile-links__item-link,
@@ -4343,7 +4338,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .mobilemenu__backdrop {
     position: absolute;
-    background: #ffffff;
+    background: #3d464d;
     opacity: 0;
     transition: opacity .3s
 }
@@ -4401,7 +4396,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
     .mobilemenu__close:focus,
     .mobilemenu__close:hover {
-        fill: #ffffff
+        fill: #3d464d
     }
 
 .mobilemenu__content {
@@ -4570,9 +4565,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .nav-panel {
     height: 54px;
-    background: #555555;
+    background: #ffd333;
     box-shadow: 0 1px rgba(0, 0, 0, .04), inset 0 -1px rgba(0, 0, 0, .04);
-    color: #ffffff
+    color: #3d464d
 }
 
 .nav-panel--stuck {
@@ -4598,7 +4593,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .nav-panel__logo svg {
     display: block;
-    fill: #ffffff
+    fill: #3d464d
 }
 
 .nav-panel__departments {
@@ -4632,7 +4627,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .search__form {
     position: relative;
     height: 42px;
-    width: fit-content;
     display: -ms-flexbox;
     display: flex
 }
@@ -4652,7 +4646,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .search__input {
     border: none;
     padding: 0 17px;
-    background: #fff;
+    background: transparent;
     width: 1px;
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -4706,7 +4700,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
         }
 
             .search__input:hover ~ .search__button:hover {
-                fill: #555555
+                fill: #ffd333
             }
 
     .search__input:focus {
@@ -4729,7 +4723,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
         .search__input:focus ~ .search__border {
             background: transparent;
-            box-shadow: inset 0 0 0 2px #555555
+            box-shadow: inset 0 0 0 2px #ffd333
         }
 
         .search__input:focus ~ .search__button {
@@ -4737,7 +4731,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
         }
 
             .search__input:focus ~ .search__button:hover {
-                fill: #555555
+                fill: #ffd333
             }
 
 .search__button {
@@ -4746,7 +4740,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     background: transparent;
     -ms-flex-positive: 0;
     flex-grow: 0;
-    width: 89px;
+    width: 42px;
     cursor: pointer;
     display: -ms-flexbox;
     display: flex;
@@ -4761,13 +4755,13 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     .search__button:focus,
     .search__button:hover {
         outline: none;
-        fill: #555555
+        fill: #ffd333
     }
 
 .site-header {
     position: relative;
     z-index: 100;
-    background: #02A7F0;
+    background: transparent;
     color: inherit
 }
 
@@ -4812,13 +4806,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .site-header__phone-title {
     font-size: 14px;
-    color: #fff;
+    color: #999;
     margin-bottom: 6px
 }
 
 .site-header__phone-number {
     font-size: 20px;
-    color: red;
     font-weight: 700
 }
 
@@ -4837,12 +4830,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .topbar {
     height: 32px;
-    background: #118AB2;
+    background: #f7f7f7;
     box-shadow: none;
     border-bottom: none;
     font-size: 14px;
     line-height: 14px;
-    color: #ffffff;
+    color: #737373;
     position: relative;
     z-index: 20
 }
@@ -4883,7 +4876,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .topbar-dropdown__btn {
     border: none;
-    padding: 0 15px 0 15px;
+    padding: 0 20px 0 10px;
     cursor: pointer;
     transition: all .1s;
     background: transparent;
@@ -4915,8 +4908,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .topbar-dropdown--opened .topbar-dropdown__btn,
 .topbar-dropdown__btn:focus,
 .topbar-dropdown__btn:hover {
-    background: #1a66ff;
-    color: #ffffff;
+    background: #ebebeb;
+    color: #3d464d;
     fill: #999
 }
 
@@ -5092,6 +5085,14 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     background: #e52e2e
 }
 
+.footer-newsletter__social-link--instagram a {
+    background: #815dc7
+}
+
+.footer-newsletter__social-link--rss a {
+    background: #ffc338
+}
+
 .footer-newsletter__form {
     display: -ms-flexbox;
     display: flex;
@@ -5136,8 +5137,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .site-footer {
-    background: #333333;
-    color: #fbfbfb;
+    background: transparent;
     border-top: 1px solid #ebebeb
 }
 
@@ -5146,7 +5146,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .site-footer__bottom {
-    height: 30px;
+    height: 54px;
     border-top: 1px solid #ebebeb;
     display: -ms-flexbox;
     display: flex;
@@ -5160,13 +5160,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     font-size: 14px
 }
 
-.center-parent {
-    text-align: center;
-}
-
-.site-footer__copyright a:hover {
-    text-decoration: underline
-}
+    .site-footer__copyright a:hover {
+        text-decoration: underline
+    }
 
 .site-footer__payments img {
     max-width: 100%
@@ -5234,7 +5230,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .about-us__teammates {
-    margin-top: 70px
+    margin-top: 42px
 }
 
 .teammates .owl-carousel .owl-dots {
@@ -5274,7 +5270,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     }
 
     .teammates .owl-carousel button.owl-dot.active {
-        color: #555555
+        color: #ffd333
     }
 
 .teammate__avatar img {
@@ -5285,12 +5281,11 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .teammate__name {
     font-size: 18px;
     font-weight: 500;
-    margin-top: 16px;
-    text-align: center
+    margin-top: 16px
 }
 
 .teammate__position {
-    font-size: 14px;
+    font-size: 14px
 }
 
 @media (max-width:991px) and (min-width:768px) {
@@ -6376,7 +6371,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: -.03em;
-    color: #000000
+    color: #3d464d
 }
 
 .product__new-price {
@@ -6760,7 +6755,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .product-gallery__carousel-item--active {
-    box-shadow: inset 0 0 0 2px #555555
+    box-shadow: inset 0 0 0 2px #ffd333
 }
 
 .product-tabs {
@@ -6815,7 +6810,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     .product-tabs__item--active,
     .product-tabs__item--active:hover {
         cursor: default;
-        border-bottom-color: #555555;
+        border-bottom-color: #ffd333;
         background: transparent
     }
 
@@ -7752,7 +7747,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     -ms-flex-negative: 0;
     flex-shrink: 0;
     padding-right: 30px;
-    color: black;
+    color: #999
 }
 
 .spec__disclaimer {
@@ -8785,7 +8780,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     width: 48px;
     height: 48px;
     margin-right: 20px;
-    fill: #555555
+    fill: #ffd333
 }
 
     .block-features__icon svg {
@@ -9573,12 +9568,11 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .block-products-carousel .owl-stage {
-    padding-left: 100pxs
+    padding-bottom: 56px
 }
 
 .block-products-carousel .owl-stage-outer {
-    margin-bottom: -65px;
-    /* margin-left: 260px*/
+    margin-bottom: -56px
 }
 
 .block-products-carousel__slider {
@@ -10055,7 +10049,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
         }
 
         .block-slideshow .owl-carousel .owl-dot.active {
-            background: #555555
+            background: #ffd333
         }
 
         .block-slideshow .owl-carousel .owl-dot + .owl-dot {
@@ -10713,7 +10707,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     padding-top: 2px;
     font-size: 14px;
     font-weight: 700;
-    color: #ffffff
+    color: #3d464d
 }
 
 .widget-products__new-price {
@@ -10757,7 +10751,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
     .widget-search__input:focus {
         outline: none;
-        box-shadow: inset 0 0 0 2px #555555
+        box-shadow: inset 0 0 0 2px #ffd333
     }
 
     .widget-search__input::-webkit-input-placeholder {
@@ -10799,7 +10793,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
     .widget-search__button:focus,
     .widget-search__button:hover {
-        fill: #555555
+        fill: #ffd333
     }
 
 .widget-tags {

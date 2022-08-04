@@ -89,15 +89,16 @@ else
                                         </div>
                                     </div>
 
-                                    @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaProduct = Model.product_id, @strUrl = Request.Url.ToString() }))
-                                    {
-                                        <input style="cursor:pointer" type="submit" value="Thêm vào giỏ" class="btn btn-primary btn-lg" />
 
-                                    }
 
                                 </div>
                             </div>
-                        </form><!-- .product__options / end -->
+                        </form> 
+                    @using (Html.BeginForm("ThemGioHang", "GioHang", new { iMaProduct = Model.product_id, strUrl = Request.Url.ToString() }))
+                        {
+                            <input style="cursor:pointer" type="submit" value="Thêm vào giỏ" class="btn btn-primary btn-lg" />
+
+                        }<!-- .product__options / end -->
                     </div><!-- .product__end -->
                 </div>
             </div>
