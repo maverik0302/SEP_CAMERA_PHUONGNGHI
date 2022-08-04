@@ -50,8 +50,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
                 category.CreateDate = DateTime.Now;
+                db.Categories.Add(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -83,8 +83,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
                 category.UpdateDate = DateTime.Now;
+                db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

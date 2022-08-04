@@ -39,24 +39,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(account).State = EntityState.Modified;
-                // Upload file
-                //var img = Request.Files["img"]; // lay thong tin file
-                //if (img.ContentLength != 0)
-                //{
-                //    string[] FileExtentions = new string[] { ".jpg", ".jepg", ".png", ".gif" };
-                //    // Kiem tra tap tin
-                //    if (FileExtentions.Contains(img.FileName.Substring(img.FileName.LastIndexOf("."))))
-                //    {
-                //        string slug = Account.Thumnail;
-                //        //
-                //        string imgName = slug + img.FileName.Substring(img.FileName.LastIndexOf("."));
-                //        Account.Thumnail = imgName;
-                //        string PathDir = "~/Content/image/ImgProduct/";
-                //        string PathFile = Path.Combine(Server.MapPath(PathDir), imgName);
-                //        img.SaveAs(PathFile);
-                //    }
-                //}
-                // end Upload file
                 db.SaveChanges();
                 return RedirectToAction("Index", "HomeAdmin");
             }
