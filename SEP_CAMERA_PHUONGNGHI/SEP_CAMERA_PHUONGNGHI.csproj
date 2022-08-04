@@ -971,6 +971,7 @@
     <Content Include="Views\Blog\BlogDetail.cshtml" />
     <Content Include="Views\Search\KetQuaTimKiem.cshtml" />
     <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
