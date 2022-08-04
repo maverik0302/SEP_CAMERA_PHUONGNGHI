@@ -65,11 +65,11 @@
                                 @item.ThanhTien
                             </td>
                             <td class="cart-table__column cart-table__column--remove">
-                                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMaProduct = item.iMaProduct, strUrl = Request.Url.ToString() }))
-                                {
-                                    @Html.ActionLink("Xoá", "Xoagiohang", new { @iMaProduct = item.iMaProduct })
-
+                                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @iMa = item.iMaProduct, strUrl = Request.Url.ToString() }))
+                                { 
+                                    @Html.ActionLink("Xoá", "Xoagiohang", new { @iMa = item.iMaProduct })
                                 }
+                                
 
                                 @*<button type="button"
                 class="btn btn-light btn-sm btn-svg-icon" onclick="location.href='@Url.Action("Xoagiohang", "GioHang", new {iMaProduct = item.iMaProduct})'">

@@ -61,12 +61,13 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             }
             //get cart from session
             List<GioHang> lstCart = LayGioHang();
+            //Check if the product exists
             GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMa);
             if (prod != null)
             {
                 sp.sAmount = int.Parse(f["txtSoLuong"].ToString());
             }
-            return View("GioHang");
+            return RedirectToAction("GioHang");
 
         }
         public ActionResult Xoagiohang(int iMa)
@@ -77,7 +78,9 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
+            //get cart
             List<GioHang> lstCart = LayGioHang();
+            //Check if the product exists
             GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMa);
 
             if (prod == null)
