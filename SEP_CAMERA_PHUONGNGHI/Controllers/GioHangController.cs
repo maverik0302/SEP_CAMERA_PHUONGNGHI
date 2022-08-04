@@ -94,10 +94,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         //built cart
         public ActionResult GioHang()
         {
-            //if (Session["GioHang"] == null)
-            //{
-            //    return RedirectToAction("Index", "Home");
-            //}
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             List<GioHang> lstCart = LayGioHang();
             return View(lstCart);
 
@@ -126,5 +126,20 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             }
             return dTongTien;
         }
+
+        public ActionResult GioHangPartial()
+        {
+            if (Total() == 0)
+            {
+                return PartialView();
+            }
+
+            ViewBag.Total = Total();
+            ViewBag.TongTien = TongTien();
+            return PartialView();
+
+        }
+
+
     }
 }
