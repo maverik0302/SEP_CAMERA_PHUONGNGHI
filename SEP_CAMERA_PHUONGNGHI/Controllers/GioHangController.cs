@@ -49,10 +49,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         }
 
         //update cart
-        public ActionResult CapNhatGioHang(int iMaProduct, FormCollection f)
+        public ActionResult CapNhatGioHang(int iMa, FormCollection f)
         {
             //Check ID Product
-            tbProduct prod = db.tbProducts.SingleOrDefault(n => n.product_id == iMaProduct);
+            tbProduct prod = db.tbProducts.SingleOrDefault(n => n.product_id == iMa);
             //if get wrong product, response error code
             if (prod == null)
             {
@@ -61,7 +61,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             }
             //get cart from session
             List<GioHang> lstCart = LayGioHang();
-            GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMaProduct);
+            GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMa);
             if (prod != null)
             {
                 sp.sAmount = int.Parse(f["txtSoLuong"].ToString());
@@ -69,20 +69,20 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             return View("GioHang");
 
         }
-        public ActionResult Xoagiohang(int iMaProduct)
+        public ActionResult Xoagiohang(int iMa)
         {
-            tbProduct prod = db.tbProducts.SingleOrDefault(n => n.product_id == iMaProduct);
+            tbProduct prod = db.tbProducts.SingleOrDefault(n => n.product_id == iMa);
             if (prod != null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
             List<GioHang> lstCart = LayGioHang();
-            GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMaProduct);
+            GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMa);
 
             if (prod == null)
             {
-                lstCart.RemoveAll(n => n.iMaProduct == iMaProduct);
+                lstCart.RemoveAll(n => n.iMaProduct == iMa);
             }
             if (lstCart.Count == 0)
             {
@@ -90,7 +90,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             }
             return RedirectToAction("GioHang");
         }
-        
+
         //built cart
         public ActionResult GioHang()
         {
@@ -142,4 +142,4 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
 
     }
-}
+}   
