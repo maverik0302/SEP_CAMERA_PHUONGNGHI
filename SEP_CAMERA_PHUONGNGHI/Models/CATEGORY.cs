@@ -21,9 +21,11 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         {
             this.tbProducts = new HashSet<tbProduct>();
         }
-    
+
         public int category_id { get; set; }
+        [StringLength(250, MinimumLength = 1)]
         public string Name { get; set; }
+        [StringLength(250, MinimumLength = 1)]
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> sort { get; set; }
