@@ -38,7 +38,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         [Required]
         public Nullable<int> BaoHanh { get; set; }
         [StringLength(1000, MinimumLength = 1)]
-
         public string Desciption { get; set; }
         public Nullable<int> category_id { get; set; }
         public Nullable<int> brand_id { get; set; }
