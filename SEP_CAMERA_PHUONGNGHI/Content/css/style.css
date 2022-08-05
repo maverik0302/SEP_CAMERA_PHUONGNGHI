@@ -5212,10 +5212,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .about-us__image {
-    background-image: url(../images/aboutus.jpg);
+    background-image: url(../image/aboutus.jpg);
     background-size: cover;
     background-position: bottom;
-    height: 400px
+    height: 500px
 }
 
 .about-us__body {
@@ -8777,13 +8777,13 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .block-features__item {
-    -ms-flex-preferred-size: 0;
+   /* -ms-flex-preferred-size: 0;
     flex-basis: 0;
-    -ms-flex-positive: 1;
+    -ms-flex-positive: 1;*/
     flex-grow: 1;
-    padding: 16px 24px;
-    display: -ms-flexbox;
-    display: flex
+    padding: 16px 0px;
+    /*display: -ms-flexbox;*/
+    display: flex;
 }
 
 .block-features__divider,
