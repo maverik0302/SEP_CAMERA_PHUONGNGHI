@@ -864,9 +864,8 @@ h6 {
 
 .card-body {
     padding: 1rem;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
+    font-size: 17px;
+    text-align: inherit;
 }
 
 .card-title {
