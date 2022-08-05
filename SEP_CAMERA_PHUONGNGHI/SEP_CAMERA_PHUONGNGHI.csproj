@@ -687,6 +687,7 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\fonts\stroyka\stroyka.css" />
     <Content Include="Content\fonts\stroyka\stroyka.svg" />
+    <Content Include="Content\image\aboutus.jpg" />
     <Content Include="Content\image\icon-zalo.png" />
     <Content Include="Content\image\ImgPost\p1.jpg" />
     <Content Include="Content\image\ImgPost\p2.jpg" />
