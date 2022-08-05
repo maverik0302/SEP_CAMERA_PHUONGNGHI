@@ -25,7 +25,7 @@
                                     <div class="posts-list__item">
                                         <div class="post-card post-card--layout--list post-card--size--nl">
                                             <div class="post-card__image">
-                                                <a href="#">
+                                                <a href="~/Blog/BlogDetail?id=@items.post_id">
                                                     <img src="@Url.Content("~/Content/image/ImgPost/"+items.Image)" alt="">
                                                 </a>
                                             </div>
@@ -34,6 +34,7 @@
                                                     <a href="~/Blog/BlogDetail?id=@items.post_id">
                                                         @items.Name
                                                     </a>
+                                                    <div class="post-card__date">@items.CreateDate</div>
                                                 </div>
                                                 <div class="post-card__content">
                                                     @items.Description
@@ -43,6 +44,7 @@
                                                        class="btn btn-secondary btn-sm">Xem ngay</a>
                                                 </div>
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 }

@@ -864,9 +864,8 @@ h6 {
 
 .card-body {
     padding: 1rem;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
+    font-size: 17px;
+    text-align: inherit;
 }
 
 .card-title {
@@ -1798,7 +1797,13 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .post-card--layout--grid .post-card__content {
     width: 100%;
-    margin-top: 12px
+    margin-top: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .post-card--layout--grid .post-card__read-more {
@@ -1932,6 +1937,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
         -ms-flex-order: -1;
         order: -1;
         padding-left: 22px;
+        margin-top: 6px;
         font-size: 15px;
         position: relative
     }
@@ -1950,13 +1956,18 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
     .post-card--layout--list.post-card--size--nl .post-card__name {
         margin-top: 6px;
-        font-size: 18px;
+        font-size: 25px;
         line-height: 24px
     }
 
     .post-card--layout--list.post-card--size--nl .post-card__content {
-        margin-top: 20px;
-        font-size: 16px
+        margin-top: 10px;
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
     }
 
     .post-card--layout--list.post-card--size--nl .post-card__read-more {
@@ -3807,16 +3818,16 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     }
 
 .menu {
-    color: #ffffff;
-    background: #fff;
-    box-shadow: 0 1px 15px rgba(0, 0, 0, .25);
+    color: #b6b6b6;
+    background: #555555;
+    box-shadow: 0 1px 15px rgb(0 0 0 / 25%);
     list-style: none;
     width: 190px;
-    padding: 10px 0;
+    padding: 0.2px 0;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: .02em;
-    font-weight: 500
+    font-weight: 500;
 }
 
 @media (-ms-high-contrast:none), screen and (-ms-high-contrast:active) {
@@ -5204,7 +5215,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     background-image: url(../images/aboutus.jpg);
     background-size: cover;
     background-position: bottom;
-    height: 500px
+    height: 400px
 }
 
 .about-us__body {
@@ -9578,7 +9589,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .block-products-carousel .owl-stage-outer {
     margin-bottom: -56px;
-    margin-left: 260px
+    /*margin-left: 260px*/
 }
 
 .block-products-carousel__slider {
