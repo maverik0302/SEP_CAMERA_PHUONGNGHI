@@ -649,10 +649,10 @@ h6 {
 .btn-primary,
 .btn-primary.disabled,
 .btn-primary:disabled {
-    border-color: #555555;
-    background: #555555;
-    color: #ffffff;
-    fill: #ffffff
+    border-color: #267ad5;
+    background: #267ad5;
+    color: #fff;
+    fill: #fff;
 }
 
     .btn-primary.disabled .fake-svg-icon,
@@ -863,10 +863,7 @@ h6 {
 }
 
 .card-body {
-    padding: 1rem;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
+    padding: 2rem;
 }
 
 .card-title {
@@ -3876,25 +3873,25 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .menu--layout--topbar {
     padding: 6px 0;
     width: 150px;
-    box-shadow: 0 1px 7px rgba(0, 0, 0, .25)
+    box-shadow: 0 1px 7px rgb(0 0 0, 0.25);
 }
 
 @media (-ms-high-contrast:none), screen and (-ms-high-contrast:active) {
     .menu--layout--topbar {
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, .15)
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .15);
     }
 }
 
 .menu--layout--topbar > li > a {
     display: block;
     padding: 8px 21px 6px 13px;
-    color: inherit
+    color: inherit;
 }
 
 .menu--layout--topbar.menu--with-icons .menu__icon {
     position: absolute;
     top: 3px;
-    left: 12px
+    left: 12px;
 }
 
 .menu--layout--topbar.menu--with-icons > li > a {
@@ -4871,6 +4868,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     flex-grow: 1
 }
 
+.menu menu--layout--topbar {
+    padding: 6px 0;
+    width: 150px;
+    box-shadow: 0 1px 7px rgb(0 0 0 / 25%);
+}
+
 .topbar__item--link + .topbar__item--link {
     margin-left: 16px
 }
@@ -4909,7 +4912,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     transform-origin: top;
     transform: rotateX(60deg);
     opacity: 0;
-    transition: transform .2s, opacity .2s, visibility 0s .2s
+    transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+
 }
 
 .topbar-dropdown--opened .topbar-dropdown__btn,
@@ -10807,3 +10811,4 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     border-radius: 2px;
     padding: 28px
 }
+
