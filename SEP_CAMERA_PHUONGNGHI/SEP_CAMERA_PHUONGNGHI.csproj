@@ -151,7 +151,7 @@
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\tbProductsController.cs" />
     <Compile Include="Areas\Admin\Middleware\LoginVerification.cs" />
-    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AboutsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
@@ -967,7 +967,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Slide.cshtml" />
-    <Content Include="Views\About\About.cshtml" />
+    <Content Include="Views\Abouts\Abouts.cshtml" />
     <Content Include="Views\Blog\Blog.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
     <Content Include="Views\Checkout\Checkout.cshtml" />

@@ -5232,7 +5232,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .about-us__title {
-    margin-bottom: 50px
+    margin-bottom: 15px
 }
 
 .about-us__team,
@@ -5250,7 +5250,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .about-us__teammates {
-    margin-top: 70px
+    /*margin-top: 70px*/
+    margin-bottom: 20px;
 }
 
 .teammates .owl-carousel .owl-dots {

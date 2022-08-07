@@ -1,0 +1,35 @@
+﻿@model List<SEP_CAMERA_PHUONGNGHI.Models.About>
+@{
+    ViewBag.Title = "Abouts";
+}
+
+<div class="block about-us">
+    <div class="about-us__image"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="about-us__body">
+                    @foreach (var item in Model)
+                    {
+                        <h1 class="about-us__title">@item.Title</h1>
+                        <div class="about-us__text typography">
+                            <p>
+                                @item.Description
+                            </p>
+                        </div>
+                        <div class="about-us__teammates teammates">
+                            <div class="owl-carousel">
+                                <div class="teammates__item teammate"></div>
+                                <div class="teammates__item teammate">
+                                    <div class="teammate__name">@item.Owner</div>
+                                    <div class="teammate__position text-muted">Người quản lí của cửa hàng Camera</div>
+                                </div>
+                                <div class="teammates__item teammate"></div>
+                            </div>
+                        </div>
+                    }    
+                </div> 
+            </div>  
+        </div>
+    </div>
+</div>
