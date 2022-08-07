@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SEP_CAMERA_PHUONGNGHI.Models.tbProduct>
+﻿@model IEnumerable<SEP_CAMERA_PHUONGNGHI.Models.About>
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +7,7 @@
 
 <div class="page-inner">
     <div class="page-header">
-        <Strong class="page-title">QUẢN LÍ SẢN PHẨM</Strong>
+        <Strong class="page-title">QUẢN LÍ BÀI GIỚI THIỆU</Strong>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -15,10 +15,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
-                            <strong>Danh sách sản phẩm</strong>
+                            <strong>Danh sách bài giới thiệu</strong>
                         </div>
                         <div class="col-md-6 text-right">
-                            <a style="font-size:16px" href="@Url.Action("Create")">Tạo mới sản phẩm</a>
+                            <a style="font-size:16px" href="@Url.Action("Create")">Tạo mới bài giới thiệu</a>
                         </div>
                     </div>
                 </div>
@@ -29,28 +29,15 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>
-                                        Tên sản phẩm
-                                    </th>
-                                    <th style="width: 100px">
-                                        Hình ảnh
+                                        Tiêu đề
                                     </th>
                                     <th>
-                                        Tình trạng
-                                    </th>
-                                    <th>
-                                        Tồn kho
+                                        Người tạo
                                     </th>
 
                                     <th>
-                                        Ngày tạo sản phẩm
+                                        Ngày tạo
                                     </th>
-                                    <th>
-                                        Nhãn sản phẩm
-                                    </th>
-                                    <th>
-                                        Danh mục
-                                    </th>
-
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -58,28 +45,14 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>
-                                        Tên sản phẩm
+                                        Tiêu đề
                                     </th>
                                     <th>
-                                        Hình ảnh
+                                        Người tạo
                                     </th>
                                     <th>
-                                        Tình trạng
+                                        Ngày tạo
                                     </th>
-                                    <th>
-                                        Tồn kho
-                                    </th>
-
-                                    <th>
-                                        Ngày tạo sản phẩm
-                                    </th>
-                                    <th>
-                                        Nhãn sản phẩm
-                                    </th>
-                                    <th>
-                                        Danh mục
-                                    </th>
-
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
@@ -87,33 +60,20 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@item.product_id</td>
+                                        <td>@item.about_id</td>
                                         <td>
-                                            @*@Html.DisplayFor(modelItem => item.Name)*@
-                                            @item.Name
+                                            @Html.DisplayFor(modelItem => item.Title)
                                         </td>
                                         <td>
-                                            <img src="~/Content/image/ImgProduct/@item.Thumnail" class="img-fluid" alt="" />
-                                        </td>
-                                        <td>
-                                            @item.Status
-                                        </td>
-                                        <td>
-                                            @item.TonKho
+                                            @Html.DisplayFor(modelItem => item.Owner)
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.CreateDate)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Brand.Name)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Category.Name)
-                                        </td>
-                                        <td>
-                                            <a href="@Url.Action("Edit", "tbProducts", new { id = item.product_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>
-                                            <a href="@Url.Action("Details", "tbProducts", new { id = item.product_id })"><i class="fa-solid fa-circle-info fa-2x"> | </i></a>
-                                            <a href="@Url.Action("Delete", "tbProducts", new { id = item.product_id })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
+                                            <a href="@Url.Action("Edit", "About", new { id = item.about_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Details", "About", new { id = item.about_id })"><i class="fa-solid fa-circle-info fa-2x"> | </i></a>
+                                            <a href="@Url.Action("Delete", "About", new { id = item.about_id })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
                                         </td>
                                     </tr>
                                 }

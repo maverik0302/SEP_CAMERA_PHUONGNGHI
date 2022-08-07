@@ -88,7 +88,7 @@
                         <div class="form-group">
                             <label>Miêu tả</label>
                             <div class="col-md-10">
-                                @Html.TextAreaFor(model => model.Desciption, new { @class = "form-control", @row = "5", required = "required" })
+                                @Html.TextAreaFor(model => model.Desciption, new { @class = "form-control", @rows = "6", required = "required" })
                                 @Html.ValidationMessageFor(model => model.Desciption, "", new { @class = "text-danger" })
                             </div>
                         </div>
