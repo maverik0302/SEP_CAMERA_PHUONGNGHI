@@ -64,12 +64,19 @@ else
                         </div>
                         <h1 class="product__name">@Model.Name</h1>
                         <h5 class="product__brand">
-                            Thương hiệu: 
+                            Thương hiệu:
                             @if (brand != null)
                             {
                                 <span class="blue">@brand.Name</span>
                             }
                         </h5>
+                        <ul class="product__meta">
+                            <li class="product__meta-availability">
+                                Trạng thái: <span class="text-success">
+                                @Model.Status
+                                </span>
+                            </li>
+                        </ul>
                     </div><!-- .product__info / end -->
                     <!-- .product__sidebar -->
                     <div class="product__sidebar">
@@ -79,7 +86,7 @@ else
                                             </div>
                         
                         <!-- .product__options -->
-                        <form class="product__options">
+                        <form class="product__options" style="margin-bottom:10px">
                             <div class="form-group product__option">
                                 <label class="product__option-label"
                                        for="product-quantity">Số lượng</label>

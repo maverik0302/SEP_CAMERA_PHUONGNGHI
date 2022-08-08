@@ -8787,7 +8787,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     flex-basis: 0;
     -ms-flex-positive: 1;*/
     flex-grow: 1;
-    padding: 16px 0px;
+    padding: 16px 10px;
     /*display: -ms-flexbox;*/
     display: flex;
 }
@@ -8810,7 +8810,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     }
 
 .block-features__content {
-    padding-top: 2px
+    padding-top: 2px;
+    margin-left: 40px;
 }
 
 .block-features__title {
