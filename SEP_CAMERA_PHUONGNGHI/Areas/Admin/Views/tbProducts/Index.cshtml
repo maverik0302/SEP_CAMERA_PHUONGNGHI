@@ -89,15 +89,19 @@
                                     <tr>
                                         <td>@item.product_id</td>
                                         <td>
-                                            @*@Html.DisplayFor(modelItem => item.Name)*@
                                             @item.Name
                                         </td>
                                         <td>
                                             <img src="~/Content/image/ImgProduct/@item.Thumnail" class="img-fluid" alt="" />
                                         </td>
-                                        <td>
-                                            @item.Status
-                                        </td>
+                                        @if (item.Status == true)
+                                        {
+                                            <td>Hết hàng</td>
+                                        }
+                                        else
+                                        {
+                                            <td>Còn hàng</td>
+                                        }
                                         <td>
                                             @item.TonKho
                                         </td>
