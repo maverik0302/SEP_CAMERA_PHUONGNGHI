@@ -12,203 +12,194 @@
 }
 
 @*@if (Model == null)
-{
-    <div class="center_title_bar">Sản phẩm không tồn tại</div>
-}
-else
-{*@
-    <div class="page-header">
-        <div class="page-header__container container">
-            <div class="page-header__breadcrumb">
-            </div>
+    {
+        <div class="center_title_bar">Sản phẩm không tồn tại</div>
+    }
+    else
+    {*@
+<div class="page-header">
+    <div class="page-header__container container">
+        <div class="page-header__breadcrumb">
         </div>
     </div>
-
-    <div class="block">
-        <div class="container">
-            <div class="product product--layout--standard" data-layout="standard">
-                <div class="product__content">
-                    <!-- .product__gallery -->
-                    <div class="product__gallery">
-                        <div class="product-gallery">
-                            <div class="product-gallery__featured">
-                                <div class="owl-carousel owl-loaded owl-drag" id="product-image">
-                                    <div class="owl-stage-outer">
-                                        <div class="owl-stage"
-                                             style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2655px;">
-                                            <div class="owl-item active" style="width: 531px;">
-                                                <a>
-                                                    <img src="@Url.Content("~/Content/image/ImgProduct/"+Model.Thumnail)" alt="Image">
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div><!-- .product__gallery / end -->
-                    <!-- .product__info -->
-                    <div class="product__info">
-                        <div class="product__wishlist-compare">
-                            <button type="button"
-                                    class="btn btn-sm btn-light btn-svg-icon" data-toggle="tooltip" data-placement="right"
-                                    title="" data-original-title="Wishlist">
-                                <svg width="16px" height="16px">
-                                    <use xlink:href="images/sprite.svg#wishlist-16"></use>
-                                </svg>
-                            </button> <button type="button" class="btn btn-sm btn-light btn-svg-icon"
-                                              data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare">
-                                <svg width="16px" height="16px">
-                                    <use xlink:href="images/sprite.svg#compare-16"></use>
-                                </svg>
-                            </button>
-                        </div>
-                        <h1 class="product__name">@Model.Name</h1>
-                        <h5 class="product__brand">
-                            Thương hiệu:
-                            @if (brand != null)
-                            {
-                                <span class="blue">@brand.Name</span>
-                            }
-                        </h5>
-                        <ul class="product__meta">
-                            <li class="product__meta-availability">
-                                Trạng thái: <span class="text-success">
-                                @Model.Status
-                                </span>
-                            </li>
-                        </ul>
-                    </div><!-- .product__info / end -->
-                    <!-- .product__sidebar -->
-                    <div class="product__sidebar">
-                        <div class="product__prices">
-                            @String.Format("{0:0,0}", Model.PromotionPrice) đ
-                                                <span class="product-card__old-price" style="font-size: 20px">@String.Format("{0:0,0}", Model.Price) đ</span>
-                                            </div>
-                        
-                        <!-- .product__options -->
-                        <form class="product__options" style="margin-bottom:10px">
-                            <div class="form-group product__option">
-                                <label class="product__option-label"
-                                       for="product-quantity">Số lượng</label>
-                                <div class="product__actions">
-                                    <div class="product__actions-item">
-                                        <div class="input-number product__quantity">
-                                            <input id="product-quantity"
-                                                   class="input-number__input form-control form-control-lg" type="number"
-                                                   min="1" value="1">
-                                            <div class="input-number__add"></div>
-                                            <div class="input-number__sub"></div>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                        </form> 
-                    @using (Html.BeginForm("ThemGioHang", "GioHang", new { iMaProduct = Model.product_id, strUrl = Request.Url.ToString() }))
+                    </div>
+                </div><!-- .product__gallery / end -->
+                <!-- .product__info -->
+                <div class="product__info">
+                    <div class="product__wishlist-compare">
+                        <button type="button"
+                                class="btn btn-sm btn-light btn-svg-icon" data-toggle="tooltip" data-placement="right"
+                                title="" data-original-title="Wishlist">
+                            <svg width="16px" height="16px">
+                                <use xlink:href="images/sprite.svg#wishlist-16"></use>
+                            </svg>
+                        </button> <button type="button" class="btn btn-sm btn-light btn-svg-icon"
+                                          data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare">
+                            <svg width="16px" height="16px">
+                                <use xlink:href="images/sprite.svg#compare-16"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <h1 class="product__name">@Model.Name</h1>
+                    <h5 class="product__brand">
+                        Thương hiệu:
+                        @if (brand != null)
                         {
-                            <input style="cursor:pointer" type="submit" value="Thêm vào giỏ" class="btn btn-primary btn-lg" />
-
-                        }<!-- .product__options / end -->
-                    </div><!-- .product__end -->
-                </div>
-            </div>
-            <div class="product-tabs">
-                <div class="product-tabs__list">
-                    <a href="#tab-description" class="product-tabs__item product-tabs__item--active">Mô tả</a>
-                    <a href="#tab-specification" class="product-tabs__item">Thông số kỹ thuật</a>
-                    <a href="#tab-reviews" class="product-tabs__item">Đánh giá</a>
-                </div>
-                <div class="product-tabs__content">
-                    <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
-                        <div class="typography">
-                            <p>
-                                @Model.Desciption
-                            </p>
-                        </div>
+                            <span class="blue">@brand.Name</span>
+                        }
+                    </h5>
+                    <ul class="product__meta">
+                        <li class="product__meta-availability">
+                            Trạng thái:
+                            @if (Model.Status == true)
+                            {
+                                <span style="color:red" >
+                                    Hết hàng
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="text-success">
+                                    Còn hàng
+                                </span>
+                            }
+                        </li>
+                    </ul>
+                </div><!-- .product__info / end -->
+                <!-- .product__sidebar -->
+                <div class="product__sidebar">
+                    <div class="product__prices">
+                        @String.Format("{0:0,0}", Model.PromotionPrice) đ
+                        <span class="product-card__old-price" style="font-size: 20px">@String.Format("{0:0,0}", Model.Price) đ</span>
                     </div>
-                    <div class="product-tabs__pane" id="tab-specification">
-                        <div class="spec">
-                            <h3 class="spec__header">Thông số kỹ thuật</h3>
-                            <div class="spec__section">
-                                <div class="spec__row">
-                                    <div class="spec__name">Cảm biến ảnh:</div>
-                                    <div class="spec__value">@Model.CambienAnh</div>
+
+                    <!-- .product__options -->
+                    <form class="product__options" style="margin-bottom:10px">
+                        <div class="form-group product__option">
+                            <label class="product__option-label"
+                                   for="product-quantity">Số lượng</label>
+                            <div class="product__actions">
+                                <div class="product__actions-item">
+                                    <div class="input-number product__quantity">
+                                        <input id="product-quantity"
+                                               class="input-number__input form-control form-control-lg" type="number"
+                                               min="1" value="1">
+                                        <div class="input-number__add"></div>
+                                        <div class="input-number__sub"></div>
+                                    </div>
                                 </div>
-                                <div class="spec__row">
-                                    <div class="spec__name">Độ phân giải:</div>
-                                    <div class="spec__value">@Model.Dophangiai</div>
-                                </div>
-                                <div class="spec__row">
-                                    <div class="spec__name">Ống kính</div>
-                                    <div class="spec__value">@Model.Ongkinh</div>
-                                </div>
-                                <div class="spec__row">
-                                    <div class="spec__name">Góc nhìn:</div>
-                                    <div class="spec__value">@Model.Gocnhin</div>
-                                </div>
-                                <div class="spec__row">
-                                    <div class="spec__name">Chuẩn nén video:</div>
-                                    <div class="spec__value">@Model.ChuannenVideo</div>
-                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </form>
+                    @using (Html.BeginForm("ThemGioHang", "GioHang", new { iMaProduct = Model.product_id, strUrl = Request.Url.ToString() }))
+                    {
+                        <input style="cursor:pointer" type="submit" value="Thêm vào giỏ" class="btn btn-primary btn-lg" />
+
+                    }<!-- .product__options / end -->
+                </div><!-- .product__end -->
+            </div>
+        </div>
+        <div class="product-tabs">
+            <div class="product-tabs__list">
+                <a href="#tab-description" class="product-tabs__item product-tabs__item--active">Mô tả</a>
+                <a href="#tab-specification" class="product-tabs__item">Thông số kỹ thuật</a>
+                <a href="#tab-reviews" class="product-tabs__item">Đánh giá</a>
+            </div>
+            <div class="product-tabs__content">
+                <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
+                    <div class="typography">
+                        <p>
+                            @Model.Desciption
+                        </p>
+                    </div>
+                </div>
+                <div class="product-tabs__pane" id="tab-specification">
+                    <div class="spec">
+                        <h3 class="spec__header">Thông số kỹ thuật</h3>
+                        <div class="spec__section">
+                            <div class="spec__row">
+                                <div class="spec__name">Cảm biến ảnh:</div>
+                                <div class="spec__value">@Model.CambienAnh</div>
+                            </div>
+                            <div class="spec__row">
+                                <div class="spec__name">Độ phân giải:</div>
+                                <div class="spec__value">@Model.Dophangiai</div>
+                            </div>
+                            <div class="spec__row">
+                                <div class="spec__name">Ống kính</div>
+                                <div class="spec__value">@Model.Ongkinh</div>
+                            </div>
+                            <div class="spec__row">
+                                <div class="spec__name">Góc nhìn:</div>
+                                <div class="spec__value">@Model.Gocnhin</div>
+                            </div>
+                            <div class="spec__row">
+                                <div class="spec__name">Chuẩn nén video:</div>
+                                <div class="spec__value">@Model.ChuannenVideo</div>
                             </div>
                         </div>
                     </div>
-                    <div class="product-tabs__pane" id="tab-reviews">
-                        <div class="reviews-view">
-                            <div class="reviews-view__list">
-                                <h3 class="reviews-view__header">Đánh giá</h3>
-                                <div class="reviews-list">
-                                    <ol class="reviews-list__content">
-                                        <li class="reviews-list__item">
-                                            <div class="review">
-                                                <div class="review__avatar">
-                                                    <img src="images/avatars/avatar-1.jpg" alt="">
-                                                </div>
-                                                <div class="review__content">
-                                                    <div class="review__author">Name</div>
-                                                    <div class="review__text">
-                                                        Phasellus id mattis nulla. Mauris velit nisi,
-                                                        imperdiet vitae sodales in, maximus ut lectus. Vivamus commodo
-                                                        scelerisque lacus, at porttitor dui iaculis id. Curabitur imperdiet
-                                                        ultrices fermentum.
-                                                    </div>
-                                                    <div class="review__date">27 May, 2018</div>
-                                                </div>
+                </div>
+                <div class="product-tabs__pane" id="tab-reviews">
+                    <div class="reviews-view">
+                        <div class="reviews-view__list">
+                            <h3 class="reviews-view__header">Đánh giá</h3>
+                            <div class="reviews-list">
+                                <ol class="reviews-list__content">
+                                    <li class="reviews-list__item">
+                                        <div class="review">
+                                            <div class="review__avatar">
+                                                <img src="images/avatars/avatar-1.jpg" alt="">
                                             </div>
+                                            <div class="review__content">
+                                                <div class="review__author">Name</div>
+                                                <div class="review__text">
+                                                    Phasellus id mattis nulla. Mauris velit nisi,
+                                                    imperdiet vitae sodales in, maximus ut lectus. Vivamus commodo
+                                                    scelerisque lacus, at porttitor dui iaculis id. Curabitur imperdiet
+                                                    ultrices fermentum.
+                                                </div>
+                                                <div class="review__date">27 May, 2018</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <div class="reviews-list__pagination">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link page-link--with-arrow"
+                                               href="#" aria-label="Previous">
+                                                <svg class="page-link__arrow page-link__arrow--left" aria-hidden="true"
+                                                     width="8px" height="13px">
+                                                    <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
+                                                </svg>
+                                            </a>
                                         </li>
-                                    </ol>
-                                    <div class="reviews-list__pagination">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                                <a class="page-link page-link--with-arrow"
-                                                   href="#" aria-label="Previous">
-                                                    <svg class="page-link__arrow page-link__arrow--left" aria-hidden="true"
-                                                         width="8px" height="13px">
-                                                        <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="#">
-                                                    2 <span class="sr-only">(current)</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link page-link--with-arrow" href="#"
-                                                   aria-label="Next">
-                                                    <svg class="page-link__arrow page-link__arrow--right"
-                                                         aria-hidden="true" width="8px" height="13px">
-                                                        <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item active">
+                                            <a class="page-link" href="#">
+                                                2 <span class="sr-only">(current)</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link page-link--with-arrow" href="#"
+                                               aria-label="Next">
+                                                <svg class="page-link__arrow page-link__arrow--right"
+                                                     aria-hidden="true" width="8px" height="13px">
+                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -217,62 +208,63 @@ else
             </div>
         </div>
     </div>
+</div>
 
-    <!-- sản phẩm liên quan -->
-    <div class="block block-products-carousel" data-layout="grid-5">
-        <div class="container">
-            <div class="block-header">
-                <h3 class="block-header__title">Sản phẩm tương tự</h3>
-                <div class="block-header__divider"></div>
-                <div class="block-header__arrows-list">
-                    <button class="block-header__arrow block-header__arrow--left" type="button">
-                        <svg width="7px"
-                             height="11px">
-                            <use xlink:href="images/sprite.svg#arrow-rounded-left-7x11"></use>
-                        </svg>
-                    </button> <button class="block-header__arrow block-header__arrow--right"
-                                      type="button">
-                        <svg width="7px" height="11px">
-                            <use xlink:href="images/sprite.svg#arrow-rounded-right-7x11"></use>
-                        </svg>
-                    </button>
-                </div>
+<!-- sản phẩm liên quan -->
+<div class="block block-products-carousel" data-layout="grid-5">
+    <div class="container">
+        <div class="block-header">
+            <h3 class="block-header__title">Sản phẩm tương tự</h3>
+            <div class="block-header__divider"></div>
+            <div class="block-header__arrows-list">
+                <button class="block-header__arrow block-header__arrow--left" type="button">
+                    <svg width="7px"
+                         height="11px">
+                        <use xlink:href="images/sprite.svg#arrow-rounded-left-7x11"></use>
+                    </svg>
+                </button> <button class="block-header__arrow block-header__arrow--right"
+                                  type="button">
+                    <svg width="7px" height="11px">
+                        <use xlink:href="images/sprite.svg#arrow-rounded-right-7x11"></use>
+                    </svg>
+                </button>
             </div>
-            <div class="block-products-carousel__slider">
-                <div class="block-products-carousel__preloader"></div>
-                <div class="owl-carousel">
-                    @foreach (var item in product.Where(c => c.category_id == category).ToList())
-                    {
-                        <div class="block-products-carousel__column" style="margin-bottom: 70px">
-                            <div class="block-products-carousel__cell">
-                                <div class="product-card">
-                                    <div class="product-card__image">
+        </div>
+        <div class="block-products-carousel__slider">
+            <div class="block-products-carousel__preloader"></div>
+            <div class="owl-carousel">
+                @foreach (var item in product.Where(c => c.category_id == category).ToList())
+                {
+                    <div class="block-products-carousel__column" style="margin-bottom: 70px">
+                        <div class="block-products-carousel__cell">
+                            <div class="product-card">
+                                <div class="product-card__image">
+                                    <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                                        <img src="~/Content/image/ImgProduct/@item.Thumnail" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-card__info">
+                                    <div class="product-card__name">
                                         <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
-                                            <img src="~/Content/image/ImgProduct/@item.Thumnail" alt="">
+                                            @item.Name
                                         </a>
                                     </div>
-                                    <div class="product-card__info">
-                                        <div class="product-card__name">
-                                            <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
-                                                @item.Name
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-card__actions">
-                                        <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
-                                        <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
-                                        <div class="product-card__buttons">
-                                            <button class="btn btn-primary product-card__addtocart" type="button">
-                                                Thêm vào giỏ
-                                            </button>
-                                        </div>
+                                </div>
+                                <div class="product-card__actions">
+                                    <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
+                                    <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
+                                    <div class="product-card__buttons">
+                                        <button class="btn btn-primary product-card__addtocart" type="button">
+                                            Thêm vào giỏ
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    }
                     </div>
+                }
             </div>
         </div>
-    </div><!-- sản phẩm liên quan / end -->
+    </div>
+</div><!-- sản phẩm liên quan / end -->
 @*}*@

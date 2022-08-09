@@ -73,6 +73,14 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                     }
                 }
                 // end Upload file
+                if (tbProduct.TonKho.Equals("0"))
+                {
+                    tbProduct.Status = true;
+                }
+                else
+                {
+                    tbProduct.Status = false;
+                }
                 tbProduct.CreateDate = DateTime.Now;
                 db.tbProducts.Add(tbProduct);
                 db.SaveChanges();
@@ -137,6 +145,14 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                     }
                 }
                 // end Upload file
+                if (tbProduct.TonKho.Equals("0"))
+                {
+                    tbProduct.Status = true;
+                }
+                else
+                {
+                    tbProduct.Status = false;
+                }
                 tbProduct.UpdateDate = DateTime.Now;
                 db.Entry(tbProduct).State = EntityState.Modified;
                 db.SaveChanges();
