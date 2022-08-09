@@ -689,6 +689,7 @@
     <Content Include="Content\fonts\stroyka\stroyka.css" />
     <Content Include="Content\fonts\stroyka\stroyka.svg" />
     <Content Include="Content\image\aboutus.jpg" />
+    <Content Include="Content\image\arrow.png" />
     <Content Include="Content\image\icon-zalo.png" />
     <Content Include="Content\image\ImgPost\p1.jpg" />
     <Content Include="Content\image\ImgPost\p2.jpg" />
@@ -966,8 +967,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\About\About.cshtml" />
     <Content Include="Views\Shared\_Slide.cshtml" />
-    <Content Include="Views\Abouts\Abouts.cshtml" />
     <Content Include="Views\Blog\Blog.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
     <Content Include="Views\Checkout\Checkout.cshtml" />
