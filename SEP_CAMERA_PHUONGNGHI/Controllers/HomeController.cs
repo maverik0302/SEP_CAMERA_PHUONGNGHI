@@ -22,5 +22,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
             return View("Home", lstBlog);
         }
+        public ActionResult SlidePartial()
+        {
+            List<Slide> slideDb = db.Slides.Where(P => P.slide_id == 0).ToList();
+            return PartialView();
+        }
     }
 }

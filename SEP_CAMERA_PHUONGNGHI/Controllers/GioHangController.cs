@@ -63,17 +63,19 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             List<GioHang> lstCart = LayGioHang();
             //Check if the product exists
             GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMa);
-            if (prod != null)
+            if (sp != null)
             {
                 sp.sAmount = int.Parse(f["txtSoLuong"].ToString());
             }
             return RedirectToAction("GioHang");
 
         }
+
+        //Delete item in cart
         public ActionResult Xoagiohang(int iMa)
         {
             tbProduct prod = db.tbProducts.SingleOrDefault(n => n.product_id == iMa);
-            if (prod != null)
+            if (prod == null)
             {
                 Response.StatusCode = 404;
                 return null;
@@ -83,9 +85,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             //Check if the product exists
             GioHang sp = lstCart.SingleOrDefault(n => n.iMaProduct == iMa);
 
-            if (prod == null)
+            if (lstCart != null)
             {
                 lstCart.RemoveAll(n => n.iMaProduct == iMa);
+                return RedirectToAction("GioHang");
             }
             if (lstCart.Count == 0)
             {
@@ -132,17 +135,21 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
         public ActionResult GioHangPartial()
         {
-            if (Total() == 0)
-            {
-                return PartialView();
-            }
 
             ViewBag.Total = Total();
-            ViewBag.TongTien = TongTien();
             return PartialView();
 
         }
 
+        public ActionResult SuaGioHang()
+        {
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            List<GioHang> lstCart = LayGioHang();
+            return View(lstCart);
+        }
 
     }
 }   
