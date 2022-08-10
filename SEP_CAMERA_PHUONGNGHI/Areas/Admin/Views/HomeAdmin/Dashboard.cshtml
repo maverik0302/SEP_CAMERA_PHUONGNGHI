@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "DASHBOARD - CAMERA PHƯƠNG NGHI";
+    Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
+    ViewBag.Searchs = false;
+}
+
+<div class="panel-header bg-primary-gradient">
+    <div class="page-inner py-5">
+        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+            <div>
+                <h2 style="text-shadow: black 0.1em 0.1em 0.2em" class="text-white pb-2 fw-bold">@ViewBag.Title</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-inner mt--5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-head-row">
+                        <p style="font-weight:bold; font-size:16px; color: orangered;">DOANH THU HÀNG THÁNG NĂM @DateTime.Now.Year</p>
+                        <div class="card-tools">
+                            <label for="import"></label>
+                            <a href="@Url.Action("Home", "StatisticRevenue")" role="button" style="color:white; font-size:12px" class="btn btn-secondary btn-round ml-auto">
+                                <i class="fas fa-chart-bar"></i> &ensp;
+                                XEM THÊM&ensp;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container" style="min-height: 375px">
+                        <canvas id="statisticsChart"></canvas>
+                    </div>
+                    <div id="myChartLegend"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

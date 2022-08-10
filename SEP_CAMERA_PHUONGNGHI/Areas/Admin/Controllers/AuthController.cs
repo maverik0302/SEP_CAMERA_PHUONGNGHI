@@ -31,7 +31,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                     Session["user-id"] = user.user_id;
                     Session["user-fname"] = user.FirstName;
                     Session["user-lname"] = user.LastName;
-                    return RedirectToAction("Index", "HomeAdmin");
+                    return RedirectToAction("Dashboard", "HomeAdmin");
                 }
                 else
                 {
