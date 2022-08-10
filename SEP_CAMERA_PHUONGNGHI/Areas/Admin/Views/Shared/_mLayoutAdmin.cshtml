@@ -69,7 +69,7 @@
                                     <div class="user-box">
                                         <div class="avatar-lg"><img src="~/assets/admin/images/logo.jpg" alt="image profile" class="avatar-img rounded"></div>
                                         <div class="u-text">
-                                            <h4>@Session["user-username"]</h4>
+                                            <h4>@Session["user-lname"] @Session["user-fname"]</h4>
                                             <p class="text-muted">@Session["user-email"]</p><a href="@Url.Action("MyProfile","HomeAdmin")" class="btn btn-xs btn-secondary btn-sm">Thông tin cá nhân</a>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                @Session["user-username"]
+                                <span>@Session["user-lname"] @Session["user-fname"]</span>
                                 <span class="user-level">Người quản trị</span>
                                 <span class="caret"></span>
                             </span>
@@ -118,25 +118,10 @@
                 </div>
                 <ul class="nav nav-primary">
                     <li class="nav-item">
-                        <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+                        <a href="@Url.Action("Dashboard", "HomeAdmin")" >
                             <i class="fas fa-home"></i>
-                            <p>Dashboard</p>
-                            <span class="caret"></span>
+                            <p>Trang chủ</p>
                         </a>
-                        <div class="collapse" id="dashboard">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="../../demo1/index.html">
-                                        <span class="sub-item">Dashboard 1</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../../demo2/index.html">
-                                        <span class="sub-item">Dashboard 2</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
                     <li class="nav-section">
                         <span class="sidebar-mini-icon">
@@ -146,50 +131,44 @@
                     </li>
                     <!--Quản lí sản phẩm-->
                     <li class="nav-item">
-                        <a data-toggle="collapse" href="#sidebarLayouts">
-                            <i class="fas fa-th-list"></i>
+                        <a href="@Url.Action("Index", "tbProducts")">
+                            <i class="fas fa-camera"></i>
                             <p>Quản lí sản phẩm</p>
-                            <span class="caret"></span>
                         </a>
-                        <div class="collapse" id="sidebarLayouts">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="@Url.Action("Index", "tbProducts")">
-                                        <span class="sub-item">Sản phẩm</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Index", "Brands")">
-                                        <span class="sub-item">Nhãn hàng</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Index", "Category")">
-                                        <span class="sub-item">Danh mục</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    </li>
+                    <!-- Quản lí bài viết-->
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Brands")">
+                            <i class="fas fa-bars"></i>
+                            <p>Quản lí hãng sản phẩm</p>
+                        </a>
+                    </li>
+                    <!-- Quản lí bài viết-->
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Category")">
+                            <i class="fas fa-folder-open"></i>
+                            <p>Quản lí danh mục</p>
+                        </a>
                     </li>
                     <!-- Quản lí bài viết-->
                     <li class="nav-item">
                         <a href="@Url.Action("Index", "Post")">
-                            <i class="fas fa-pencil"></i>
-                            <p>Bài viết</p>
+                            <i class="fas fa-pencil-square"></i>
+                            <p>Quản lí bài viết</p>
                         </a>
                     </li>
                     <!-- Quản lí bài giới thiệu-->
                     <li class="nav-item">
                         <a href="@Url.Action("Index", "About")">
-                            <i class="fas fa-pencil-alt"></i>
-                            <p>Bài giới thiệu giới thiệu</p>
+                            <i class="fas fa-pencil"></i>
+                            <p>Quản lí bài giới thiệu</p>
                         </a>
                     </li>
                     <!-- Quản lí đơn hàng-->
                     <li class="nav-item">
                         <a href="@Url.Action("Index", "Order")">
                             <i class="fas fa-list"></i>
-                            <p>Đơn hàng</p>
+                            <p>Quản lí đơn hàng</p>
                         </a>
                     </li>
 
