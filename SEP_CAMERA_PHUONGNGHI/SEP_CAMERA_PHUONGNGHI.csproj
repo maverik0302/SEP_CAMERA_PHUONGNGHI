@@ -942,6 +942,7 @@
     <Content Include="Areas\Admin\Views\About\Details.cshtml" />
     <Content Include="Areas\Admin\Views\About\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\About\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Dashboard.cshtml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -985,6 +986,7 @@
     <Content Include="Views\GioHang\SuaGioHang.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

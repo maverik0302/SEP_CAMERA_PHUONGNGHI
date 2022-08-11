@@ -3304,7 +3304,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     height: 100%;
     cursor: default;
     font-weight: 500;
-    padding: 0 32px 0 47px
+    padding: 0 10px 0 10px
 }
 
     .departments__button:focus {
@@ -3384,7 +3384,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .departments__megamenu--sm {
-    width: 237px
+    width: 180px
 }
 
 .departments__megamenu--nl {
@@ -3435,7 +3435,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     }
 
     .departments__megamenu--sm {
-        width: 204px
+        width: 180px
     }
 
     .departments__megamenu--nl {
@@ -4618,7 +4618,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
     .nav-panel__departments + .nav-panel__nav-links,
     .nav-panel__logo + .nav-panel__nav-links {
-        margin-left: 18px
+        /*margin-left: 18px*/
     }
 
 .nav-panel__nav-links {
@@ -8811,7 +8811,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .block-features__content {
     padding-top: 2px;
-    margin-left: 35px;
+    margin-left: 33px;
 }
 
 .block-features__title {
