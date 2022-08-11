@@ -660,29 +660,41 @@
                                                     @foreach (var item in category)
                                                     {
                                                         <li class="departments__item">
-                                                            <a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">@item.Name</a>
+                                                            <a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">@item.Name
+                                                            </a>
 
-                                                            <div class="departments__menu">
-                                                                <!-- .menu brand -->
-                                                                @foreach (var items in brand)
-                                                                {
-                                                                    <ul class="menu menu--layout--classic">
-                                                                        <li>
-                                                                            <a href="@Url.Action("Brand", "ShopGrid", new {idbrand = items.brand_id, idcategory = item.category_id})">@items.Name</a>
-                                                                        </li>
-                                                                    </ul><!-- .menu brand / end -->
-                                                                }
+                                                            <div class="departments__megamenu departments__megamenu--sm">
+                                                                <!-- .megamenu -->
+                                                                <div class="megamenu megamenu--departments">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <ul class="megamenu__links megamenu__links--level--0">
+                                                                                <li class="megamenu__item megamenu__item--with-submenu">
+                                                                                    <a style="color:black">Thương hiệu</a>
+                                                                                    @foreach (var items in brand)
+                                                                                    {
+                                                                                        <ul class="megamenu__links megamenu__links--level--1">
+                                                                                            <li class="megamenu__item">
+                                                                                                <a href="@Url.Action("Brand", "ShopGrid", new {idbrand = items.brand_id, idcategory = item.category_id})">@items.Name</a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    }
+                                                                                </li>
+                                                                            </ul>       
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- .megamenu / end -->
                                                             </div>
+                                                            
                                                         </li>
                                                     }
                                                 </ul>
                                             </div>
-                                        </div><button class="departments__button">
-                                            <svg class="departments__button-icon" width="18px" height="14px">
-                                                <use xlink:href="images/sprite.svg#menu-18x14"></use>
-                                            </svg> DANH MỤC SẢN PHẨM <svg class="departments__button-arrow" width="9px" height="6px">
-                                                <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
-                                            </svg>
+                                        </div>
+                                        <button class="departments__button">
+                                            <svg style="margin-right:7px" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                                <path style="font:bolder" fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                            </svg> DANH MỤC SẢN PHẨM
                                         </button>
                                     </div><!-- .departments / end -->
                                 </div><!-- .nav-links -->
