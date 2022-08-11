@@ -10,6 +10,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
     public class GioHangController : Controller
     {
         SEP25Team01Entities db = new SEP25Team01Entities();
+        #region
         // GET: Cart
         public List<GioHang> LayGioHang()
         {
@@ -150,6 +151,15 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             List<GioHang> lstCart = LayGioHang();
             return View(lstCart);
         }
+        #endregion
 
+
+        #region Đặt Hàng    
+        public ActionResult Dathang()
+        {
+            return View();
+        }
+
+        #endregion
     }
 }   
