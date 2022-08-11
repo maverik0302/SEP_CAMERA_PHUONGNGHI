@@ -1,0 +1,117 @@
+﻿@model SEP_CAMERA_PHUONGNGHI.Models.Account
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<br />
+<div style="margin-left: 300px">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Đăng Ký</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                <span id="ErrorFirstName" style="color:firebrick"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                <span id="ErrorLastName" style="color:firebrick"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                <span id="ErrorPassword" style="color:firebrick"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input id="btnSubmit" type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $('#btnSubmit').click(function () {
+        var loi = 0;
+        if ($('#FirstName').val() == "") {
+            $('#ErrorFirstName').text('Vui lòng nhập tên');
+            loi++;
+        } else {
+            $('#ErrorFirstName').text('');
+        }
+
+        if ($('#LastName').val() == "") {
+            $('#ErrorLastName').text('Vui lòng nhập Họ');
+            loi++;
+        }
+        else {
+            $('#ErrorLastName').text('');
+        }
+
+        if ($('#Password').val() == "") {
+            $('#ErrorPassword').text('Vui lòng nhập mật khẩu');
+            loi++;
+        }
+        else {
+            $('#ErrorPassword').text('');
+        }
+
+        if (loi != 0) {
+            return false;
+        } return true;
+
+    });
+</script>
