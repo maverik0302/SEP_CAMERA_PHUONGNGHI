@@ -79,50 +79,43 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         }
         public ActionResult Dashboard()
         {
-            //Return với tổng doanh thu của cửa hàng
+            // Lấy số lượng người truy cập từ application
+            ViewBag.SoNguoiTruyCap = HttpContext.Application["SoNguoiTruyCap"].ToString(); // lấy số lượng người truy cập từ application đã được tạo 
+            ViewBag.SoNguoiOnline = HttpContext.Application["SoNguoiDangOnline"].ToString(); // lấy số người đang online trên website
+            ViewBag.TongDoanhThu = ThongKeTongDoanhThu();
+            ViewBag.DoanhThuTheoThang = ThongKeDoanhThuThang(Thang: DateTime.Now.Month, Nam: DateTime.Now.Year);
+            return View();
 
-            if (Session["user-id"] != null)
+        }
+        public decimal ThongKeTongDoanhThu()
+        {
+            decimal TongDoanhThu = db.OrderDetails.Sum(n => n.num * n.price_product).Value;
+            return TongDoanhThu;
+        }
+
+        public decimal ThongKeDoanhThuThang(int Thang, int Nam)
+        {
+            Thang = DateTime.Now.Month;
+            Nam = DateTime.Now.Year;
+            // Thống kê theo doanh thu  theo tháng
+            // List ra những đơn hàng nào có tháng, năm tương ứng
+            var lstDDH = db.Oders.Where(n => n.orderdate.Value.Month == Thang && n.orderdate.Value.Year == Nam);
+            decimal TongTien = 0;
+            // Duyệt chi tiết của đơn hàng đó và lấy tổng tiền của tất cả sản phẩm thuộc đơn hàng đó
+            foreach (var item in lstDDH)
             {
-                for (int i = 1; i <= 12; i++)
-                {
-                    int days = DateTime.DaysInMonth(DateTime.Now.Year, i);
-                    string ssDate = DateTime.Now.Year + "-" + i.ToString().PadLeft(2, '0') + "-01 00:00:00";
-                    string seDate = DateTime.Now.Year + "-" + i.ToString().PadLeft(2, '0') + "-" + days.ToString().PadLeft(2, '0') + " 00:00:00";
-                    DateTime stD = DateTime.ParseExact(ssDate, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-                    DateTime enD = DateTime.ParseExact(seDate, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-
-                    //var saoke = db.Sao_Ke.Where(s => s.Ngay_Giao_Dich >= stD && s.Ngay_Giao_Dich <= enD).ToList();
-                    decimal tong = 0;
-                    decimal coc = 0;
-                    decimal thanhtoan = 0;
-
-                    //if (saoke.Count > 0)
-                    //{
-                    //    foreach (var item in saoke.Where(s => s.Coc_or_ThanhToan == 0).ToList())
-                    //        coc += item.So_Tien;
-                    //    foreach (var item in saoke.Where(s => s.Coc_or_ThanhToan == 1).ToList())
-                    //        thanhtoan += item.So_Tien;
-                    //    foreach (var item in saoke)
-                    //        tong += item.So_Tien;
-                    //}
-
-                    if (i == 1) { ViewBag.CocThangMot = coc; ViewBag.ThanhToanThangMot = thanhtoan; ViewBag.TongThangMot = tong; }
-                    else if (i == 2) { ViewBag.CocThangHai = coc; ViewBag.ThanhToanThangHai = thanhtoan; ViewBag.TongThangHai = tong; }
-                    else if (i == 3) { ViewBag.CocThangBa = coc; ViewBag.ThanhToanThangBa = thanhtoan; ViewBag.TongThangBa = tong; }
-                    else if (i == 4) { ViewBag.CocThangBon = coc; ViewBag.ThanhToanThangBon = thanhtoan; ViewBag.TongThangBon = tong; }
-                    else if (i == 5) { ViewBag.CocThangNam = coc; ViewBag.ThanhToanThangNam = thanhtoan; ViewBag.TongThangNam = tong; }
-                    else if (i == 6) { ViewBag.CocThangSau = coc; ViewBag.ThanhToanThangSau = thanhtoan; ViewBag.TongThangSau = tong; }
-                    else if (i == 7) { ViewBag.CocThangBay = coc; ViewBag.ThanhToanThangBay = thanhtoan; ViewBag.TongThangBay = tong; }
-                    else if (i == 8) { ViewBag.CocThangTam = coc; ViewBag.ThanhToanThangTam = thanhtoan; ViewBag.TongThangTam = tong; }
-                    else if (i == 9) { ViewBag.CocThangChin = coc; ViewBag.ThanhToanThangChin = thanhtoan; ViewBag.TongThangChin = tong; }
-                    else if (i == 10) { ViewBag.CocThangMuoi = coc; ViewBag.ThanhToanThangMuoi = thanhtoan; ViewBag.TongThangMuoi = tong; }
-                    else if (i == 11) { ViewBag.CocThangMMot = coc; ViewBag.ThanhToanThangMot = thanhtoan; ViewBag.TongThangMMot = tong; }
-                    else if (i == 12) { ViewBag.CocThangMHai = coc; ViewBag.ThanhToanThangMHai = thanhtoan; ViewBag.TongThangMHai = tong; }
-                }
-                return View();
+                TongTien += decimal.Parse(item.OrderDetails.Sum(n => n.num * n.price_product).Value.ToString());
             }
-            return RedirectToAction("Index");
+            return TongTien;
+        }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

@@ -5,15 +5,38 @@
     ViewBag.Searchs = false;
 }
 
-<div class="panel-header bg-primary-gradient">
-    <div class="page-inner py-5">
-        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-            <div>
-                <h2 style="text-shadow: black 0.1em 0.1em 0.2em" class="text-white pb-2 fw-bold">@ViewBag.Title</h2>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Fonts and icons -->
+<script src="~/assets/js/plugin/webfont/webfont.min.js"></script>
+<script>
+    WebFont.load({
+        google: { "families": ["Lato:300,400,700,900"] },
+        custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../../assets/css/fonts.min.css'] },
+        active: function () {
+            sessionStorage.fonts = true;
+        }
+    });
+</script>
+
+<!-- CSS Files -->
+<link href="~/assets/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/assets/js/atlantis.min.js">
+<!-- CSS Just for demo purpose, don't include it in your project -->
+<link href="~/assets/css/demo.css" rel="stylesheet" />
+@* *@ 
+<br />
+<div class="pagetitle">
+    <strong class="page-title">Thống kê & Báo cáo</strong>
+    <nav>
+        <br />
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="@Url.Action("Index", "HomeAdmin")">Trang quản trị</a></li>
+            <li class="breadcrumb-item">Trang chủ</li>
+            <li class="breadcrumb-item active">Thống kê & Báo cáo</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+<br />
+
 <div class="page-inner mt--5">
     <div class="row">
         <div class="col-md-12">
@@ -23,7 +46,7 @@
                         <p style="font-weight:bold; font-size:16px; color: orangered;">DOANH THU HÀNG THÁNG NĂM @DateTime.Now.Year</p>
                         <div class="card-tools">
                             <label for="import"></label>
-                            <a href="@Url.Action("Home", "StatisticRevenue")" role="button" style="color:white; font-size:12px" class="btn btn-secondary btn-round ml-auto">
+                            <a @*href="@Url.Action("Home", "StatisticRevenue")"*@ role="button" style="color:white; font-size:12px" class="btn btn-secondary btn-round ml-auto">
                                 <i class="fas fa-chart-bar"></i> &ensp;
                                 XEM THÊM&ensp;
                             </a>
@@ -31,13 +54,83 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="chart-container" style="min-height: 375px">
-                        <canvas id="statisticsChart"></canvas>
+                    <div class="chart-container">
+                        <canvas id="multipleBarChart"></canvas>
                     </div>
-                    <div id="myChartLegend"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!--   Core JS Files   -->
+<script src="~/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="~/assets/js/core/popper.min.js"></script>
+<script src="~/assets/js/core/bootstrap.min.js"></script>
+<!-- jQuery UI -->
+<script src="~/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="~/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<!-- Chart JS -->
+<script src="~/assets/admin/vendor/chart.js/chart.min.js"></script>
+
+<!-- jQuery Scrollbar -->
+<script src="~/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<!-- Atlantis JS -->
+<script src="~/assets/js/atlantis.min.js"></script>
+<!-- Atlantis DEMO methods, don't include it in your project! -->
+<script src="~/assets/js/demo.js"></script>
+
+
+@section scripts {
+    <script>
+
+        multipleBarChart = document.getElementById('multipleBarChart')
+
+        var myMultipleBarChart = new Chart(multipleBarChart, {
+            type: 'bar',
+            data: {
+                labels: ["Tháng Một", "Tháng Hai", "Tháng Ba", "Tháng Tư", "Tháng Năm", "Tháng Sáu", "Tháng Bảy", "Tháng Tám", "Tháng Chín", "Tháng Mười", "Tháng M.Một", "Tháng M.Hai"],
+               datasets : [{
+					label: "Doanh thu theo tháng",
+					backgroundColor: '#59d05d',
+					borderColor: '#59d05d',
+                   data: [@ViewBag.TongDoanhThu],
+				},{
+					label: "Số lượng truy cập website",
+					backgroundColor: '#fdaf4b',
+					borderColor: '#fdaf4b',
+					data: [@ViewBag.SoNguoiTruyCap],
+				}, {
+					label: "Số người đang online trên website",
+					backgroundColor: '#177dff',
+					borderColor: '#177dff',
+					data: [@ViewBag.SoNguoiOnline],
+				}],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom'
+                },
+                title: {
+                    display: true,
+                    text: 'Traffic Stats'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false
+                },
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                        stacked: true,
+                    }],
+                    yAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
+        });
+    </script>
+}
