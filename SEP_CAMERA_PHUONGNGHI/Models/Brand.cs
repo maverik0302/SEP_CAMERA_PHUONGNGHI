@@ -11,9 +11,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-
+    
     public partial class Brand
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,7 +21,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         }
     
         public int brand_id { get; set; }
-        [StringLength(250, MinimumLength = 1)]
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

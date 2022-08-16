@@ -14,12 +14,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     
     public partial class Contact
     {
+        public string ContactNam { get; set; }
         public int contact_id { get; set; }
         public string email { get; set; }
         public string address { get; set; }
         public string phone { get; set; }
-        public Nullable<int> ct_from_id { get; set; }
-    
-        public virtual ContactForm ContactForm { get; set; }
     }
 }

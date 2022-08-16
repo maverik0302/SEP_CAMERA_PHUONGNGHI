@@ -15,6 +15,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     public partial class Slide
     {
         public int slide_id { get; set; }
+        public string TitleSlide { get; set; }
+        public string DescriptionSlide { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         public Nullable<int> Sort { get; set; }

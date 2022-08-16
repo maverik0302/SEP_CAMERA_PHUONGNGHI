@@ -22,7 +22,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public Nullable<int> order_id { get; set; }
         public Nullable<int> card_id { get; set; }
     
-        public virtual Cart Cart { get; set; }
         public virtual Oder Oder { get; set; }
+        public virtual tbProduct tbProduct { get; set; }
     }
 }
