@@ -17,7 +17,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         // GET: Admin/Order
         public ActionResult Index()
         {
-            var oders = db.Oders.Include(o => o.CUSTOMER);
+            var oders = db.Oders.Include(o => o.Account);
             return View(oders.ToList());
         }
 
