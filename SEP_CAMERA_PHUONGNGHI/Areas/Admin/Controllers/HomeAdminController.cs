@@ -79,34 +79,38 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         }
         public ActionResult Dashboard()
         {
-            // Lấy số lượng người truy cập từ application
-            ViewBag.SoNguoiTruyCap = HttpContext.Application["SoNguoiTruyCap"].ToString(); // lấy số lượng người truy cập từ application đã được tạo 
-            ViewBag.SoNguoiOnline = HttpContext.Application["SoNguoiDangOnline"].ToString(); // lấy số người đang online trên website
-            ViewBag.TongDoanhThu = ThongKeTongDoanhThu();
-            ViewBag.DoanhThuTheoThang = ThongKeDoanhThuThang(Thang: DateTime.Now.Month, Nam: DateTime.Now.Year);
+            ThongKeDoanhThuThang();
             return View();
 
         }
-        public decimal ThongKeTongDoanhThu()
+      
+        public void ThongKeDoanhThuThang()
         {
-            decimal TongDoanhThu = db.OrderDetails.Sum(n => n.num * n.price_product).Value;
-            return TongDoanhThu;
-        }
-
-        public decimal ThongKeDoanhThuThang(int Thang, int Nam)
-        {
-            Thang = DateTime.Now.Month;
-            Nam = DateTime.Now.Year;
-            // Thống kê theo doanh thu  theo tháng
-            // List ra những đơn hàng nào có tháng, năm tương ứng
-            var lstDDH = db.Oders.Where(n => n.orderdate.Value.Month == Thang && n.orderdate.Value.Year == Nam);
-            decimal TongTien = 0;
-            // Duyệt chi tiết của đơn hàng đó và lấy tổng tiền của tất cả sản phẩm thuộc đơn hàng đó
-            foreach (var item in lstDDH)
+            for (int i = 1; i <= 12; i++)
             {
-                TongTien += decimal.Parse(item.OrderDetails.Sum(n => n.num * n.price_product).Value.ToString());
+                int Nam = DateTime.Now.Year;
+                var saoke = db.Oders.Where(n => n.orderdate.Value.Month == i && n.orderdate.Value.Year == Nam).ToList();
+                decimal tong = 0;
+
+                if (saoke.Count > 0)
+                {
+                    foreach (var item in saoke)
+                        tong += decimal.Parse(item.total_price);
+                }
+
+                if (i == 1) { ViewBag.TongThangMot = tong; }
+                else if (i == 2) { ViewBag.TongThangHai = tong; }
+                else if (i == 3) { ViewBag.TongThangBa = tong; }
+                else if (i == 4) { ViewBag.TongThangBon = tong; }
+                else if (i == 5) { ViewBag.TongThangNam = tong; }
+                else if (i == 6) { ViewBag.TongThangSau = tong; }
+                else if (i == 7) { ViewBag.TongThangBay = tong; }
+                else if (i == 8) { ViewBag.TongThangTam = tong; }
+                else if (i == 9) { ViewBag.TongThangChin = tong; }
+                else if (i == 10) { ViewBag.TongThangMuoi = tong; }
+                else if (i == 11) { ViewBag.TongThangMMot = tong; }
+                else if (i == 12) { ViewBag.TongThangMHai = tong; }
             }
-            return TongTien;
         }
 
         protected override void Dispose(bool disposing)

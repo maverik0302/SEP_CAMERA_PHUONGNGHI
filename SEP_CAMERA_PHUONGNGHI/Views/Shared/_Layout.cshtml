@@ -2,6 +2,7 @@
 @{SEP25Team01Entities db = new SEP25Team01Entities();
     var category = db.Categories.ToList();
     var brand = db.Brands.ToList();
+    
 }
 
 <!DOCTYPE html>
@@ -659,6 +660,7 @@
                                                 <ul class="departments__links">
                                                     @foreach (var item in category)
                                                     {
+                                                        var idcate = item.category_id;
                                                         <li class="departments__item">
                                                             <a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">@item.Name
                                                             </a>
@@ -671,11 +673,11 @@
                                                                             <ul class="megamenu__links megamenu__links--level--0">
                                                                                 <li class="megamenu__item megamenu__item--with-submenu">
                                                                                     <a style="color:black">Thương hiệu</a>
-                                                                                    @foreach (var items in brand)
+                                                                                    @foreach (var items in db.tbProducts.Where(c => c.category_id == idcate).GroupBy(p => new { p.Brand.Name, p.brand_id }).Select(b => new {b.Key.Name, b.Key.brand_id}).ToList())
                                                                                     {
                                                                                         <ul class="megamenu__links megamenu__links--level--1">
                                                                                             <li class="megamenu__item">
-                                                                                                <a href="@Url.Action("Brand", "ShopGrid", new {idbrand = items.brand_id, idcategory = item.category_id})">@items.Name</a>
+                                                                                                <a href="@Url.Action("Brand", "ShopGrid", new { idbrand = items.brand_id, idcategory = item.category_id})">@items.Name</a>
                                                                                             </li>
                                                                                         </ul>
                                                                                     }
