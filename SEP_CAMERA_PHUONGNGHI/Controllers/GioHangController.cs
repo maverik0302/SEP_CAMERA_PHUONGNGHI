@@ -155,9 +155,22 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
 
         #region Đặt Hàng    
-        public ActionResult Dathang()
+        public ActionResult DatHang()
         {
-            return View();
+            if (Session["Account"] == null || Session["Account"].ToString() == "")
+            {
+                return RedirectToAction("DangNhap", "User");
+            }
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            //LayGioHang
+            List<GioHang> lstCart = LayGioHang();
+            ViewBag.Total = Total();
+            ViewBag.TongTien = TongTien();
+            return View(lstCart);
         }
 
         #endregion
