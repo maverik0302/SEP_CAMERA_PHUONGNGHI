@@ -16,8 +16,9 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult DangKy() { 
-            return View(); 
+        public ActionResult DangKy()
+        {
+            return View();
         }
 
 
@@ -41,18 +42,24 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         {
             string sAcc = f["txtTaikhoan"].ToString();
             string sPass = f.Get("txtMatkhau").ToString();
-            
-            Account sUser = db.Accounts.SingleOrDefault(n => n.Email==sAcc&&n.Password == sPass); 
 
-            if(sUser != null)
+            Account sUser = db.Accounts.SingleOrDefault(n => n.Email == sAcc && n.Password == sPass);
+
+            if (sUser != null)
             {
-                ViewBag.ThongBao = "Đăng nhập thành công!";
-                Session["Account"] = sUser;
-                return View();
+                if (sUser.Role.Equals("Quản lí"))
+                {
+                    return RedirectToAction("Dashboard", "HomeAdmin");
+                }
+                else
+                {
+                    ViewBag.ThongBao = "Đăng nhập thành công!";
+                    Session["Account"] = sUser;
+                    return View();
+                }
             }
             ViewBag.ThongBao = "Không tìm thấy mật khẩu hoặc tài khoản";
             return View();
         }
-
     }
 }

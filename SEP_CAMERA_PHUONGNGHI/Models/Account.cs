@@ -11,7 +11,9 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+
     public partial class Account
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,9 +21,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         {
             this.Oders = new HashSet<Oder>();
         }
-    
+
         public int user_id { get; set; }
         public string Username { get; set; }
+        [StringLength(20, MinimumLength = 1)]
         public string Password { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
@@ -29,7 +32,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public string LastName { get; set; }
         public string Role { get; set; }
         public Nullable<bool> status { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Oder> Oders { get; set; }
     }

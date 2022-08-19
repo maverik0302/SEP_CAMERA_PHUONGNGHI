@@ -19,8 +19,8 @@
                             <strong>Danh sách đơn hàng</strong>
                         </div>
                         @*<div class="col-md-6 text-right">
-                            <a style="font-size:16px" href="@Url.Action("Create")">Tạo mới danh mục</a>
-                        </div>*@
+                                <a style="font-size:16px" href="@Url.Action("Create")">Tạo mới danh mục</a>
+                            </div>*@
                     </div>
                 </div>
                 <div class="card-body">
@@ -90,11 +90,12 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.DeliveryDate)
                                         </td>
-                                        <td>B
+                                        <td>
+                                            B
                                             @Html.DisplayFor(modelItem => item.total_price)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.user_id)
+                                            @Html.DisplayFor(modelItem => item.Account.Username)
                                         </td>
                                         <td>
                                             @*<a href="@Url.Action("Edit", "Order", new { id = item.order_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>*@
