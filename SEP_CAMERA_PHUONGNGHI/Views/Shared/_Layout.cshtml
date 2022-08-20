@@ -589,7 +589,7 @@
                                     <div class="topbar-dropdown__body">
                                         <ul class="menu menu--layout--topbar">
                                             <li>
-                                                <a style="color:black" href="~/User/DangNhap">Đăng nhập</a>
+                                                <a style="color:black" href="@Url.Action("Login", "Auth", new { Area = "Admin"})">Đăng nhập</a>
                                             </li>
                                             <li>
                                                 <a style="color:black" href="~/User/DangKy">Đăng kí</a>
@@ -720,7 +720,7 @@
 
 
                                         <li class="nav-links__item">
-                                            <a href="#chung-toi-lien-he-ban">
+                                            <a href="@Url.Action("Index", "Home")#chung-toi-lien-he-ban">
                                                 <span>
                                                     LIÊN HỆ
                                                 </span>

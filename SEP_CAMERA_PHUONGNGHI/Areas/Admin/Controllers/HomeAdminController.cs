@@ -17,7 +17,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         SEP25Team01Entities db = new SEP25Team01Entities();
         public ActionResult Index()
         {
-            ViewBag.Message = null;
             return View();
         }
         public ActionResult MyProfile()

@@ -22,10 +22,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-            var user = model.Accounts.FirstOrDefault(u => u.Email.Equals(email));/*ADMIN.FirstOrDefault(u => u.email.Equals(email));*/
+            var user = model.Accounts.FirstOrDefault(u => u.Email.Equals(email) && u.Password.Equals(password));/*ADMIN.FirstOrDefault(u => u.email.Equals(email));*/
             if(user != null)
             {
-                if (user.Password.Equals(password))
+                if (user.Role.Equals("Quản lí"))
                 {
                     Session["user-username"] = user.Username;
                     Session["user-id"] = user.user_id;
@@ -35,10 +35,12 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                 }
                 else
                 {
-                    Session["password-incorrect"] = true;
-                    return View();
+                    ViewBag.ThongBao = "Đăng nhập thành công!";
+                    Session["Account"] = user;
+                    return RedirectToAction("Index", "Home", new { Area = "" });
                 }
             }
+            Session["password-incorrect"] = true;
             Session["user-not-found"] = true;
             return View();
         }
