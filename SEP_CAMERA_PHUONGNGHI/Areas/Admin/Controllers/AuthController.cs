@@ -25,19 +25,20 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             var user = model.Accounts.FirstOrDefault(u => u.Email.Equals(email) && u.Password.Equals(password));/*ADMIN.FirstOrDefault(u => u.email.Equals(email));*/
             if(user != null)
             {
-                if (user.Role.Equals("Quản lí"))
+                if (user.Role == null)
+                {
+                    ViewBag.ThongBao = "Đăng nhập thành công!";
+                    Session["Account"] = user;
+                    return RedirectToAction("Index", "Home", new { area = "" });
+                }
+                else
                 {
                     Session["user-username"] = user.Username;
                     Session["user-id"] = user.user_id;
                     Session["user-fname"] = user.FirstName;
                     Session["user-lname"] = user.LastName;
                     return RedirectToAction("Dashboard", "HomeAdmin");
-                }
-                else
-                {
-                    ViewBag.ThongBao = "Đăng nhập thành công!";
-                    Session["Account"] = user;
-                    return RedirectToAction("Index", "Home", new { Area = "" });
+
                 }
             }
             Session["password-incorrect"] = true;
