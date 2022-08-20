@@ -35,7 +35,7 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="blue">
 
-                <a href="@Url.Action("Index", "HomeAdmin")" class="logo">
+                <a href="@Url.Action("Dashboard", "HomeAdmin")" class="logo">
                     <img height="11px" src="~/assets/admin/images/LogoAdmin.png">
 
                 </a>
@@ -64,7 +64,6 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-user animated fadeIn">
-                                @*<div class="dropdown-user-scroll scrollbar-outer">*@
                                 <li>
                                     <div class="user-box">
                                         <div class="avatar-lg"><img src="~/assets/admin/images/logo.jpg" alt="image profile" class="avatar-img rounded"></div>
@@ -169,6 +168,15 @@
                             <a href="@Url.Action("Index", "Order")">
                                 <i class="fas fa-list"></i>
                                 <p>Quản lí đơn hàng</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="dropdown-divider"></div>
+                    <ul class="nav nav-primary">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Logout", "Auth")">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <p>Đăng xuất</p>
                             </a>
                         </li>
                     </ul>
