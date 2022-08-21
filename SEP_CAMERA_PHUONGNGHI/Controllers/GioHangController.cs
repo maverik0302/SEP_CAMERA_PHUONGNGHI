@@ -155,7 +155,48 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
 
         #region Đặt Hàng    
-        public ActionResult Dathang()
+        public ActionResult DatHang()
+        {
+            if (Session["Account"] == null || Session["Account"].ToString() == "")
+            {
+                return RedirectToAction("DangNhap", "User");
+            }
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            //LayGioHang
+            List<GioHang> lstCart = LayGioHang();
+            ViewBag.Total = Total();
+            ViewBag.TongTien = TongTien();
+            return View(lstCart);
+        }
+        public ActionResult DatHang(FormCollection f)
+        {
+            Oder donhang = new Oder();
+            Account customer = (Account)Session["Account"];
+            List<GioHang> lstCart = LayGioHang();
+            donhang.user_id = customer.user_id;
+            donhang.orderdate = DateTime.Now;
+            donhang.Delivered = true;
+            db.Oders.Add(donhang);
+            db.SaveChanges();
+            foreach (var item in lstCart)
+            {
+                OrderDetail detail = new OrderDetail();
+                detail.detail_id = item.iMaProduct;
+                detail.num = item.sAmount;
+                detail.price_product = (int)item.sPrice;
+                db.OrderDetails.Add(detail);
+            }
+            db.SaveChanges();
+            Session["GioHang"] = null;
+            return RedirectToAction("XacNhanDonHang", "Home");
+        }
+
+
+        public ActionResult XacNhanDonHang()
         {
             return View();
         }
