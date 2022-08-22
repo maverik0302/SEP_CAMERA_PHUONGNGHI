@@ -28,6 +28,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                 if (user.Role == null)
                 {
                     ViewBag.ThongBao = "Đăng nhập thành công!";
+                    Session["user-username"] = user.Username;
+                    Session["user-id"] = user.user_id;
+                    Session["user-fname"] = user.FirstName;
+                    Session["user-lname"] = user.LastName;
                     Session["Account"] = user;
                     return RedirectToAction("Index", "Home", new { area = "" });
                 }
