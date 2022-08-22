@@ -733,8 +733,8 @@ h6 {
 .btn-light.focus,
 .btn-light:focus,
 .btn-light:hover {
-    border-color: #f0f0f0;
-    background: #f0f0f0;
+    border-color: #555555;
+    background: #267AD5;
     color: #ffffff;
     fill: #ffffff
 }
