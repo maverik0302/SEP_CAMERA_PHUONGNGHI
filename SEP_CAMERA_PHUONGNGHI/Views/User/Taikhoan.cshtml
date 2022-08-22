@@ -1,0 +1,101 @@
+﻿@model SEP_CAMERA_PHUONGNGHI.Models.Account
+
+@{
+    ViewBag.Title = "Taikhoan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="site__body">
+    <div class="page-header">
+        <div style="padding-left:220px; width:1140px; height:45px" class="page-header__breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a style="color:blue" href="@Url.Action("Index", "Home")">Trang chủ</a>
+
+                    </li>
+                    <li class="breadcrumb-item">Tài khoản</li>
+                </ol>
+            </nav>
+        </div>
+        <br>
+        <div class="page-header__title">
+            <h1 style="padding-left:220px" class="page-title">Thông tin tài khoản</h1>
+        </div>
+    </div>
+    <br />
+    <div class="block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 d-flex mt-4 mt-md-0">
+                    <div class="card flex-grow-1 mb-0">
+                        <div class="card-body">
+                            <h3 class="card-title" style="text-align:center">Thông tin</h3>
+
+                            <form method="post" action="@Url.Action("Taikhoan", "User")">
+                                <br>
+                                <div class="row mb-3">
+                                    <label for="LastName" class="col-md-4 col-lg-3 col-form-label">Họ</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="LastName" type="text" class="form-control" id="lastName" value="@Model.LastName">
+                                        @Html.HiddenFor(m => Model.user_id)
+                                        @Html.HiddenFor(m => Model.status)
+                                        @Html.HiddenFor(m => Model.Password)
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="FirstName" class="col-md-4 col-lg-3 col-form-label">Tên</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="FirstName" type="text" class="form-control" id="firstName" value="@Model.FirstName">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="Username" class="col-md-4 col-lg-3 col-form-label">Tên tài khoản</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="Username" type="text" class="form-control" id="username" value="@Model.Username">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="Address" class="col-md-4 col-lg-3 col-form-label">Địa chỉ</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="Address" type="text" class="form-control" id="Address" value="@Model.Address">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="Email" type="email" class="form-control" id="Email" value="@Model.Email">
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                                </div>
+                            </form><!-- End Profile Edit Form -->
+
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="~/assets/admin/vendor/apexchart/apexcharts.min.js"></script>
+    <script src="~/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/admin/vendor/chart.js/chart.min.js"></script>
+    <script src="~/assets/admin/vendor/echarts/echarts.min.js"></script>
+    <script src="~/assets/admin/vendor/quill/quill.min.js"></script>
+    <script src="~/assets/admin/vendor/simple-data/simple-datatables.js"></script>
+    <script src="~/assets/admin/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/assets/admin/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/assets/admin/js/main.js"></script>
