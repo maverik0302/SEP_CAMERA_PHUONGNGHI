@@ -961,11 +961,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Abouts\Abouts.cshtml" />
-    <Content Include="Views\Shared\_Slide.cshtml" />
     <Content Include="Views\Blog\Blog.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
     <Content Include="Views\Checkout\Checkout.cshtml" />
-    <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\ShopGrid\ShopGrid.cshtml" />
     <Content Include="Views\Pay\Pay.cshtml" />
     <Content Include="Views\ShopGrid\ProductDetail.cshtml" />
@@ -983,6 +981,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
