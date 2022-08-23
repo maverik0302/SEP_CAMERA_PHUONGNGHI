@@ -166,11 +166,11 @@
                         <div class="reviews-view__list">
                             <h3 class="reviews-view__header">Đánh giá</h3>
                             <div class="reviews-list">
-                                <ol class="reviews-list__content">
-                                    <li class="reviews-list__item">
-                                        @foreach (var items in cmt)
-                                        {
-                                            int usID = items.user_id;
+                                @foreach (var items in cmt)
+                                {
+                                    int usID = items.user_id;
+                                    <ol class="reviews-list__content">
+                                        <li class="reviews-list__item">
                                             <div class="review">
                                                 <div class="review__content">
                                                     <div class="review__author">@db.Accounts.FirstOrDefault(t => t.user_id == usID).LastName @db.Accounts.FirstOrDefault(t => t.user_id == usID).FirstName</div>
@@ -180,9 +180,9 @@
                                                     <div class="review__date">@items.CreateDate</div>
                                                 </div>
                                             </div>
-                                         }
                                         </li>
-                                </ol>
+                                    </ol>
+                                }
                                 @*<div class="reviews-list__pagination">
                                         <ul class="pagination justify-content-center">
                                             <li class="page-item disabled">

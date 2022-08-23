@@ -4925,7 +4925,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     transform: rotateX(60deg);
     opacity: 0;
     transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
-
 }
 
 .topbar-dropdown--opened .topbar-dropdown__btn,
@@ -7608,23 +7607,23 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .review__author {
     margin-top: -4px;
-    font-size: 16px;
-    font-weight: 500
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .review__rating {
-    margin-top: 2px
+    margin-top: 2px;
 }
 
 .review__text {
     font-size: 16px;
-    margin-top: 12px
+    margin-top: 5px;
 }
 
 .review__date {
-    margin-top: 10px;
+    margin-top: 5px;
     color: #999;
-    font-size: 14px
+    font-size: 13px
 }
 
 @media (min-width:576px) and (max-width:767px) {
@@ -7652,7 +7651,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .reviews-list__item {
     border-bottom: 1px solid #ebebeb;
     padding-top: 28px;
-    padding-bottom: 24px
+    padding-bottom: 10px;
+    margin-top: 10px;
 }
 
     .reviews-list__item:first-child {
@@ -7664,7 +7664,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .reviews-view__header {
-    margin-bottom: 50px
+    margin-bottom: 20px
 }
 
 .reviews-view__form {
@@ -8783,7 +8783,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .block-features__item {
-   /* -ms-flex-preferred-size: 0;
+    /* -ms-flex-preferred-size: 0;
     flex-basis: 0;
     -ms-flex-positive: 1;*/
     flex-grow: 1;
@@ -10825,4 +10825,3 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     border-radius: 2px;
     padding: 28px
 }
-
