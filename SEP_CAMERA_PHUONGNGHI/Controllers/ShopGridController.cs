@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,7 +20,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             return View(ketqua);
         }
         public ActionResult ProductDetail(int id)
-        { 
+        {
             tbProduct detail = db.tbProducts.Find(id);
 
             return View(detail);
@@ -42,6 +44,32 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             var lstProduct = db.tbProducts.Where(P => P.category_id == id).ToList();
 
             return View("ShopGrid", lstProduct);
+        }
+        public ActionResult Cmtrate(int id)
+        {
+            var cmt = db.Cmts.Where(P => P.cmt_id == id).ToList();
+
+            return View("ShopGrid", cmt);
+        }
+
+        [HttpPost]
+        public ActionResult CommentRate(string sreview, int userID, int proID)
+        {
+            if (!string.IsNullOrEmpty(sreview.Trim()))
+            {
+
+                Cmt dcomment = new Cmt();
+                dcomment.product_id = proID;
+                dcomment.user_id = userID;
+                dcomment.rating = "5";
+                dcomment.review = sreview;
+                dcomment.CreateDate = DateTime.Now;
+                db.Cmts.Add(dcomment);
+                db.SaveChanges();
+                return RedirectToAction("ProductDetail", new { id = proID });
+            }
+
+            return RedirectToAction("ProductDetail", new { id = proID });
         }
     }
 }

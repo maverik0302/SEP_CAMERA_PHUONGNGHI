@@ -9,6 +9,7 @@
     Brand brand = db.Brands.Find(Model.brand_id);
     var category = Model.category_id;
     var product = db.tbProducts.ToList();
+    var cmt = db.Cmts.Where(p => p.product_id == Model.product_id).ToList();
 }
 
 <div class="page-header">
@@ -166,71 +167,74 @@
                             <div class="reviews-list">
                                 <ol class="reviews-list__content">
                                     <li class="reviews-list__item">
-                                        <div class="review">
-                                            <div class="review__avatar">
-                                                <img src="images/avatars/avatar-1.jpg" alt="">
-                                            </div>
-                                            <div class="review__content">
-                                                <div class="review__author">Name</div>
-                                                <div class="review__text">
-                                                    Phasellus id mattis nulla. Mauris velit nisi,
-                                                    imperdiet vitae sodales in, maximus ut lectus. Vivamus commodo
-                                                    scelerisque lacus, at porttitor dui iaculis id. Curabitur imperdiet
-                                                    ultrices fermentum.
+                                        @foreach (var items in cmt)
+                                        {
+                                            int usID = items.user_id;
+                                            <div class="review">
+                                                <div class="review__content">
+                                                    <div class="review__author">@db.Accounts.FirstOrDefault(t => t.user_id == usID).LastName @db.Accounts.FirstOrDefault(t => t.user_id == usID).FirstName</div>
+                                                    <div class="review__text">
+                                                        @items.review
+                                                    </div>
+                                                    <div class="review__date">@items.CreateDate</div>
                                                 </div>
-                                                <div class="review__date">27 May, 2018</div>
                                             </div>
-                                        </div>
-                                    </li>
+                                         }
+                                        </li>
                                 </ol>
-                                <div class="reviews-list__pagination">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item disabled">
-                                            <a class="page-link page-link--with-arrow"
-                                               href="#" aria-label="Previous">
-                                                <svg class="page-link__arrow page-link__arrow--left" aria-hidden="true"
-                                                     width="8px" height="13px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">
-                                                1 <span class="sr-only">(current)</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link page-link--with-arrow" href="#"
-                                               aria-label="Next">
-                                                <svg class="page-link__arrow page-link__arrow--right"
-                                                     aria-hidden="true" width="8px" height="13px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                @*<div class="reviews-list__pagination">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link page-link--with-arrow"
+                                                   href="#" aria-label="Previous">
+                                                    <svg class="page-link__arrow page-link__arrow--left" aria-hidden="true"
+                                                         width="8px" height="13px">
+                                                        <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">
+                                                    1 <span class="sr-only">(current)</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link page-link--with-arrow" href="#"
+                                                   aria-label="Next">
+                                                    <svg class="page-link__arrow page-link__arrow--right"
+                                                         aria-hidden="true" width="8px" height="13px">
+                                                        <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>*@
                             </div>
                         </div>
-                        <form class="reviews-view__form">
-                            <h3 class="reviews-view__header">Nhập bình luận</h3>
-                            <div class="row">
-                                <div class="col-12 col-lg-9 col-xl-8">
-                                    <div class="form-group">
-                                        <label for="review-text">Nhập bình luận</label>
-                                        <textarea class="form-control" id="review-text" rows="6"></textarea>
-                                    </div>
-                                    <div class="form-group mb-0">
-                                        <button type="submit"
-                                                class="btn btn-primary btn-lg">
-                                            Bình luận
-                                        </button>
+                        @if (Session["user-id"] != null)
+                        {
+                            <form method="post" action="@Url.Action("CommentRate", "ShopGrid")">
+                                <h3 class="reviews-view__header">Nhập bình luận</h3>
+                                <div class="row">
+                                    <div class="col-12 col-lg-9 col-xl-8">
+                                        <div class="form-group">
+                                            <label for="review-text">Nhập bình luận</label>
+                                            <input hidden name="proID" value="@Model.product_id" />
+                                            <input hidden name="userID" value="@Session["user-id"]" />
+                                            <textarea class="form-control" id="review-text" rows="6" name="sreview"></textarea>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <button type="submit"
+                                                    class="btn btn-primary btn-lg">
+                                                Bình luận
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        }
                     </div>
                 </div>
             </div>
