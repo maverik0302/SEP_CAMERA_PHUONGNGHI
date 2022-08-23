@@ -19,5 +19,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public string email { get; set; }
         public string address { get; set; }
         public string phone { get; set; }
+        public string content { get; set; }
     }
 }

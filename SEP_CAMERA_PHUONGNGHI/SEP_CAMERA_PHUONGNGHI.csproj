@@ -975,13 +975,10 @@
     <Content Include="Views\GioHang\SuaGioHang.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
-
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
-
     <Content Include="Views\User\Taikhoan.cshtml" />
     <Content Include="Views\User\Doimatkhau.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

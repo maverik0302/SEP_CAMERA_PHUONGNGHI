@@ -101,6 +101,7 @@
           <Property Name="email" Type="nvarchar" MaxLength="250" />
           <Property Name="address" Type="nvarchar" MaxLength="250" />
           <Property Name="phone" Type="nvarchar" MaxLength="250" />
+          <Property Name="content" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -111,6 +112,10 @@
           <Property Name="Phone" Type="int" />
           <Property Name="Address" Type="nvarchar" MaxLength="250" />
           <Property Name="email" Type="nvarchar" MaxLength="250" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="District" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ward" Type="nvarchar" MaxLength="250" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="footer">
           <Key>
@@ -149,7 +154,7 @@
           <Property Name="Delivered" Type="bit" />
           <Property Name="DeliveryDate" Type="datetime" />
           <Property Name="customer_id" Type="int" />
-          <Property Name="total_price" Type="nchar" MaxLength="10" />
+          <Property Name="total_price" Type="int" />
           <Property Name="user_id" Type="int" />
         </EntityType>
         <EntityType Name="OrderDetail">
@@ -254,15 +259,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Oder_Account">
-          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+        <Association Name="FK_Oder_CUSTOMER">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
           <End Role="Oder" Type="Self.Oder" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Account">
-              <PropertyRef Name="user_id" />
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="customer_id" />
             </Principal>
             <Dependent Role="Oder">
-              <PropertyRef Name="user_id" />
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -361,8 +366,8 @@
             <End Role="tbProduct" EntitySet="tbProduct" />
             <End Role="KhoHang" EntitySet="KhoHang" />
           </AssociationSet>
-          <AssociationSet Name="FK_Oder_Account" Association="Self.FK_Oder_Account">
-            <End Role="Account" EntitySet="Account" />
+          <AssociationSet Name="FK_Oder_CUSTOMER" Association="Self.FK_Oder_CUSTOMER">
+            <End Role="CUSTOMER" EntitySet="CUSTOMER" />
             <End Role="Oder" EntitySet="Oder" />
           </AssociationSet>
           <AssociationSet Name="FK_OrderDetail_Oder" Association="Self.FK_OrderDetail_Oder">
@@ -421,7 +426,6 @@
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="status" Type="Boolean" />
-          <NavigationProperty Name="Oders" Relationship="Self.FK_Oder_Account" FromRole="Account" ToRole="Oder" />
         </EntityType>
         <EntityType Name="Brand">
           <Key>
@@ -496,6 +500,7 @@
           <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="phone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -506,6 +511,11 @@
           <Property Name="Phone" Type="Int32" />
           <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ward" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oders" Relationship="Self.FK_Oder_CUSTOMER" FromRole="CUSTOMER" ToRole="Oder" />
         </EntityType>
         <EntityType Name="footer">
           <Key>
@@ -545,9 +555,9 @@
           <Property Name="Delivered" Type="Boolean" />
           <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
           <Property Name="customer_id" Type="Int32" />
-          <Property Name="total_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="total_price" Type="Int32" />
           <Property Name="user_id" Type="Int32" />
-          <NavigationProperty Name="Account" Relationship="Self.FK_Oder_Account" FromRole="Oder" ToRole="Account" />
+          <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_Oder_CUSTOMER" FromRole="Oder" ToRole="CUSTOMER" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetail_Oder" FromRole="Oder" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="OrderDetail">
@@ -648,18 +658,6 @@
           <NavigationProperty Name="KhoHangs" Relationship="Self.FK_KhoHang_tbProduct" FromRole="tbProduct" ToRole="KhoHang" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetail_tbProduct" FromRole="tbProduct" ToRole="OrderDetail" />
         </EntityType>
-        <Association Name="FK_Oder_Account">
-          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
-          <End Role="Oder" Type="Self.Oder" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Account">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="Oder">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tbProduct_Brand">
           <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
           <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
@@ -705,6 +703,18 @@
             </Principal>
             <Dependent Role="tbProduct">
               <PropertyRef Name="comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oder_CUSTOMER">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+          <End Role="Oder" Type="Self.Oder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="Oder">
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -763,10 +773,6 @@
           <EntitySet Name="SysConfigs" EntityType="Self.SysConfig" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="tbProducts" EntityType="Self.tbProduct" />
-          <AssociationSet Name="FK_Oder_Account" Association="Self.FK_Oder_Account">
-            <End Role="Account" EntitySet="Accounts" />
-            <End Role="Oder" EntitySet="Oders" />
-          </AssociationSet>
           <AssociationSet Name="FK_tbProduct_Brand" Association="Self.FK_tbProduct_Brand">
             <End Role="Brand" EntitySet="Brands" />
             <End Role="tbProduct" EntitySet="tbProducts" />
@@ -782,6 +788,10 @@
           <AssociationSet Name="FK_tbProduct_CommentProduct" Association="Self.FK_tbProduct_CommentProduct">
             <End Role="CommentProduct" EntitySet="CommentProducts" />
             <End Role="tbProduct" EntitySet="tbProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oder_CUSTOMER" Association="Self.FK_Oder_CUSTOMER">
+            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+            <End Role="Oder" EntitySet="Oders" />
           </AssociationSet>
           <AssociationSet Name="FK_KhoHang_tbProduct" Association="Self.FK_KhoHang_tbProduct">
             <End Role="tbProduct" EntitySet="tbProducts" />
@@ -904,6 +914,7 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="content" ColumnName="content" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -915,6 +926,10 @@
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Ward" ColumnName="Ward" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
