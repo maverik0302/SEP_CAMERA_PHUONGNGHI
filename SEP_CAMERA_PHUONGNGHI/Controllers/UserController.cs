@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,51 +16,78 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult DangKy()
         {
             return View();
         }
 
-
         [HttpPost]
-
         public ActionResult DangKy(Account acc)
         {
             db.Accounts.Add(acc);
             db.SaveChanges();
             return View();
         }
+        
+        public ActionResult Taikhoan()
+        {
+            int id = (int)Session["user-id"];
+            var tkuser = db.Accounts.FirstOrDefault(t => t.user_id == id);
+            return View(tkuser);
+        }
 
-        [HttpGet]
-        public ActionResult DangNhap()
+        [HttpPost]
+        public ActionResult Taikhoan(Account account)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(account).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            return View(account);
+        }
+
+        public ActionResult Doimatkhau()
         {
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult DangNhap(FormCollection f)
-        //{
-        //    string sAcc = f["txtTaikhoan"].ToString();
-        //    string sPass = f.Get("txtMatkhau").ToString();
+        [HttpPost]
+        public ActionResult Doimatkhau(string Password, string NewPassword, string RenewPassword)
+        {
+            int id = (int)Session["user-id"];
+            var Xacthuc = db.Accounts.FirstOrDefault(x => x.user_id == id);
+            if (Xacthuc.Password.Equals(Password))
+            {
+                if (!Xacthuc.Password.Equals(NewPassword))
+                {
+                    if (NewPassword.Equals(RenewPassword))
+                    {
+                        Xacthuc.Password = NewPassword;
+                        ViewBag.Message = "Thay đổi mật khẩu thành công";
+                        db.Entry(Xacthuc).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return View();
+                    }
+                    ViewBag.Message = "Nhập lại mật khẩu không trùng khớp";
+                    return View();
 
-        //    Account sUser = db.Accounts.SingleOrDefault(n => n.Email == sAcc && n.Password == sPass);
+                }
+                ViewBag.Message = "Mật khẩu mới không được trùng mật khẩu cũ";
+                return View();
 
-        //    if (sUser != null)
-        //    {
-        //        if (sUser.Role.Equals("Quản lí"))
-        //        {
-        //            return View();
-        //        }
-        //        else
-        //        {
-        //            ViewBag.ThongBao = "Đăng nhập thành công!";
-        //            Session["Account"] = sUser;
-        //            return RedirectToAction("Index", "Home");
-        //        }
-        //    }
-        //    ViewBag.ThongBao = "Không tìm thấy mật khẩu hoặc tài khoản";
-        //    return View();
-        //}
+            }
+            ViewBag.Message = "Mật khẩu hiện tại không chính xác";
+            return View();
+        }
+
+        public ActionResult DangXuat()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

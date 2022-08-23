@@ -39,7 +39,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             {
                 db.Entry(account).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", "HomeAdmin");
+                return RedirectToAction("Dashboard", "HomeAdmin");
             }
             return View(account);
         }
@@ -60,10 +60,10 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                     if (NewPassword.Equals(RenewPassword))
                     {
                         Xacthuc.Password = NewPassword;
+                        ViewBag.Message = "Thay đổi mật khẩu thành công";
                         db.Entry(Xacthuc).State = EntityState.Modified;
                         db.SaveChanges();
-                        ViewBag.Message = null;
-                        return RedirectToAction("MyProfile", "HomeAdmin");
+                        return View();
                     }
                     ViewBag.Message = "Nhập lại mật khẩu không trùng khớp";
                     return View();

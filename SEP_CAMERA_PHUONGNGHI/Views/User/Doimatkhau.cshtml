@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Doimatkhau";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="site__body">
+        <div class="page-header">
+            <div style="padding-left:220px; width:1140px; height:45px" class="page-header__breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a style="color:blue" href="@Url.Action("Index", "Home")">Trang chủ</a>
+
+                        </li>
+                        <li class="breadcrumb-item">Tài khoản</li>
+                    </ol>
+                </nav>
+            </div>
+            <br>
+            <div class="page-header__title">
+                <h1 style="padding-left:220px" class="page-title">
+                    Thay đổi mật khẩu mới
+                </h1>
+            </div>
+        </div>
+        <br />
+        <div class="block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 d-flex mt-4 mt-md-0">
+                        <div class="card flex-grow-1 mb-0">
+                            <div class="card-body">
+                                <h3 class="card-title" style="text-align:center">Đổi mật khẩu</h3>
+                                <form method="post" action="@Url.Action("Doimatkhau", "User")">
+                                    <br>
+                                    <div class="row mb-3">
+                                        <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Mật khẩu hiện tại</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="Password" type="password" class="form-control" id="Password" required="required">
+                                            @if ((ViewBag.Message) == ("Mật khẩu hiện tại không chính xác"))
+                                            {
+                                                <p style="color:red">@ViewBag.Message</p>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Mật khẩu mới</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="NewPassword" type="password" class="form-control" id="NewPassword" required="required">
+                                            @if ((ViewBag.Message) == ("Mật khẩu mới không được trùng mật khẩu cũ"))
+                                            {
+                                                <p style="color:red">@ViewBag.Message</p>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Nhập lại mật khẩu mới</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="RenewPassword" type="password" class="form-control" id="RenewPassword" required="required">
+                                            @if ((ViewBag.Message) == ("Nhập lại mật khẩu không trùng khớp"))
+                                            {
+                                                <p style="color:red">@ViewBag.Message</p>
+                                            }
+                                            @if ((ViewBag.Message) == ("Thay đổi mật khẩu thành công"))
+                                            {
+                                                <p style="color:blue">@ViewBag.Message</p>
+                                            }
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Thay đổi mật khẩu</button>
+                                    </div>
+                                </form><!-- End Change Password Form -->
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
