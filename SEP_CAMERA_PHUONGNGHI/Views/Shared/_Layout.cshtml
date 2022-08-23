@@ -682,52 +682,106 @@
                         <div class="nav-panel__row">
                             <div class="nav-panel__departments">
                                 <!-- .departments -->
-                                <div class="departments departments--opened" data-departments-fixed-by="">
-                                    <div class="departments__body">
-                                        <div class="departments__links-wrapper" style="">
-                                            <ul class="departments__links">
-                                                @foreach (var item in category)
-                                                {
-                                                    var idcate = item.category_id;
-                                                    <li class="departments__item">
-                                                        <a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">
-                                                            @item.Name
-                                                        </a>
+                                @if (ViewBag.Title.Equals("Home Page"))
+                                {
+                                    <div class="departments departments--opened departments--fixed" data-departments-fixed-by="">
+                                        <div class="departments__body">
+                                            <div class="departments__links-wrapper" style="">
+                                                <ul class="departments__links">
+                                                    @foreach (var item in category)
+                                                    {
+                                                        var idcate = item.category_id;
+                                                        <li class="departments__item">
+                                                            <a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">
+                                                                @item.Name
+                                                            </a>
 
-                                                        <div class="departments__megamenu departments__megamenu--sm">
-                                                            <!-- .megamenu -->
-                                                            <div class="megamenu megamenu--departments">
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <ul class="megamenu__links megamenu__links--level--0">
-                                                                            <li class="megamenu__item megamenu__item--with-submenu">
-                                                                                <a style="color:black">Thương hiệu</a>
-                                                                                @foreach (var items in db.tbProducts.Where(c => c.category_id == idcate).GroupBy(p => new { p.Brand.Name, p.brand_id }).Select(b => new { b.Key.Name, b.Key.brand_id }).ToList())
-                                                                                {
-                                                                                    <ul class="megamenu__links megamenu__links--level--1">
-                                                                                        <li class="megamenu__item">
-                                                                                            <a href="@Url.Action("Brand", "ShopGrid", new { idbrand = items.brand_id, idcategory = item.category_id})">@items.Name</a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                }
-                                                                            </li>
-                                                                        </ul>
+                                                            <div class="departments__megamenu departments__megamenu--sm">
+                                                                <!-- .megamenu -->
+                                                                <div class="megamenu megamenu--departments">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <ul class="megamenu__links megamenu__links--level--0">
+                                                                                <li class="megamenu__item megamenu__item--with-submenu">
+                                                                                    <a style="color:black">Thương hiệu</a>
+                                                                                    @foreach (var items in db.tbProducts.Where(c => c.category_id == idcate).GroupBy(p => new { p.Brand.Name, p.brand_id }).Select(b => new { b.Key.Name, b.Key.brand_id }).ToList())
+                                                                                    {
+                                                                                        <ul class="megamenu__links megamenu__links--level--1">
+                                                                                            <li class="megamenu__item">
+                                                                                                <a href="@Url.Action("Brand", "ShopGrid", new { idbrand = items.brand_id, idcategory = item.category_id})">@items.Name</a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    }
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            </div><!-- .megamenu / end -->
-                                                        </div>
+                                                                </div><!-- .megamenu / end -->
+                                                            </div>
 
-                                                    </li>
-                                                }
-                                            </ul>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <button class="departments__button">
-                                        <svg style="margin-right:7px" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
-                                            <path style="font:bolder" fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                        </svg> DANH MỤC SẢN PHẨM
-                                    </button>
-                                </div><!-- .departments / end -->
+                                        <button class="departments__button">
+                                            <svg style="margin-right:7px" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                                <path style="font:bolder" fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                            </svg> DANH MỤC SẢN PHẨM
+                                        </button>
+                                    </div><!-- .departments / end -->
+                                }
+                                else
+                                {
+                                    <div class="departments" data-departments-fixed-by="">
+                                        <div class="departments__body">
+                                            <div class="departments__links-wrapper" style="">
+                                                <ul class="departments__links">
+                                                    @foreach (var item in category)
+                                                    {
+                                                        var idcate = item.category_id;
+                                                        <li class="departments__item">
+                                                            <a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">
+                                                                @item.Name
+                                                            </a>
+
+                                                            <div class="departments__megamenu departments__megamenu--sm">
+                                                                <!-- .megamenu -->
+                                                                <div class="megamenu megamenu--departments">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <ul class="megamenu__links megamenu__links--level--0">
+                                                                                <li class="megamenu__item megamenu__item--with-submenu">
+                                                                                    <a style="color:black">Thương hiệu</a>
+                                                                                    @foreach (var items in db.tbProducts.Where(c => c.category_id == idcate).GroupBy(p => new { p.Brand.Name, p.brand_id }).Select(b => new { b.Key.Name, b.Key.brand_id }).ToList())
+                                                                                    {
+                                                                                        <ul class="megamenu__links megamenu__links--level--1">
+                                                                                            <li class="megamenu__item">
+                                                                                                <a href="@Url.Action("Brand", "ShopGrid", new { idbrand = items.brand_id, idcategory = item.category_id})">@items.Name</a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    }
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- .megamenu / end -->
+                                                            </div>
+
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button class="departments__button">
+                                            <svg style="margin-right:7px" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                                <path style="font:bolder" fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                            </svg> DANH MỤC SẢN PHẨM
+                                        </button>
+                                    </div><!-- .departments / end -->
+
+                                }
+
                             </div><!-- .nav-links -->
                             <div class="nav-panel__nav-links nav-links">
                                 <ul class="nav-links__list">
