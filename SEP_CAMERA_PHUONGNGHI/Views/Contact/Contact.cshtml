@@ -1,0 +1,164 @@
+﻿@model SEP_CAMERA_PHUONGNGHI.Models.Contact
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+
+<div class="page-header__container container">
+    <div class="page-header__breadcrumb">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="@Url.Action("Index", "Home")">Trang Chủ</a>
+                    <svg class="breadcrumb-arrow"
+                         width="6px" height="9px">
+                        <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                    </svg>
+                </li>
+
+                <li class="breadcrumb-item active" aria-current="page">Liên Hệ</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="page-header__title">
+        <h1>Liên Hệ</h1>
+    </div>
+</div>
+
+
+
+<div id="chung-toi-lien-he-ban" class="block block-product-columns d-lg-block d-none">
+    <div class="container">
+        <div class="card mb-0">
+            <div class="card-body contact-us">
+                <div class="contact-us__container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 pb-4 pb-lg-0">
+                            <h4 class="contact-us__header card-title">Địa chỉ</h4>
+                            <div class="contact-us__address">
+                                <p>
+                                    <b>CN1: </b>937D/11/10/6 Tạ Quang Bửu, Phường 5, Quận 8, TP.HCM<br>
+                                    <b>CN2: </b>Khu phố Kim Điền, Thị trấn Cần Giuộc, Long An<br>
+                                    <b>Email: </b>cameraphuongnghihuynh@gmail.com<br>
+                                    <b>Hotline: </b>098 276 7799<br>
+                                </p>
+                                <p>
+                                    <strong>Thời gian mở cửa Thứ 2 đến Thứ 7</strong><br>
+                                    Sáng: 8h đến 11h30<br />
+                                    Chiều: 13h đến 17h
+                                </p>
+                                <p>
+                                    Các sản phẩm và giải pháp của CÔNG NGHỆ MỚI thì việc giám sát của quý khách giờ đây sẽ không chỉ dừng
+                                    lại ở giám sát nội bộ, giám sát trong phạm vi hẹp mà còn có thể giám sát từ xa. Các thiết bị được tích
+                                    hợp, kết nối với hệ thống xử lý thông minh còn đem lại cho quý khách các tiện ích siêu việt như: Tự động
+                                    cảnh báo khi có đột nhập, tự động gửi tin nhắn cảnh báo tới điện thoại của chủ nhà, tự động ghi hình khi
+                                    phát hiện chuyển động trong vùng theo dői, tự động quét các góc độ theo chương trình đặt trước....
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-lg-6">
+                            <h4 class="contact-us__header card-title">Để chúng tôi liên hệ bạn</h4>
+
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <label>Họ và tên</label>
+
+                                    @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
+                                    <span id="ErrorName" style="color:firebrick"></span>
+                                </div>
+
+                                    <div class="form-group">
+                                        <label>Email</label>
+
+                                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                        <span id="ErrorEmail" style="color:firebrick"></span>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label>Số điện thoại</label>
+
+                                        @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                                        <span id="ErrorPhone" style="color:firebrick"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Nội dung liên hệ</label>
+
+                                        @Html.EditorFor(model => model.ct_content, new { htmlAttributes = new { @class = "form-control multi-line" } })
+                                        @Html.ValidationMessageFor(model => model.ct_content, "", new { @class = "text-danger" })
+                                        <span id="ErrorContent" style="color:firebrick"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input id="btnContact" type="submit" value="Gửi liên hệ" class="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $('#btnContact').click(function () {
+        var loi = 0;
+        if ($('#ContactName').val() == "") {
+            $('#ErrorName').text('Vui lòng nhập tên');
+            loi++;
+        } else {
+            $('#ErrorName').text('');
+        }
+
+        if ($('#email').val() == "") {
+            $('#ErrorEmail').text('Vui lòng nhập Email');
+            loi++;
+        } else {
+            $('#ErrorEmail').text('');
+        }
+
+        if ($('#phone').val() == "") {
+            $('#ErrorPhone').text('Vui lòng nhập số điện thoại');
+            loi++;
+        } else {
+            $('#ErrorPhone').text('');
+        }
+
+        if ($('#ct_content').val() == "") {
+            $('#ErrorContent').text('Nhập nội dung của bạn');
+            loi++;
+        } else {
+            $('#ErrorContent').text('');
+        }
+
+
+
+        if (loi != 0) {
+            return false;
+        } return true;
+
+    });
+</script>

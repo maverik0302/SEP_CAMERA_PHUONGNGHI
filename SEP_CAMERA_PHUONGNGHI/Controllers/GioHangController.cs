@@ -106,6 +106,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
                 return RedirectToAction("Index", "Home");
             }
             List<GioHang> lstCart = LayGioHang();
+            ViewBag.TongTien = TongTien();
             return View(lstCart);
 
         }
@@ -133,6 +134,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             }
             return dTongTien;
         }
+
 
         public ActionResult GioHangPartial()
         {
@@ -180,20 +182,21 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             List<GioHang> lstCart = LayGioHang();
             donhang.user_id = customer.user_id;
             donhang.orderdate = DateTime.Now;
-            donhang.Delivered = true;
+            donhang.Delivered = false;
+            donhang.total_price = TongTien();
             db.Oders.Add(donhang);
             db.SaveChanges();
             foreach (var item in lstCart)
             {
                 OrderDetail detail = new OrderDetail();
-                detail.detail_id = item.iMaProduct;
+                detail.product_id = item.iMaProduct;
                 detail.num = item.sAmount;
                 detail.price_product = (int)item.sPrice;
                 db.OrderDetails.Add(detail);
             }
             db.SaveChanges();
             Session["GioHang"] = null;
-            return RedirectToAction("XacNhanDonHang", "Home");
+            return RedirectToAction("XacNhanDonHang", "GioHang");
         }
         public ActionResult XacNhanDonHang()
         {

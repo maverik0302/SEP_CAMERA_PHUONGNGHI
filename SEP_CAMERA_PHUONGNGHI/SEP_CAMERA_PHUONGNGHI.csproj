@@ -158,6 +158,7 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PayController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
@@ -684,6 +685,7 @@
     <Content Include="Content\image\aboutus.jpg" />
     <Content Include="Content\image\arrow.png" />
     <Content Include="Content\image\icon-zalo.png" />
+    <Content Include="Content\image\ImgBanner\banner-2.jpg" />
     <Content Include="Content\image\ImgPost\p1.jpg" />
     <Content Include="Content\image\ImgPost\p2.jpg" />
     <Content Include="Content\image\ImgPost\p3.jpg" />
@@ -710,6 +712,7 @@
     <Content Include="Content\image\ImgProduct\KBV5.jpg" />
     <Content Include="Content\image\ImgProduct\KBV6.jpg" />
     <Content Include="Content\image\ImgProduct\ManKBV.jpg" />
+    <Content Include="Content\image\ImgSlide\slide-1.jpg" />
     <Content Include="Content\image\Logo\CAMERA PHƯƠNG NGHI.png" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\number.js" />
@@ -983,11 +986,12 @@
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
     <Content Include="Views\User\Taikhoan.cshtml" />
     <Content Include="Views\User\Doimatkhau.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\History\History.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -2,6 +2,7 @@
 @{SEP25Team01Entities db = new SEP25Team01Entities();
     var category = db.Categories.ToList();
     var brand = db.Brands.ToList();
+   
 
 }
 
@@ -803,7 +804,7 @@
 
 
                                     <li class="nav-links__item">
-                                        <a href="@Url.Action("Index", "Home")#chung-toi-lien-he-ban">
+                                        <a href="@Url.Action("Contact", "Contact")">
                                             <span>
                                                 LIÊN HỆ
                                             </span>
@@ -926,47 +927,10 @@
                                         <i class="footer-contacts__icon fas fa-mobile-alt">
                                         </i>098 276 7799
                                     </li>
-                                    @*<li>
-                                            <i class="footer-contacts__icon far fa-clock"></i> mon-sat 10:00pm - 7:00pm
-                                        </li>*@
+                                    
                                 </ul>
                             </div>
-                            @*<div class="site-footer__widget footer-newsletter">
-                                        <h5 class="footer-newsletter__title">Đăng ký nhận tin</h5>
-                                        <div class="footer-newsletter__text">
-                                            Thời gian làm việc:
-                                            Các ngày trong tuần: 8h00 - 18h00
-                                            Từ T2 tới T7 hằng tuần
-                                        </div>
-                                        <form action="#" class="footer-newsletter__form">
-                                            <label class="sr-only"
-                                                   for="footer-newsletter-address">Email Address</label> <input type="text"
-                                                                                                                class="footer-newsletter__form-input form-control"
-                                                                                                                id="footer-newsletter-address" placeholder="Email Address...">
-                                        </form>
-                                        <div class="footer-newsletter__text footer-newsletter__text--social">
-                                            Follow us on
-                                            social networks
-                                        </div>
-                                        <ul class="footer-newsletter__social-links">
-                                            <li class="footer-newsletter__social-link footer-newsletter__social-link--facebook">
-                                                <a href="https://themeforest.net/user/kos9" target="_blank">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li class="footer-newsletter__social-link footer-newsletter__social-link--twitter">
-                                                <a href="product.html">
-                                                    <img src="image/icon-zalo">
-                                                </a>
-                                            </li>
-                                            <li class="footer-newsletter__social-link footer-newsletter__social-link--youtube">
-                                                <a href="https://themeforest.net/user/kos9" target="_blank">
-                                                    <i class="fab fa-youtube"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>*@
+                           
                         </div>
 
                         <div class="col-md-3">

@@ -3,7 +3,8 @@
 @{SEP25Team01Entities db = new SEP25Team01Entities();
     var category = db.Categories.ToList();
     var post = db.Posts.ToList();
-
+    var slide = db.Slides.ToList();
+    var product = db.tbProducts.ToList();
     ViewBag.Title = "Home Page";
 
 }
@@ -16,25 +17,29 @@
             <div class="col-12 col-lg-9 offset-lg-3">
                 <div class="block-slideshow__body">
                     <div class="owl-carousel">
-                        <a class="block-slideshow__slide" href="#">
-                            <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop"
-                                 style="background-image: url('images/slides/slide-1.jpg')"></div>
-                            <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile"
-                                 style="background-image: url('images/slides/slide-1-mobile.jpg')"></div>
-                            <div class="block-slideshow__slide-content">
-                                <div class="block-slideshow__slide-title">
-                                    Big choice of<br>Plumbing products
+                        @foreach (var item in slide)
+                        {
+                            <a class="block-slideshow__slide" href="#">
+                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop"
+                                     style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')"></div>
+
+                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile"
+                                     style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')">
                                 </div>
-                                <div class="block-slideshow__slide-text">
-                                    Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit.<br>Etiam pharetra laoreet dui quis
-                                    molestie.
+
+                                <div class="block-slideshow__slide-content">
+                                    <div class="block-slideshow__slide-title ">
+                                        @item.TitleSlide
+                                    </div>
+                                    <div class="block-slideshow__slide-text">
+                                        @item.DescriptionSlide
+                                    </div>
+                                    <div class="block-slideshow__slide-button">
+                                        <span class="btn btn-primary btn-lg">@item.Name</span>
+                                    </div>
                                 </div>
-                                <div class="block-slideshow__slide-button">
-                                    <span class="btn btn-primary btn-lg">Shop Now</span>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+                        }
                     </div>
                 </div>
             </div>
@@ -127,7 +132,7 @@
                                             Thêm vào giỏ
                                         </button>
                                     </div>
-                                </div>B
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,6 +141,23 @@
         </div>
     </div>
 </div>
+
+<!-- .block-banner -->
+<div class="block block-banner">
+    <div class="container">
+        
+        <a href="#" class="block-banner__body">
+            <div class="block-banner__image block-banner__image--desktop"
+                 style=" background-image: url('../../content/image/imgbanner/banner-2.jpg'); "></div>
+            <div class="block-banner__image block-banner__image--mobile"
+                 style=" background-image: url('../../content/image/imgbanner/banner-2.jpg'); "></div>
+            <div class="block-banner__title">Chào mừng đến với camera Phương Nghi<br class="block-banner__mobile-br">Hand Tools</div>
+            <div class="block-banner__text">Camera, đầu ghi hình, phụ kiện</div>
+            <div class="block-banner__button"><span class="btn btn-sm btn-primary">Mua Sắm Ngay</span></div>
+        </a>
+    </div>
+</div>
+<!-- .block-banner / end -->
 
 <div class="block block-posts block-posts--layout--list-sm" data-layout="list-sm">
     <div class="container">
@@ -190,63 +212,63 @@
         </div>
     </div><!-- .block-posts / end -->
 </div>
-<div id="chung-toi-lien-he-ban" class="block block-product-columns d-lg-block d-none">
+
+
+<div class="block block--highlighted block-categories block-categories--layout--classic">
     <div class="container">
-        <div class="card mb-0">
-            <div class="card-body contact-us">
-                <div class="contact-us__container">
-                    <div class="row">
-                        <div class="col-12 col-lg-6 pb-4 pb-lg-0">
-                            <h4 class="contact-us__header card-title">Địa chỉ</h4>
-                            <div class="contact-us__address">
-                                <p>
-                                    <b>CN1: </b>937D/11/10/6 Tạ Quang Bửu, Phường 5, Quận 8, TP.HCM<br>
-                                    <b>CN2: </b>Khu phố Kim Điền, Thị trấn Cần Giuộc, Long An<br>
-                                    <b>Email: </b>cameraphuongnghihuynh@gmail.com<br>
-                                    <b>Hotline: </b>098 276 7799<br>
-                                </p>
-                                <p>
-                                    <strong>Thời gian mở cửa Thứ 2 đến Thứ 7</strong><br>
-                                    Sáng: 8h đến 11h30<br />
-                                    Chiều: 13h đến 17h
-                                </p>
-                                <p>
-                                    Các sản phẩm và giải pháp của CÔNG NGHỆ MỚI thì việc giám sát của quý khách giờ đây sẽ không chỉ dừng
-                                    lại ở giám sát nội bộ, giám sát trong phạm vi hẹp mà còn có thể giám sát từ xa. Các thiết bị được tích
-                                    hợp, kết nối với hệ thống xử lý thông minh còn đem lại cho quý khách các tiện ích siêu việt như: Tự động
-                                    cảnh báo khi có đột nhập, tự động gửi tin nhắn cảnh báo tới điện thoại của chủ nhà, tự động ghi hình khi
-                                    phát hiện chuyển động trong vùng theo dői, tự động quét các góc độ theo chương trình đặt trước....
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <h4 class="contact-us__header card-title">Để chúng tôi liên hệ bạn</h4>
-                            <form>
-                                <div class="form form-vertical">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="form-name">
-                                                Họ tên
-                                            </label>
-                                            <input type="text" id="form-name" class="form-control" placeholder="Tên của bạn">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="form-email">Số điện thoại</label>
-                                            <input type="number" id="form-email" class="form-control" placeholder="0123456789">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="form-message">Ghi chú</label>
-                                    <textarea id="form-message" class="form-control" rows="5" placeholder="..."></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Gửi lời nhắn</button>
-                            </form>
-                        </div>
+        <div class="block-header">
+            <h3 class="block-header__title">Popular Categories</h3>
+            <div class="block-header__divider"></div>
+        </div>
+        <div class="block-categories__list">
+            @foreach(var item in category) {
+            <div class="block-categories__item category-card category-card--layout--classic">
+                <div class="category-card__body">
+                    <div class="category-card__image">
+                        <a href="#">
+                            <img src="images/categories/category-2.jpg" alt="">
+                        </a>
                     </div>
+                    <div class="category-card__content">
+                        <div class="category-card__name"><a href="#">@item.Name</a></div>
+                        
+                        <div class="category-card__all"><a href="#">Show All</a></div>
+                        <div class="category-card__products">134 Products</div>
+                    </div>
+                </div>
+            </div>
+            }
+     
+        </div>
+    </div>
+</div>
+
+<div class="block block-brands">
+    <div class="container">
+        <div class="block-brands__slider">
+            <div class="owl-carousel">
+                <div class="block-brands__item">
+                    <a href="#"><img src="images/logos/logo-1.png" alt=""></a>
+                </div>
+                <div class="block-brands__item">
+                    <a href="#"><img src="images/logos/logo-2.png" alt=""></a>
+                </div>
+                <div class="block-brands__item">
+                    <a href="#"><img src="images/logos/logo-3.png" alt=""></a>
+                </div>
+                <div class="block-brands__item">
+                    <a href="#"><img src="images/logos/logo-4.png" alt=""></a>
+                </div>
+                <div class="block-brands__item">
+                    <a href="#"><img src="images/logos/logo-5.png" alt=""></a>
+                </div>
+                <div class="block-brands__item">
+                    <a href="#"><img src="images/logos/logo-6.png" alt=""></a>
+                </div>
+                <div class="block-brands__item">
+                    <a href="#"><img src="images/logos/logo-7.png" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-

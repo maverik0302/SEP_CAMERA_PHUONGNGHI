@@ -21,6 +21,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
             get { return sAmount * sPrice; }
         }
 
+        
+
         public GioHang(int MaProduct)
         {
             iMaProduct = MaProduct;

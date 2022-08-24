@@ -28,7 +28,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         {
             db.Accounts.Add(acc);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("GioHang", "GioHang");
         }
         
         public ActionResult Taikhoan()
