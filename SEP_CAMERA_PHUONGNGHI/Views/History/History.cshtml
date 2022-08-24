@@ -1,0 +1,66 @@
+﻿@model IEnumerable<SEP_CAMERA_PHUONGNGHI.Models.Oder>
+
+@{
+    ViewBag.Title = "History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>History</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ngày đặt hàng
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Delivered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_price)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTOMER.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Delivered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_price)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.CUSTOMER.Name)
+        </td>
+        <td>
+
+            @Html.ActionLink("Chi Tiết", "Details", new { id=item.order_id }) |
+           
+        </td>
+    </tr>
+}
+
+</table>
