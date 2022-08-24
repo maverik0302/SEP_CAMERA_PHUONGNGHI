@@ -94,7 +94,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
                 if (saoke.Count > 0)
                 {
                     foreach (var item in saoke)
-                        tong += decimal.Parse(item.total_price);
+                        tong += decimal.Parse(item.total_price.Value.ToString());
                 }
 
                 if (i == 1) { ViewBag.TongThangMot = tong; }

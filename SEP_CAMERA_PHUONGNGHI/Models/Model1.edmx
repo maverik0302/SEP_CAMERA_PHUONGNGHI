@@ -96,12 +96,12 @@
           <Key>
             <PropertyRef Name="contact_id" />
           </Key>
-          <Property Name="ContactNam" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="contact_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="250" />
           <Property Name="address" Type="nvarchar" MaxLength="250" />
           <Property Name="phone" Type="nvarchar" MaxLength="250" />
-          <Property Name="content" Type="nvarchar" MaxLength="500" />
+          <Property Name="ct_content" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -495,12 +495,12 @@
           <Key>
             <PropertyRef Name="contact_id" />
           </Key>
-          <Property Name="ContactNam" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="phone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="content" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ct_content" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -909,12 +909,12 @@
           <EntitySetMapping Name="Contacts">
             <EntityTypeMapping TypeName="SEP25Team01Model.Contact">
               <MappingFragment StoreEntitySet="Contact">
-                <ScalarProperty Name="ContactNam" ColumnName="ContactNam" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
                 <ScalarProperty Name="contact_id" ColumnName="contact_id" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="ct_content" ColumnName="ct_content" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
