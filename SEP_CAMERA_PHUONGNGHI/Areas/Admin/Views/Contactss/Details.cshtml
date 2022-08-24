@@ -1,4 +1,4 @@
-﻿@model SEP_CAMERA_PHUONGNGHI.Models.Oder
+﻿@model SEP_CAMERA_PHUONGNGHI.Models.Contact
 
 @{
     ViewBag.Title = "Details";
@@ -6,10 +6,9 @@
 }
 
 
-
 <div class="page-inner">
     <div class="page-header">
-        <Strong class="page-title">QUẢN LÍ ĐƠN HÀNG</Strong>
+        <Strong class="page-title">CÁC VẤN ĐỀ CỦA KHÁCH HÀNG</Strong>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -17,57 +16,52 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
-                            <strong>Mô tả đơn hàng</strong>
+                            <strong>Mô tả vấn đề gặp phải</strong>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
 
+                <div class="card-body">
                     <dl class="dl-horizontal">
                         <dt>
-                            <strong>
-                                Ngày đặt hàng
-                            </strong>
+                            <strong>Tên khách hàng</strong>
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.orderdate)
+                            @Html.DisplayFor(model => model.ContactName)
                         </dd>
 
                         <dt>
-                            <strong>
-                                Trạng thái
-                            </strong>
-
+                            <strong>Email</strong>
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.Status)
-                        </dd>
-
-                    
-                        <dt>
-                            <strong>
-                                Tổng giá trị
-                            </strong>
-
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.total_price)
+                            @Html.DisplayFor(model => model.email)
                         </dd>
 
                         <dt>
-                            <strong>
-                                Tên khách hàng
-                            </strong>
-
+                            <strong>Địa chỉ</strong>
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.CUSTOMER.Name)
+                            @Html.DisplayFor(model => model.address)
                         </dd>
 
+                        <dt>
+                            <strong>Số điện thoại</strong>
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.phone)
+                        </dd>
+
+                        <dt>
+                            <strong>Nội dung vấn đề</strong>
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ct_content)
+                        </dd>
                     </dl>
                 </div>
 
@@ -79,3 +73,5 @@
         </div>
     </div>
 </div>
+
+
