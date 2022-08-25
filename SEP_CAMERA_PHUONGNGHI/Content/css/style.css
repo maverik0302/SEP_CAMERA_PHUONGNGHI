@@ -10830,3 +10830,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .multi-line {
     height: 5em;
 }
+
+.confirm-order__image {
+
+    background-image: url('../image/confirm-order.png');
+    background-size: cover;
+    background-position: bottom;
+    height: 500px
+}
+

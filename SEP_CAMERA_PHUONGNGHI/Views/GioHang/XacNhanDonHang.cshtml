@@ -1,9 +1,39 @@
-﻿
+﻿@using SEP_CAMERA_PHUONGNGHI.Models
 @{
     ViewBag.Title = "XacNhanDonHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="site__body">
 
-<h2>XacNhanDonHang</h2>
 
-@Html.ActionLink("Trở về trang chủ", "Index", "Home")
+    <div class="site__body">
+        <div class="block">
+            <div class="container">
+                <div class="not-found">
+                    
+                    <img height="300" src="~/Content/image/confirm_man.jpg" />
+                    <div class="not-found__content">
+                        <h1 class="not-found__title">Đơn hàng thành công</h1>
+                        <p class="not-found__text">
+                            Sản phẩm của bạn sẽ được vận chuyển trong thời gian sớm nhất.
+                            <br />
+                            Xin cảm ơn bạn đã tin tưởng chúng tôi!
+                        </p>
+                        <form class="not-found__search" action="@Url.Action("KetQuaTimKiem", "Search")" method="post">
+                            <input type="text" name="txtSearch"
+                                   class="not-found__search-input form-control" placeholder="Tìm kiếm thêm sản phẩm...">
+                            <button type="submit" class="not-found__search-button btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                        </form>
+                        <a class="btn btn-secondary btn-sm" href="@Url.Action("Index", "Home")">Trở về trang chủ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

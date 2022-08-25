@@ -5,10 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="site__body">
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary(true)
+@using (Html.BeginForm("DatHang", "GioHang"))
+{
+
+    @Html.AntiForgeryToken()
+    
+
+    <div class="site__body">
         <div class="page-header">
             <div class="page-header__container container">
                 <div class="page-header__title">
@@ -16,40 +19,42 @@
                 </div>
             </div>
         </div>
+
         <div class="checkout block">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-7">
                         <div class="card mb-lg-0">
-
                             <div class="card-body">
                                 <h3 class="card-title">Chi tiết thanh toán</h3>
-                                @{
-                                    Account customer = (Account)Session["Account"];
-                                }
 
 
+                                @Html.ValidationSummary(true)
                                 <div class="form-group">
                                     <label for="checkout-company-name">
-                                        Họ và tên
-                                        <span class="text-muted"></span>
+                                        Họ và tên <span class="text-muted"></span>
                                     </label>
-                                    <input type="text" class="form-control" id="checkout-company-name">
+                                    
                                 </div>
 
                                 <div class="form-group">
                                     <label for="checkout-street-address">Địa chỉ</label>
-                                    <input type="text" class="form-control" id="checkout-street-address">
+                                    
                                 </div>
+
                                 <div class="form-group">
                                     <label for="checkout-city">Thành phố / TỈnh</label> <input type="text" class="form-control" id="checkout-city">
                                 </div>
+
                                 <div class="form-group">
                                     <label for="checkout-state">Quận / Huyện</label> <input type="text" class="form-control" id="checkout-state">
                                 </div>
+
                                 <div class="form-group">
                                     <label for="checkout-postcode">Phường / Xã</label> <input type="text" class="form-control" id="checkout-postcode">
                                 </div>
+
+
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="checkout-email">
@@ -62,19 +67,28 @@
                                         <input type="text" class="form-control" id="checkout-phone">
                                     </div>
                                 </div>
-                                
+
+
                             </div>
                             <div class="card-divider"></div>
                             <div class="card-body">
                                 <h3 class="card-title">Chi tiết giao hàng</h3>
+
                                 <div class="form-group">
                                     <label for="checkout-comment">
-                                        Ghi chú <span class="text-muted">(Optional)</span>
-                                    </label> <textarea id="checkout-comment" class="form-control" rows="4"></textarea>
+                                        Ghi chú
+
+                                    </label>
+                                    <textarea id="checkout-comment" class="form-control" rows="4"></textarea>
                                 </div>
+
                             </div>
                         </div>
                     </div>
+
+
+
+
                     <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
                         <div class="card mb-0">
                             <div class="card-body">
@@ -86,6 +100,7 @@
                                             <th>Tổng</th>
                                         </tr>
                                     </thead>
+
                                     <tbody class="checkout__totals-products">
                                         @foreach (var item in Model)
                                         {
@@ -96,21 +111,73 @@
                                         }
                                     </tbody>
 
+                                    <tbody class="checkout__totals-subtotals">
+
+                                        <tr>
+                                            <th>Khuyến mãi</th>
+                                            <td style="color:darkblue">@String.Format("{0:0,0}", @ViewBag.sDiviant) đ</td>
+                                        </tr>
+
+                                    </tbody>
+
                                     <tfoot class="checkout__totals-footer">
+
+
                                         <tr>
                                             <th>Tổng hóa đơn</th>
-                                            <td>@String.Format("{0:0,0}", @ViewBag.TongTien)</td>
+                                            <td>@String.Format("{0:0,0}", @ViewBag.TongTien) đ</td>
                                         </tr>
                                     </tfoot>
                                 </table>
-
-                                <input type="submit" value="Đặt Mua" class="btn btn-primary btn-xl btn-block">
+                                <div class="payment-methods">
+                                    <ul class="payment-methods__list">
+                                        <li class="payment-methods__item payment-methods__item--active">
+                                            <label class="payment-methods__item-header">
+                                                <span class="payment-methods__item-radio input-radio">
+                                                    <span class="input-radio__body">
+                                                        <input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked"> <span class="input-radio__circle"></span>
+                                                    </span>
+                                                </span><span class="payment-methods__item-title">
+                                                    Giao hàng thanh toán tiền mặt
+                                                </span>
+                                            </label>
+                                            <div class="payment-methods__item-container">
+                                                <div class="payment-methods__item-description text-muted">
+                                                    Make your
+                                                    payment directly into our bank account. Please use your Order ID
+                                                    as the payment reference. Your order will not be shipped until
+                                                    the funds have cleared in our account.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="payment-methods__item">
+                                            <label class="payment-methods__item-header">
+                                                <span class="payment-methods__item-radio input-radio">
+                                                    <span class="input-radio__body">
+                                                        <input class="input-radio__input" name="checkout_payment_method" type="radio"> <span class="input-radio__circle"></span>
+                                                    </span>
+                                                </span><span class="payment-methods__item-title">
+                                                    Chuyển khoản ngân hàng
+                                                </span>
+                                            </label>
+                                            <div class="payment-methods__item-container">
+                                                <div class="payment-methods__item-description text-muted">
+                                                    Please
+                                                    send a check to Store Name, Store Street, Store Town, Store
+                                                    State / County, Store Postcode.
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-xl btn-block">
+                                    Đặt mua
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    }
-
+    </div>
+}

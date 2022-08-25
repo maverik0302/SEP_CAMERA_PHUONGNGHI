@@ -684,6 +684,7 @@
     <Content Include="Content\fonts\stroyka\stroyka.svg" />
     <Content Include="Content\image\aboutus.jpg" />
     <Content Include="Content\image\arrow.png" />
+    <Content Include="Content\image\confirm_man.jpg" />
     <Content Include="Content\image\icon-zalo.png" />
     <Content Include="Content\image\ImgBanner\banner-2.jpg" />
     <Content Include="Content\image\ImgPost\p1.jpg" />
@@ -714,6 +715,7 @@
     <Content Include="Content\image\ImgProduct\ManKBV.jpg" />
     <Content Include="Content\image\ImgSlide\slide-1.jpg" />
     <Content Include="Content\image\Logo\CAMERA PHƯƠNG NGHI.png" />
+    <Content Include="Content\image\confirm-order.png" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\number.js" />
     <Content Include="Content\PagedList.css" />
@@ -982,12 +984,12 @@
     <Content Include="Views\GioHang\SuaGioHang.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
-    <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
     <Content Include="Views\User\Taikhoan.cshtml" />
     <Content Include="Views\User\Doimatkhau.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\History\History.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

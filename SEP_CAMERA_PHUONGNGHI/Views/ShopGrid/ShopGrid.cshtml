@@ -1,5 +1,7 @@
-﻿
-@model List<SEP_CAMERA_PHUONGNGHI.Models.tbProduct>
+﻿@using SEP_CAMERA_PHUONGNGHI.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<tbProduct>
+
 @{
     ViewBag.Title = "ShopGrid";
 }
@@ -30,10 +32,10 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
                                                     <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
                                                 </svg>
-                                            </button> 
+                                            </button>
                                             <button data-layout="list"
-                                                              data-with-features="false" title="List" type="button"
-                                                              class="layout-switcher__button">
+                                                    data-with-features="false" title="List" type="button"
+                                                    class="layout-switcher__button">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
                                                     <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
                                                 </svg>
@@ -42,95 +44,60 @@
                                     </div>
                                 </div>
                                 <div class="view-options__divider"></div>
-                                <div class="view-options__control">
-                                    <label for="">Sort By</label>
-                                    <div>
-                                        <select class="form-control form-control-sm" name="" id="">
-                                            <option value="">Default</option>
-                                            <option value="">Name (A-Z)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="view-options__control">
-                                    <label for="">Show</label>
-                                    <div>
-                                        <select class="form-control form-control-sm" name="" id="">
-                                            <option value="">12</option>
-                                            <option value="">24</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                
+                                
                             </div>
                         </div>
                         <div class="products-view__list products-list" data-layout="grid-4-full"
                              data-with-features="false">
                             <div class="products-list__body">
-                                @foreach (var item in Model) 
+                                @foreach (var item in Model)
                                 {
-                                <div class="products-list__item">
-                                    <div class="product-card">
-                                        <div class="product-card__image">
-                                            <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
-                                                <img src="~/Content/image/ImgProduct/@item.Thumnail" alt="Image">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
+                                    <div class="products-list__item">
+                                        <div class="product-card">
+                                            <div class="product-card__image">
                                                 <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
-                                                    @item.Name
+                                                    <img src="~/Content/image/ImgProduct/@item.Thumnail" alt="Image">
                                                 </a>
                                             </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
-                                            <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
-                                            <div class="product-card__buttons">
-                                                <button class="btn btn-primary product-card__addtocart"
-                                                        type="button">
-                                                    Thêm vào giỏ
-                                                </button>
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">
-                                                    Thêm vào giỏ
-                                                </button>
+                                            <div class="product-card__info">
+                                                <div class="product-card__name">
+                                                    <a href="~/ShopGrid/ProductDetail?id=@item.product_id">
+                                                        @item.Name
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-card__actions">
+                                                <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
+                                                <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
+                                                
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 }
                             </div>
                         </div>
+
                         <div class="products-view__pagination">
+                            Trang @(Model.PageCount < Model.PageNumber ? 0 :Model.PageNumber )/@Model.PageCount
+
                             <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link page-link--with-arrow"
-                                       href="#" aria-label="Previous">
-                                        <svg class="page-link__arrow page-link__arrow--left" aria-hidden="true"
-                                             width="8px" height="13px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">
-                                        1 <span class="sr-only">(current)</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link page-link--with-arrow" href="#"
-                                       aria-label="Next">
-                                        <svg class="page-link__arrow page-link__arrow--right"
-                                             aria-hidden="true" width="8px" height="13px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                            </ul>
+                                @*Create Link pagelist*@
+                                <div class="Menu_trang">
+                                <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("ShopGrid", new { page = page }))</li>
                         </div>
+                        @*<style>
+            .Menu_trang {
+                display: inline;
+            }
+        </style>*@
+                        </ul>
+                    </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
