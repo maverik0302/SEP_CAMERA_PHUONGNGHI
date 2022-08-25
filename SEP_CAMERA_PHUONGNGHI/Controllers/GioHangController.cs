@@ -171,11 +171,12 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
         #region Đặt Hàng    
         [HttpGet]
+
         public ActionResult DatHang()
         {
             if (Session["Account"] == null || Session["Account"].ToString() == "")
             {
-                return RedirectToAction("Login", "Auth", new {area = "Admin" });
+                return RedirectToAction("Login", "Auth", new { area = "Admin" });
             }
             if (Session["GioHang"] == null)
             {
@@ -183,20 +184,29 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             }
             //get cart
             List<GioHang> lstCart = LayGioHang();
+
+
             ViewBag.Total = Total();
             ViewBag.TongTien = TongTien();
             ViewBag.sDiviant = sDiviant();
             return View(lstCart);
         }
 
+        [HttpPost]            
+        
         public ActionResult DatHang(FormCollection f)
         {
+            CUSTOMER customer = new CUSTOMER();
+            db.CUSTOMERs.Add(customer);
+            db.SaveChanges();
+
             Oder donhang = new Oder();
-            Account customer = (Account)Session["Account"];
+            
             List<GioHang> lstCart = LayGioHang();
-            donhang.user_id = customer.user_id;
+            donhang.customer_id = customer.customer_id;
             donhang.orderdate = DateTime.Now;
             donhang.Delivered = false;
+            donhang.Status = true;
             donhang.total_price = TongTien();
             db.Oders.Add(donhang);
             db.SaveChanges();
