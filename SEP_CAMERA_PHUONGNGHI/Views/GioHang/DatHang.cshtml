@@ -86,6 +86,7 @@
                                             <th>Tổng</th>
                                         </tr>
                                     </thead>
+
                                     <tbody class="checkout__totals-products">
                                         @foreach (var item in Model)
                                         {
@@ -96,10 +97,21 @@
                                         }
                                     </tbody>
 
+                                    <tbody class="checkout__totals-subtotals">
+                                        
+                                        <tr>
+                                            <th>Khuyến mãi</th>
+                                            <td style="color:darkblue">@String.Format("{0:0,0}", @ViewBag.sDiviant) đ</td>
+                                        </tr>
+
+                                    </tbody>
+
                                     <tfoot class="checkout__totals-footer">
+                                        
+
                                         <tr>
                                             <th>Tổng hóa đơn</th>
-                                            <td>@String.Format("{0:0,0}", @ViewBag.TongTien)</td>
+                                            <td>@String.Format("{0:0,0}", @ViewBag.TongTien) đ</td>
                                         </tr>
                                     </tfoot>
                                 </table>

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SEP_CAMERA_PHUONGNGHI.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace SEP_CAMERA_PHUONGNGHI.Controllers
 {
@@ -13,43 +15,64 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
     {
         SEP25Team01Entities db = new SEP25Team01Entities();
         // GET: ShopGrid
-        public ActionResult ShopGrid()
+        public ActionResult ShopGrid(int? page)
         {
-            List<tbProduct> ketqua = db.tbProducts.ToList();
+            int pageSize = 9;
 
-            return View(ketqua);
+            int pageNumber = (page ?? 1);
+
+            return View(db.tbProducts.ToList().OrderBy(n => n.product_id).ToPagedList(pageNumber, pageSize));
         }
+
+
         public ActionResult ProductDetail(int id)
         {
             tbProduct detail = db.tbProducts.Find(id);
 
             return View(detail);
         }
-        public ActionResult Category(int id)
-        {
-            var lstProduct = db.tbProducts.Where(P => P.category_id == id).ToList();
 
-            return View("ShopGrid", lstProduct);
+
+        public ActionResult Category(int id, int? page)
+        {
+            int pageSize = 9;
+
+            int pageNumber = (page ?? 1);
+
+            return View("ShopGrid", db.tbProducts.ToList().Where(P => P.category_id == id).ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult Brand(int idbrand, int idcategory)
-        {
-            var lstBrand = db.tbProducts.Where(B => B.brand_id == idbrand && B.category_id == idcategory).ToList();
 
-            return View("ShopGrid", lstBrand);
+
+        public ActionResult Brand(int idbrand, int idcategory, int? page)
+        {
+            //var lstBrand = db.tbProducts.Where(B => B.brand_id == idbrand && B.category_id == idcategory).ToList();
+            int pageSize = 9;
+
+            int pageNumber = (page ?? 1);
+
+            return View("ShopGrid", db.tbProducts.ToList().Where(B => B.brand_id == idbrand && B.category_id == idcategory).ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult ProductCate(int id)
-        {
-            var lstProduct = db.tbProducts.Where(P => P.category_id == id).ToList();
 
-            return View("ShopGrid", lstProduct);
+
+        public ActionResult ProductCate(int id, int? page)
+        {
+            int pageSize = 9;
+
+            int pageNumber = (page ?? 1);
+
+            return View("ShopGrid", db.tbProducts.ToList().Where(P => P.category_id == id).ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult Cmtrate(int id)
-        {
-            var cmt = db.Cmts.Where(P => P.cmt_id == id).ToList();
 
-            return View("ShopGrid", cmt);
+
+        public ActionResult Cmtrate(int id, int? page)
+        {
+            int pageSize = 9;
+
+            int pageNumber = (page ?? 1);
+
+            return View("ShopGrid", db.Cmts.ToList().Where(P => P.cmt_id == id).ToPagedList(pageNumber, pageSize));
         }
 
         [HttpPost]

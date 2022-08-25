@@ -58,9 +58,13 @@
                                     @String.Format("{0:0,0}", item.ThanhTien)
                                 </td>
                                 <td class="cart-table__column cart-table__column--remove">
-                                    <input type="submit" value="Cập nhật" />
-                                    <br />
-                                    @Html.ActionLink("Xoá", "Xoagiohang", new { iMa = item.iMaProduct })
+                                    <div class="form-row">
+                                        <input class="btn btn-primary" type="submit" value="Cập nhật" />
+                                        <hr />
+                                        <button class="btn btn-danger" type="button" onclick="location.href='@Url.Action("Xoagiohang", "GioHang", new { iMa = item.iMaProduct })'">
+                                            Xoá
+                                        </button>
+                                    </div>
                                 </td>
                             }
                             </tr>

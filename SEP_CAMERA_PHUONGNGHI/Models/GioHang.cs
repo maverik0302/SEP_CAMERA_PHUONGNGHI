@@ -15,11 +15,19 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public string sName { get; set; }
         public string sThumbnail { get; set; }
         public int sPrice { get; set; }
+        public int sPricePromotion { get; set; }
         public int sAmount { get; set; }
+
+        public int deviant
+        {
+            get { return sPrice - sPricePromotion; }
+        }
         public int ThanhTien
         {
-            get { return sAmount * sPrice; }
+            get { return (sAmount * sPrice)- (sAmount * deviant); }
         }
+
+        
 
         
 
@@ -30,6 +38,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
             sName = prod.Name;
             sThumbnail = prod.Thumnail;
             sPrice = (int)prod.Price;
+            sPricePromotion = (int)prod.PromotionPrice;
             sAmount = 1;
 
         }

@@ -25,7 +25,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             if (ketQuaTK.Count == 0)
             {
                 ViewBag.Thongbao = "Không tìm thấy sản phẩm nào";
-                return View(db.tbProducts.OrderBy(x => x.Name).ToPagedList(pageNumber, pageSize));
+                return View(db.tbProducts.OrderBy(n => n.Name).ToPagedList(pageNumber, pageSize));
             }
             ViewBag.Thongbao = "Đã tìm thấy" + ketQuaTK.Count + "Kết quả";
             return View(ketQuaTK.OrderBy(x => x.Name).ToPagedList(pageNumber, pageSize));

@@ -135,11 +135,24 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             return dTongTien;
         }
 
+        private int sDiviant()
+        {
+            int km = 0;
+            List<GioHang> lstCart = Session["GioHang"] as List<GioHang>;
+            if (lstCart != null)
+            {
+                km = lstCart.Sum(n => n.deviant);
+            }
+            return km;
+
+        }
+
 
         public ActionResult GioHangPartial()
         {
-
+            
             ViewBag.Total = Total();
+            ViewBag.TongTien = TongTien();
             return PartialView();
 
         }
@@ -172,6 +185,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             List<GioHang> lstCart = LayGioHang();
             ViewBag.Total = Total();
             ViewBag.TongTien = TongTien();
+            ViewBag.sDiviant = sDiviant();
             return View(lstCart);
         }
 
