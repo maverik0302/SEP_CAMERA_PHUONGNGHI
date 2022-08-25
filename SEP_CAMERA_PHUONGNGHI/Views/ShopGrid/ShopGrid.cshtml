@@ -6,6 +6,25 @@
     ViewBag.Title = "ShopGrid";
 }
 
+
+<div class="page-header__container container">
+    <div class="page-header__breadcrumb">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="@Url.Action("Index", "Home")">Trang Chủ</a>
+                    <svg class="breadcrumb-arrow"
+                         width="6px" height="9px">
+                        <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                    </svg>
+                </li>
+
+                <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
 <div class="site__body">
     <div class="page-header">
         <div class="page-header__container container">
@@ -44,8 +63,8 @@
                                     </div>
                                 </div>
                                 <div class="view-options__divider"></div>
-                                
-                                
+
+
                             </div>
                         </div>
                         <div class="products-view__list products-list" data-layout="grid-4-full"
@@ -70,7 +89,7 @@
                                             <div class="product-card__actions">
                                                 <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
                                                 <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -87,17 +106,17 @@
                                 <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("ShopGrid", new { page = page }))</li>
                         </div>
                         @*<style>
-            .Menu_trang {
-                display: inline;
-            }
-        </style>*@
+                                .Menu_trang {
+                                    display: inline;
+                                }
+                            </style>*@
                         </ul>
                     </div>
 
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
