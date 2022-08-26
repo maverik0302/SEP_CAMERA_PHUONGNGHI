@@ -197,6 +197,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         public ActionResult DatHang(FormCollection f)
         {
             CUSTOMER customer = new CUSTOMER();
+            
             db.CUSTOMERs.Add(customer);
             db.SaveChanges();
 
@@ -222,6 +223,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             Session["GioHang"] = null;
             return RedirectToAction("XacNhanDonHang", "GioHang");
         }
+
+
         public ActionResult XacNhanDonHang()
         {
             return View();
