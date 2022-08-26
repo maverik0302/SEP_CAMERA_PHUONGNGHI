@@ -67,39 +67,59 @@
                                     </div>
                                 </td>
                             }
-                            </tr>
+                        </tr>
                     </tbody>
                 }
             </table>
-
-            <div class="cart__actions">
-                <div class="cart__buttons">
-                    <a href="~/Checkout/Checkout" class="btn btn-primary cart__update-button">Cập nhật giỏ hàng</a>
-                </div>
-            </div>
-
-
-            <div class="row justify-content-end pt-5">
+            @*<div class="row justify-content-end pt-5">
                 <div class="col-12 col-md-7 col-lg-6 col-xl-5">
                     <div class="card">
                         <div class="card-body">
-                            <tfoot class="cart__totals-footer">
-                                <tr>
-                                    <th>Tổng: @ViewBag.TongTien</th>
-                                    <td>đ</td>
-                                </tr>
-                            </tfoot>
+                            <h3 class="card-title">Tổng giỏ hàng</h3>
+                            <table class="cart__totals">
+
+                                <tfoot class="cart__totals-footer">
+                                    <tr>
+                                        <th>Tổng:</th>
+                                        <td>@String.Format("{0:0,0}", @ViewBag.TongTien)</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <a class="btn btn-primary btn-xl btn-block cart__checkout-button"
+                               href="@Url.Action("DatHang", "GioHang")">
+                                Đặt Hàng
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>*@
+
+
+            @*<div class="row justify-content-end pt-5">
+            <div class="col-12 col-md-7 col-lg-6 col-xl-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Tổng giỏ hàng</h3>
+                        <table class="cart__totals">
+
+                            <tfoot class="cart__totals-footer">
+                                <tr>
+                                    <th>Tổng:</th>
+                                    <td>@String.Format("{0:0,0}", @ViewBag.TongTien)</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
+        </div>*@
 
             <div class="cart__actions">
                 <div class="cart__buttons">
-                    <a href="~/Home/Index" class="btn btn-light">Tiếp tục mua sắm</a> <a href="~/Checkout/Checkout" class="btn btn-primary cart__update-button">Thanh toán</a>
+                    <a href="~/Home/Index" class="btn btn-light">Tiếp tục mua sắm</a> <a href="@Url.Action("DatHang", "GioHang")" class="btn btn-primary cart__update-button">Thanh toán</a>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+                    </div>
+                </div>
 
