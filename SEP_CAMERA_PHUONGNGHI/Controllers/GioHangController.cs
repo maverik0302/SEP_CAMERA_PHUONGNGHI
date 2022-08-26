@@ -198,7 +198,15 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         public ActionResult DatHang(FormCollection f)
         {
             CUSTOMER customer = new CUSTOMER();
-            
+            customer.Name = hovaten;
+            customer.Address = diachi;
+            customer.City = tinhtp;
+            customer.District = quanhhuyen;
+            customer.Ward = phuongxa;
+            customer.email = email;
+            customer.Phone = sdt;
+            customer.Note = ghichu;
+
             db.CUSTOMERs.Add(customer);
             db.SaveChanges();
 
