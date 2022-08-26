@@ -12,11 +12,14 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
 
     public partial class Account
     {
         public int user_id { get; set; }
         public string Username { get; set; }
+        [StringLength(20, MinimumLength = 6)]
         public string Password { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
