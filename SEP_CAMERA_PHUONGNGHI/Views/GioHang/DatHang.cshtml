@@ -32,8 +32,8 @@
                                 @Html.ValidationSummary(true)
                                 <div class="form-group">
                                     <label for="checkout-company-name">
-                                        Họ và tên<br />
-                                        <span>@Session["user-lname"] @Session["user-fname"]</span>
+                                        <label for="checkout-city">Họ và tên</label> <input name="hovaten" type="text" class="form-control" id="checkout-city">
+
                                     </label>
 
                                 </div>
@@ -44,15 +44,15 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="checkout-city">Thành phố / TỈnh</label> <input type="text" class="form-control" id="checkout-city">
+                                    <label for="checkout-city">Tỉnh / Thành phố</label> <input name="tinhtp" type="text" class="form-control" id="checkout-city">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="checkout-state">Quận / Huyện</label> <input type="text" class="form-control" id="checkout-state">
+                                    <label for="checkout-state">Quận / Huyện</label> <input name="quanhhuyen" type="text" class="form-control" id="checkout-state">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="checkout-postcode">Phường / Xã</label> <input type="text" class="form-control" id="checkout-postcode">
+                                    <label for="checkout-postcode">Phường / Xã</label> <input name="phuongxa" type="text" class="form-control" id="checkout-postcode">
                                 </div>
 
 
@@ -60,12 +60,12 @@
                                     <div class="form-group col-md-6">
                                         <label for="checkout-email">
                                             Email
-                                        </label> <input type="email" class="form-control"
+                                        </label> <input name="email" type="email" class="form-control"
                                                         id="checkout-email">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="checkout-phone">Số điện thoại</label>
-                                        <input type="text" class="form-control" id="checkout-phone">
+                                        <input name="sdt" type="number" class="form-control" id="checkout-phone">
                                     </div>
                                 </div>
 
@@ -78,9 +78,8 @@
                                 <div class="form-group">
                                     <label for="checkout-comment">
                                         Ghi chú
-
                                     </label>
-                                    <textarea id="checkout-comment" class="form-control" rows="4"></textarea>
+                                    <textarea name="ghichu" id="checkout-comment" class="form-control" rows="4"></textarea>
                                 </div>
 
                             </div>

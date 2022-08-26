@@ -1,81 +1,60 @@
-﻿@model SEP_CAMERA_PHUONGNGHI.Models.Oder
+﻿@model IEnumerable<SEP_CAMERA_PHUONGNGHI.Models.OrderDetail>
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
 }
 
+<h2>Details</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.price_product)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_price_product)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Oder.order_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbProduct.Name)
+        </th>
+        <th></th>
+    </tr>
 
-<div class="page-inner">
-    <div class="page-header">
-        <Strong class="page-title">QUẢN LÍ ĐƠN HÀNG</Strong>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <strong>Mô tả đơn hàng</strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.price_product)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_price_product)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Oder.order_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbProduct.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.detail_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.detail_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.detail_id })
+        </td>
+    </tr>
+}
 
-                    <dl class="dl-horizontal">
-                        <dt>
-                            <strong>
-                                Ngày đặt hàng
-                            </strong>
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.orderdate)
-                        </dd>
-
-                        <dt>
-                            <strong>
-                                Trạng thái
-                            </strong>
-
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Status)
-                        </dd>
-
-                    
-                        <dt>
-                            <strong>
-                                Tổng giá trị
-                            </strong>
-
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.total_price)
-                        </dd>
-
-                        <dt>
-                            <strong>
-                                Tên khách hàng
-                            </strong>
-
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.CUSTOMER.Name)
-                        </dd>
-
-                    </dl>
-                </div>
-
-                <div class="card-action">
-                    <a style="font-size:16px" href="@Url.Action("Index")">Quay lại</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
+</table>

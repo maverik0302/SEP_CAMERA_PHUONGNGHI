@@ -193,9 +193,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             return View(lstCart);
         }
 
-        [HttpPost]            
-        
-        public ActionResult DatHang(FormCollection f)
+        [HttpPost]
+        public ActionResult DatHang(string hovaten, string diachi, string tinhtp, string quanhhuyen, string phuongxa, string email, int sdt, string ghichu)
         {
             CUSTOMER customer = new CUSTOMER();
             customer.Name = hovaten;
@@ -223,9 +222,20 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             foreach (var item in lstCart)
             {
                 OrderDetail detail = new OrderDetail();
+                detail.order_id = donhang.order_id;
+                if(item.sPricePromotion > 0 )
+                {
+                    detail.price_product = (int)item.sPricePromotion;
+                    detail.total_price_product = (item.sAmount * (int)item.sPricePromotion);
+
+                }
+                else
+                {
+                    detail.price_product = (int)item.sPrice;
+                    detail.total_price_product = (item.sAmount * (int)item.sPrice);
+                }
                 detail.product_id = item.iMaProduct;
                 detail.num = item.sAmount;
-                detail.price_product = (int)item.sPrice;
                 db.OrderDetails.Add(detail);
             }
             db.SaveChanges();

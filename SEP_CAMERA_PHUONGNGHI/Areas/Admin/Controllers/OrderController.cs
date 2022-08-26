@@ -28,7 +28,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Oder oder = db.Oders.Find(id);
+            var oder = db.OrderDetails.Where(o => o.order_id == id).ToList();
             if (oder == null)
             {
                 return HttpNotFound();
