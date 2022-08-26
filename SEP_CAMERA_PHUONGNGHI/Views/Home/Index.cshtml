@@ -16,32 +16,63 @@
         <div class="row">
             <div class="col-12 col-lg-9 offset-lg-3">
                 <div class="block-slideshow__body">
-                    <div class="owl-carousel">
-                        @foreach (var item in slide)
-                        {
-                            <a class="block-slideshow__slide" href="#">
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop"
-                                     style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')">
+                    <div class="owl-carousel owl-loaded owl-drag">
+                        <div class="slick-slider slick-initialized">
+                            <div class="slick-list">
 
-                                </div>
+                                @*@foreach (var item in product)
+                                {
+                                    <a class="block-slideshow__slide" href="#">
+                                        <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop"
+                                             style="background-image: url('@Url.Content("~/Content/image/ImgProduct/" + item.Thumnail)')">
 
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile"
-                                     style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')">
-                                </div>
+                                        </div>
 
-                                <div class="block-slideshow__slide-content">
-                                    <div class="block-slideshow__slide-title ">
-                                        @item.TitleSlide
+                                        <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile"
+                                             style="background-image: url('@Url.Content("~/Content/image/ImgProduct/" + item.Thumnail)')">
+                                        </div>
+
+                                        <div class="block-slideshow__slide-content">
+                                            <div class="block-slideshow__slide-title ">
+                                                @item.SeoTitle
+                                            </div>
+                                            <div class="block-slideshow__slide-text">
+                                                @item.Desciption
+                                            </div>
+                                            <div class="block-slideshow__slide-button">
+                                                <span class="btn btn-primary btn-lg">@item.Name</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                }*@
+                            </div>
+                        </div>
+                        @*@foreach (var item in slide)
+                            {
+                                <a class="block-slideshow__slide" href="#">
+                                    <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop"
+                                         style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')">
+
                                     </div>
-                                    <div class="block-slideshow__slide-text">
-                                        @item.DescriptionSlide
+
+                                    <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile"
+                                         style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')">
                                     </div>
-                                    <div class="block-slideshow__slide-button">
-                                        <span class="btn btn-primary btn-lg">@item.Name</span>
+
+                                    <div class="block-slideshow__slide-content">
+                                        <div class="block-slideshow__slide-title ">
+                                            @item.TitleSlide
+                                        </div>
+                                        <div class="block-slideshow__slide-text">
+                                            @item.DescriptionSlide
+                                        </div>
+                                        <div class="block-slideshow__slide-button">
+                                            <span class="btn btn-primary btn-lg">@item.Name</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        }
+                                </a>
+                            }*@
+
                     </div>
                 </div>
             </div>
@@ -57,7 +88,7 @@
         <div class="block-features__list">
             <div class="block-features__item">
                 <div class="block-features__content">
-                    <div class="block-features__title">Miễn phí vẫn chuyển</div>
+                    <div class="block-features__title">Miễn phí vận chuyển</div>
                     <div class="block-features__subtitle">Đơn hàng từ 100,000 đ</div>
                 </div>
             </div>
@@ -93,17 +124,7 @@
             <h3 class="block-header__title">Sản phẩm</h3>
             <div class="block-header__divider"></div>
             <div class="block-header__arrows-list">
-                <button class="block-header__arrow block-header__arrow--left" type="button">
-                    <svg width="7px"
-                         height="11px">
-                        <use xlink:href="images/sprite.svg#arrow-rounded-left-7x11"></use>
-                    </svg>
-                </button> <button class="block-header__arrow block-header__arrow--right"
-                                  type="button">
-                    <svg width="7px" height="11px">
-                        <use xlink:href="images/sprite.svg#arrow-rounded-right-7x11"></use>
-                    </svg>
-                </button>
+                <a href="@Url.Action("ShopGrid", "ShopGrid")">Xem tất cả</a>
             </div>
         </div>
         <div class="block-products-carousel__slider">
@@ -129,11 +150,6 @@
                                 <div class="product-card__actions">
                                     <div class="product-card__prices">@String.Format("{0:0,0}", item.PromotionPrice) đ</div>
                                     <span class="product-card__old-price">@String.Format("{0:0,0}", item.Price) đ</span>
-                                    <div class="product-card__buttons">
-                                        <button class="btn btn-primary product-card__addtocart" type="button">
-                                            Thêm vào giỏ
-                                        </button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -150,15 +166,8 @@
             <h3 class="block-header__title">Bài viết</h3>
             <div class="block-header__divider"></div>
             <div class="block-header__arrows-list">
-                <button class="block-header__arrow block-header__arrow--left" type="button">
-                    <svg width="7px" height="11px">
-                        <use xlink:href="images/sprite.svg#arrow-rounded-left-7x11"></use>
-                    </svg>
-                </button> <button class="block-header__arrow block-header__arrow--right" type="button">
-                    <svg width="7px" height="11px">
-                        <use xlink:href="images/sprite.svg#arrow-rounded-right-7x11"></use>
-                    </svg>
-                </button>
+                <a href="@Url.Action("Blog", "Blog")">Xem tất cả</a>
+
             </div>
         </div>
         <div class="block-posts__slider">
@@ -188,11 +197,6 @@
                         }
                     </div>
                 </div>
-                <div class="owl-nav disabled">
-                    <button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button>
-                    <button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
-                </div>
-                <div class="owl-dots disabled"></div>
             </div>
         </div>
     </div><!-- .block-posts / end -->

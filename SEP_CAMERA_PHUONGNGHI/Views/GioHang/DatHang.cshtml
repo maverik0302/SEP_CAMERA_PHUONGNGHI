@@ -32,7 +32,8 @@
                                 @Html.ValidationSummary(true)
                                 <div class="form-group">
                                     <label for="checkout-company-name">
-                                        Họ và tên <span class="text-muted"></span>
+                                        Họ và tên<br />
+                                        <span>@Session["user-lname"] @Session["user-fname"]</span>
                                     </label>
                                     
                                 </div>

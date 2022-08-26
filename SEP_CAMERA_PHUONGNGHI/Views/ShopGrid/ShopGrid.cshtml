@@ -98,25 +98,22 @@
                         </div>
 
                         <div class="products-view__pagination">
-                            Trang @(Model.PageCount < Model.PageNumber ? 0 :Model.PageNumber )/@Model.PageCount
+                            <div>Trang @(Model.PageCount < Model.PageNumber ? 0 :Model.PageNumber )/@Model.PageCount</div>
+                            <div>
+                                <ul class="pagination justify-content-center">
+                                    @*Create Link pagelist*@
+                                    <div class="Menu_trang">
+                                    <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("ShopGrid", new { page = page })) </li>
 
-                            <ul class="pagination justify-content-center">
-                                @*Create Link pagelist*@
-                                <div class="Menu_trang">
-                                <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("ShopGrid", new { page = page }))</li>
+                                </ul>
+                            </div>
+
                         </div>
-                        @*<style>
-                                .Menu_trang {
-                                    display: inline;
-                                }
-                            </style>*@
-                        </ul>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 

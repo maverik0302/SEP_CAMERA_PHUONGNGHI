@@ -5,40 +5,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="page-header__container container">
-    <div class="page-header__breadcrumb">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="@Url.Action("Index", "Home")">Trang Chủ</a>
-                    <svg class="breadcrumb-arrow"
-                         width="6px" height="9px">
-                        <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
-                        <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
-                    </svg>
-                </li>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <li class="breadcrumb-item active" aria-current="page">Đăng Ký</li>
-            </ol>
-        </nav>
+
+    <div class="page-header__container container">
+        <div class="page-header__breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="@Url.Action("Index", "Home")">Trang Chủ</a>
+                        <svg class="breadcrumb-arrow"
+                             width="6px" height="9px">
+                            <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                            <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                        </svg>
+                    </li>
+
+                    <li class="breadcrumb-item active" aria-current="page">Đăng Ký</li>
+                </ol>
+            </nav>
+        </div>
     </div>
-</div>
 
-<br />
-<div style="margin-left: 300px">
+    <br />
+    <div style="margin-left: 300px">
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <div class="col-md-6">
+        <div class="form-horizontal">
+            <div class="col-md-6">
 
-            <h4>Đăng Ký</h4>
-            <hr />
+                <h1>Đăng ký tài khoản</h1>
+                <hr />
             </div>
 
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="col-md-6">
 
                 <div class="form-group">
@@ -50,18 +52,19 @@
                 <div class="form-group">
                     <label>Họ</label>
 
-                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-                    <span id="ErrorFirstName" style="color:firebrick"></span>
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    <span id="ErrorLastName" style="color:firebrick"></span>
 
                 </div>
 
                 <div class="form-group">
                     <label>Tên</label>
 
-                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                    <span id="ErrorLastName" style="color:firebrick"></span>
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    <span id="ErrorFirstName" style="color:firebrick"></span>
+
 
                 </div>
 
@@ -89,44 +92,12 @@
 
 
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-6">
-                        <input id="btnSubmit" type="submit" value="Đăng Ký" class="btn btn-primary" />
+                    <div style="padding-left: 250px" class="col-md-offset-2 col-md-6">
+                        <input id="btnSubmit" type="submit" value="Đăng ký" class="btn btn-primary" />
                     </div>
                 </div>
             </div>
         </div>
-        }
     </div>
-
-<script type="text/javascript">
-    $('#btnSubmit').click(function () {
-        var loi = 0;
-        if ($('#FirstName').val() == "") {
-            $('#ErrorFirstName').text('Vui lòng nhập tên');
-            loi++;
-        } else {
-            $('#ErrorFirstName').text('');
-        }
-
-        if ($('#LastName').val() == "") {
-            $('#ErrorLastName').text('Vui lòng nhập Họ');
-            loi++;
-        }
-        else {
-            $('#ErrorLastName').text('');
-        }
-
-        if ($('#Password').val() == "") {
-            $('#ErrorPassword').text('Vui lòng nhập mật khẩu');
-            loi++;
-        }
-        else {
-            $('#ErrorPassword').text('');
-        }
-
-        if (loi != 0) {
-            return false;
-        } return true;
-
-    });
-</script>
+}
+ 
