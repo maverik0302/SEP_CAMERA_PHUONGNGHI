@@ -21,7 +21,9 @@
                         {
                             <a class="block-slideshow__slide" href="#">
                                 <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop"
-                                     style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')"></div>
+                                     style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')">
+
+                                </div>
 
                                 <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile"
                                      style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')">
@@ -142,23 +144,6 @@
     </div>
 </div>
 
-<!-- .block-banner -->
-<div class="block block-banner">
-    <div class="container">
-        
-        <a href="#" class="block-banner__body">
-            <div class="block-banner__image block-banner__image--desktop"
-                 style=" background-image: url('../../content/image/imgbanner/banner-2.jpg'); "></div>
-            <div class="block-banner__image block-banner__image--mobile"
-                 style=" background-image: url('../../content/image/imgbanner/banner-2.jpg'); "></div>
-            <div class="block-banner__title">Chào mừng đến với camera Phương Nghi<br class="block-banner__mobile-br">Hand Tools</div>
-            <div class="block-banner__text">Camera, đầu ghi hình, phụ kiện</div>
-            <div class="block-banner__button"><span class="btn btn-sm btn-primary">Mua Sắm Ngay</span></div>
-        </a>
-    </div>
-</div>
-<!-- .block-banner / end -->
-
 <div class="block block-posts block-posts--layout--list-sm" data-layout="list-sm">
     <div class="container">
         <div class="block-header">
@@ -214,61 +199,61 @@
 </div>
 
 
-<div class="block block--highlighted block-categories block-categories--layout--classic">
-    <div class="container">
-        <div class="block-header">
-            <h3 class="block-header__title">Popular Categories</h3>
-            <div class="block-header__divider"></div>
-        </div>
-        <div class="block-categories__list">
-            @foreach(var item in category) {
-            <div class="block-categories__item category-card category-card--layout--classic">
-                <div class="category-card__body">
-                    <div class="category-card__image">
-                        <a href="#">
-                            <img src="images/categories/category-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="category-card__content">
-                        <div class="category-card__name"><a href="#">@item.Name</a></div>
-                        
-                        <div class="category-card__all"><a href="#">Show All</a></div>
-                        <div class="category-card__products">134 Products</div>
-                    </div>
-                </div>
+@*<div class="block block--highlighted block-categories block-categories--layout--classic">
+        <div class="container">
+            <div class="block-header">
+                <h3 class="block-header__title">Popular Categories</h3>
+                <div class="block-header__divider"></div>
             </div>
-            }
-     
-        </div>
-    </div>
-</div>
+            <div class="block-categories__list">
+                @foreach(var item in category) {
+                <div class="block-categories__item category-card category-card--layout--classic">
+                    <div class="category-card__body">
+                        <div class="category-card__image">
+                            <a href="#">
+                                <img src="images/categories/category-2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="category-card__content">
+                            <div class="category-card__name"><a href="#">@item.Name</a></div>
 
-<div class="block block-brands">
-    <div class="container">
-        <div class="block-brands__slider">
-            <div class="owl-carousel">
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-1.png" alt=""></a>
+                            <div class="category-card__all"><a href="#">Show All</a></div>
+                            <div class="category-card__products">134 Products</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-2.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-3.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-4.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-5.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-6.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-7.png" alt=""></a>
+                }
+
+            </div>
+        </div>
+    </div>*@
+
+@*<div class="block block-brands">
+        <div class="container">
+            <div class="block-brands__slider">
+                <div class="owl-carousel">
+                    <div class="block-brands__item">
+                        <a href="#"><img src="images/logos/logo-1.png" alt=""></a>
+                    </div>
+                    <div class="block-brands__item">
+                        <a href="#"><img src="images/logos/logo-2.png" alt=""></a>
+                    </div>
+                    <div class="block-brands__item">
+                        <a href="#"><img src="images/logos/logo-3.png" alt=""></a>
+                    </div>
+                    <div class="block-brands__item">
+                        <a href="#"><img src="images/logos/logo-4.png" alt=""></a>
+                    </div>
+                    <div class="block-brands__item">
+                        <a href="#"><img src="images/logos/logo-5.png" alt=""></a>
+                    </div>
+                    <div class="block-brands__item">
+                        <a href="#"><img src="images/logos/logo-6.png" alt=""></a>
+                    </div>
+                    <div class="block-brands__item">
+                        <a href="#"><img src="images/logos/logo-7.png" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div>*@
