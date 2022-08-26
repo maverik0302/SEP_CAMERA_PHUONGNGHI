@@ -8818,6 +8818,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     font-size: 17px;
     line-height: 24px;
     font-weight: 700
+    
 }
 
 .block-features__subtitle {
@@ -10838,4 +10839,15 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     background-position: bottom;
     height: 500px
 }
+
+
+.brand-title {
+    color: dodgerblue
+}
+
+
+.cover-cs {
+    background: dodgerblue;
+}
+
 

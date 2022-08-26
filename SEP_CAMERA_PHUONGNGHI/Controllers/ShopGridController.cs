@@ -17,7 +17,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         // GET: ShopGrid
         public ActionResult ShopGrid(int? page)
         {
-            int pageSize = 9;
+            int pageSize = 12;
 
             int pageNumber = (page ?? 1);
 
@@ -35,11 +35,20 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
         public ActionResult Category(int id, int? page)
         {
-            int pageSize = 9;
+            int pageSize = 12;
 
             int pageNumber = (page ?? 1);
 
             return View("ShopGrid", db.tbProducts.ToList().Where(P => P.category_id == id).ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult ThuongHieu(int id, int? page)
+        {
+            int pageSize = 12;
+
+            int pageNumber = (page ?? 1);
+
+            return View("ShopGrid", db.tbProducts.ToList().Where(P => P.brand_id == id).ToPagedList(pageNumber, pageSize));
         }
 
 
@@ -47,7 +56,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         public ActionResult Brand(int idbrand, int idcategory, int? page)
         {
             //var lstBrand = db.tbProducts.Where(B => B.brand_id == idbrand && B.category_id == idcategory).ToList();
-            int pageSize = 9;
+            int pageSize = 12;
 
             int pageNumber = (page ?? 1);
 
@@ -58,7 +67,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
         public ActionResult ProductCate(int id, int? page)
         {
-            int pageSize = 9;
+            int pageSize = 12;
 
             int pageNumber = (page ?? 1);
 
@@ -68,7 +77,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
 
         public ActionResult Cmtrate(int id, int? page)
         {
-            int pageSize = 9;
+            int pageSize = 12;
 
             int pageNumber = (page ?? 1);
 

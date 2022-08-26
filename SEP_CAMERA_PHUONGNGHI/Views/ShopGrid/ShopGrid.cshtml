@@ -102,8 +102,9 @@
 
                             <ul class="pagination justify-content-center">
                                 @*Create Link pagelist*@
-                                <div class="Menu_trang">
-                                <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("ShopGrid", new { page = page }))</li>
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("ShopGrid", new { page = page }))</li>
+                                </ul>
                         </div>
                         @*<style>
                                 .Menu_trang {

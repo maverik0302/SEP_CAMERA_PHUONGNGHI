@@ -22,9 +22,9 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             }
             return lstCart;
         }
-
+        [HttpPost]
         //add cart
-        public ActionResult ThemGioHang(int iMaProduct, string strUrl)
+        public ActionResult ThemGioHang(int iMaProduct, string strUrl, FormCollection f)
         {
             tbProduct prod = db.tbProducts.SingleOrDefault(n => n.product_id == iMaProduct);
             if (prod == null)
@@ -38,13 +38,15 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
             if (sp == null)
             {
                 sp = new GioHang(iMaProduct);
+                
                 //add sản phẩm
                 lstCart.Add(sp);
                 return Redirect(strUrl);
             }
             else
             {
-                sp.sAmount++;
+                int sl = int.Parse(f["product_amout"].ToString());
+                sp.sAmount = sl;
                 return Redirect(strUrl);
             }
         }
@@ -197,6 +199,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         public ActionResult DatHang(FormCollection f)
         {
             CUSTOMER customer = new CUSTOMER();
+            customer.Name = f["customer_name"].ToString();
             db.CUSTOMERs.Add(customer);
             db.SaveChanges();
 

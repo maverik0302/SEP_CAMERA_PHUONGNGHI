@@ -1,10 +1,10 @@
 ﻿@using SEP_CAMERA_PHUONGNGHI.Models
-
 @{SEP25Team01Entities db = new SEP25Team01Entities();
     var category = db.Categories.ToList();
     var post = db.Posts.ToList();
     var slide = db.Slides.ToList();
     var product = db.tbProducts.ToList();
+    var brand = db.Brands.ToList();
     ViewBag.Title = "Home Page";
 
 }
@@ -19,6 +19,7 @@
                     <div class="owl-carousel">
                         @foreach (var item in slide)
                         {
+
                             <a class="block-slideshow__slide" href="#">
                                 <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop"
                                      style="background-image: url('@Url.Content("~/Content/image/ImgSlide/" + item.Image)')"></div>
@@ -52,32 +53,32 @@
 
 <div class="block block-features block-features--layout--classic">
     <div class="container">
-        <div class="block-features__list">
-            <div class="block-features__item">
+        <div class="block-features__list cover-cs">
+            <div class="block-features__item cover">
                 <div class="block-features__content">
-                    <div class="block-features__title">Miễn phí vẫn chuyển</div>
-                    <div class="block-features__subtitle">Đơn hàng từ 100,000 đ</div>
+                    <div class="block-features__title" style="color:snow">Miễn phí vẫn chuyển</div>
+                    <div class="block-features__subtitle" style="color:snow">Đơn hàng từ 100,000 đ</div>
                 </div>
             </div>
             <div class="block-features__divider"></div>
             <div class="block-features__item">
                 <div class="block-features__content">
-                    <div class="block-features__title">Hỗ trợ 24/7</div>
-                    <div class="block-features__subtitle">Chúng tôi luôn bên bạn mọi lúc</div>
+                    <div class="block-features__title" style="color:snow">Hỗ trợ 24/7</div>
+                    <div class="block-features__subtitle" style="color:snow">Chúng tôi luôn bên bạn mọi lúc</div>
                 </div>
             </div>
             <div class="block-features__divider"></div>
             <div class="block-features__item">
                 <div class="block-features__content">
-                    <div class="block-features__title">100% An toàn</div>
-                    <div class="block-features__subtitle">Bảo mật tốt nhất cho bạn</div>
+                    <div class="block-features__title" style="color:snow">100% An toàn</div>
+                    <div class="block-features__subtitle" style="color:snow">Bảo mật tốt nhất cho bạn</div>
                 </div>
             </div>
             <div class="block-features__divider"></div>
             <div class="block-features__item">
                 <div class="block-features__content">
-                    <div class="block-features__title">Lắp Đặt Chuyên Nghiệp</div>
-                    <div class="block-features__subtitle">Đội ngũ lắp đặt, tư vấn kỹ thuật giàu kinh nghiệm</div>
+                    <div class="block-features__title" style="color:snow">Lắp Đặt Chuyên Nghiệp</div>
+                    <div class="block-features__subtitle" style="color:snow">Đội ngũ lắp đặt, tư vấn kỹ thuật giàu kinh nghiệm</div>
                 </div>
             </div>
         </div>
@@ -151,8 +152,8 @@
                  style=" background-image: url('../../content/image/imgbanner/banner-2.jpg'); "></div>
             <div class="block-banner__image block-banner__image--mobile"
                  style=" background-image: url('../../content/image/imgbanner/banner-2.jpg'); "></div>
-            <div class="block-banner__title">Chào mừng đến với camera Phương Nghi<br class="block-banner__mobile-br">Hand Tools</div>
-            <div class="block-banner__text">Camera, đầu ghi hình, phụ kiện</div>
+            <div class="block-banner__title" style="color:aliceblue">Chào mừng đến với camera Phương Nghi<br class="block-banner__mobile-br"></div>
+            <div class="block-banner__text" style="color:aliceblue">Camera, đầu ghi hình, phụ kiện</div>
             <div class="block-banner__button"><span class="btn btn-sm btn-primary">Mua Sắm Ngay</span></div>
         </a>
     </div>
@@ -213,11 +214,30 @@
     </div><!-- .block-posts / end -->
 </div>
 
+<div class="block block-brands">
+    <div class="container">
+        <div class="block-brands__slider">
+            <div class="owl-carousel">
+                @foreach (var item in brand)
+                {
+                    <div class="block-brands__item">
+                       
+                        <h2 style="color:dodgerblue">
+                            <a href="@Url.Action("ThuongHieu", "ShopGrid", new { id = item.brand_id})">
+                                @item.Name
+                            </a>
+                        </h2>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="block block--highlighted block-categories block-categories--layout--classic">
     <div class="container">
         <div class="block-header">
-            <h3 class="block-header__title">Popular Categories</h3>
+            <h3 class="block-header__title">Danh mục tiêu biểu</h3>
             <div class="block-header__divider"></div>
         </div>
         <div class="block-categories__list">
@@ -226,13 +246,14 @@
                 <div class="category-card__body">
                     <div class="category-card__image">
                         <a href="#">
-                            <img src="images/categories/category-2.jpg" alt="">
+
+                            <img src="~/Content/image/Logo/2934068.png" />
                         </a>
                     </div>
                     <div class="category-card__content">
-                        <div class="category-card__name"><a href="#">@item.Name</a></div>
+                        <div class="category-card__name"><a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">@item.Name</a></div>
                         
-                        <div class="category-card__all"><a href="#">Show All</a></div>
+                        <div class="category-card__all"><a href="@Url.Action("Category", "ShopGrid", new {id = item.category_id})">Xem ngay</a></div>
                         <div class="category-card__products">134 Products</div>
                     </div>
                 </div>
@@ -243,32 +264,5 @@
     </div>
 </div>
 
-<div class="block block-brands">
-    <div class="container">
-        <div class="block-brands__slider">
-            <div class="owl-carousel">
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-1.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-2.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-3.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-4.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-5.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-6.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href="#"><img src="images/logos/logo-7.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+          

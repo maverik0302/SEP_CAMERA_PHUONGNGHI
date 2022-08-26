@@ -18,6 +18,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         public int sPricePromotion { get; set; }
         public int sAmount { get; set; }
 
+        
+
         public int deviant
         {
             get { return sPrice - sPricePromotion; }
@@ -27,9 +29,8 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
             get { return (sAmount * sPrice)- (sAmount * deviant); }
         }
 
-        
 
-        
+
 
         public GioHang(int MaProduct)
         {
@@ -43,5 +44,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 
         }
 
+       
     }
 }

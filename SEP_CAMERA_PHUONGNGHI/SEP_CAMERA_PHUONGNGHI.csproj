@@ -714,6 +714,7 @@
     <Content Include="Content\image\ImgProduct\KBV6.jpg" />
     <Content Include="Content\image\ImgProduct\ManKBV.jpg" />
     <Content Include="Content\image\ImgSlide\slide-1.jpg" />
+    <Content Include="Content\image\Logo\2934068.png" />
     <Content Include="Content\image\Logo\CAMERA PHƯƠNG NGHI.png" />
     <Content Include="Content\image\confirm-order.png" />
     <Content Include="Content\js\main.js" />
