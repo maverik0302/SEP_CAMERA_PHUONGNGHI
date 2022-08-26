@@ -24,11 +24,17 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult DangKy(Account acc)
         {
-            db.Accounts.Add(acc);
-            db.SaveChanges();
-            return RedirectToAction("GioHang", "GioHang");
+            if (ModelState.IsValid)
+            {
+                db.Accounts.Add(acc);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            return View(acc);
+           
         }
         
         public ActionResult Taikhoan()

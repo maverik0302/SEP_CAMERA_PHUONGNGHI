@@ -10,7 +10,7 @@
     <div class="page-header">
         <div class="page-header__container container">
             <div class="page-header__title">
-                <h1>Giỏ hàng</h1>
+                <h2>Giỏ hàng của bạn</h2>
             </div>
         </div>
     </div>
@@ -59,11 +59,14 @@
                                 </td>
                                 <td class="cart-table__column cart-table__column--remove">
                                     <div class="form-row">
-                                        <input class="btn btn-primary" type="submit" value="Cập nhật" />
-                                        <hr />
-                                        <button class="btn btn-danger" type="button" onclick="location.href='@Url.Action("Xoagiohang", "GioHang", new { iMa = item.iMaProduct })'">
-                                            Xoá
-                                        </button>
+                                        <i class="fa-solid fa-upload fa-2x"><input type="submit" value="" /></i>
+                                            @*<hr />
+                                            <button class="btn btn-danger" type="button" onclick="location.href='@Url.Action("Xoagiohang", "GioHang", new { iMa = item.iMaProduct })'">
+                                                Xoá
+                                            </button>*@
+                                        @*<a href="@Url.Action("CapNhatGioHang", "GioHang", new { iMa = item.iMaProduct })"><i class="fa-solid fa-upload fa-2x"></i></a>*@
+                                        <a href="@Url.Action("Xoagiohang", "GioHang", new { iMa = item.iMaProduct })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
+
                                     </div>
                                 </td>
                             }
@@ -72,47 +75,47 @@
                 }
             </table>
             @*<div class="row justify-content-end pt-5">
-                <div class="col-12 col-md-7 col-lg-6 col-xl-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">Tổng giỏ hàng</h3>
-                            <table class="cart__totals">
+                    <div class="col-12 col-md-7 col-lg-6 col-xl-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Tổng giỏ hàng</h3>
+                                <table class="cart__totals">
 
-                                <tfoot class="cart__totals-footer">
-                                    <tr>
-                                        <th>Tổng:</th>
-                                        <td>@String.Format("{0:0,0}", @ViewBag.TongTien)</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <a class="btn btn-primary btn-xl btn-block cart__checkout-button"
-                               href="@Url.Action("DatHang", "GioHang")">
-                                Đặt Hàng
-                            </a>
+                                    <tfoot class="cart__totals-footer">
+                                        <tr>
+                                            <th>Tổng:</th>
+                                            <td>@String.Format("{0:0,0}", @ViewBag.TongTien)</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <a class="btn btn-primary btn-xl btn-block cart__checkout-button"
+                                   href="@Url.Action("DatHang", "GioHang")">
+                                    Đặt Hàng
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>*@
+                </div>*@
 
 
             @*<div class="row justify-content-end pt-5">
-            <div class="col-12 col-md-7 col-lg-6 col-xl-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Tổng giỏ hàng</h3>
-                        <table class="cart__totals">
+                    <div class="col-12 col-md-7 col-lg-6 col-xl-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Tổng giỏ hàng</h3>
+                                <table class="cart__totals">
 
-                            <tfoot class="cart__totals-footer">
-                                <tr>
-                                    <th>Tổng:</th>
-                                    <td>@String.Format("{0:0,0}", @ViewBag.TongTien)</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                                    <tfoot class="cart__totals-footer">
+                                        <tr>
+                                            <th>Tổng:</th>
+                                            <td>@String.Format("{0:0,0}", @ViewBag.TongTien)</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>*@
+                </div>*@
 
             <div class="cart__actions">
                 <div class="cart__buttons">
@@ -120,6 +123,6 @@
                 </div>
             </div>
         </div>
-                    </div>
-                </div>
+    </div>
+</div>
 
