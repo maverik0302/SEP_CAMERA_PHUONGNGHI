@@ -5,56 +5,114 @@
     Layout = "~/Areas/Admin/Views/Shared/_mLayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.price_product)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.num)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.total_price_product)
-        </th>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.Oder.order_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tbProduct.Name)
-        </th>
-        <th></th>
-    </tr>
+<div class="page-inner">
+    <div class="page-header">
+        <Strong class="page-title">QUẢN LÍ ĐƠN HÀNG</Strong>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Chi tiết đơn hàng</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="basic-datatables" class="display table table-striped table-hover">
+                            <thread>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>
+                                        Tên sản phẩm
+                                    </th>
+                                    <th>
+                                        Giá
+                                    </th>
+                                    <th>
+                                        Số lượng
+                                    </th>
+                                    <th>
+                                        Tổng giá tiền
+                                    </th>
+                                </tr>
+                            </thread>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>
+                                        Tên sản phẩm
+                                    </th>
+                                    <th>
+                                        Giá
+                                    </th>
+                                    <th>
+                                        Số lượng
+                                    </th>
+                                    <th>
+                                        Tổng giá tiền
+                                    </th>
+                                </tr>
+                            </tfoot>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.price_product)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.num)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.total_price_product)
-        </td>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.Oder.order_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbProduct.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.detail_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.detail_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.detail_id })
-        </td>
-    </tr>
-}
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.detail_id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.tbProduct.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.price_product)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.num)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.total_price_product)
+                                    </td>
+                                </tr>
+                            }
+                        </table>
 
-</table>
+                        <div class="card-action">
+                            <a style="font-size:16px" href="@Url.Action("Index")">Quay lại</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<dl class="dl-horizontal">
+        <dt>
+            <strong>Tên danh mục</strong>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            <strong>Ngày tạo danh mục</strong>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            <strong>Ngày cập nhật</strong>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+    </dl>*@

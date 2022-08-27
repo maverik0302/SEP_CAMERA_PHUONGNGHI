@@ -17,7 +17,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         // GET: ShopGrid
         public ActionResult ShopGrid(int? page)
         {
-            int pageSize = 6;
+            int pageSize = 12;
 
             int pageNumber = (page ?? 1);
 

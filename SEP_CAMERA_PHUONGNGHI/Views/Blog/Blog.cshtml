@@ -76,12 +76,14 @@
 
                             <ul class="pagination justify-content-center">
                                 @*Create Link pagelist*@
-                                <div class="Menu_trang">
-                                <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("Blog", new { page = page }))</li>
-                        </div>
+                                <li style="letter-spacing:50px" class="page-item">
+                                    @Html.PagedListPager(Model, page => Url.Action("Blog", new { page = page }))
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
