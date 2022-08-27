@@ -30,23 +30,33 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>
+                                        Tên khách hàng
+                                    </th>
+                                    <th>
+                                        Số điện thoại
+                                    </th>
+                                    <th>
+                                        Địa chỉ
+                                    </th>
+                                    <th>
+                                        Thành phố
+                                    </th>
+                                    <th>
+                                        Quận Huyện
+                                    </th>
+                                    <th>
+                                        Phường Xã
+                                    </th>
+                                    <th>
+                                        Ghi chú
+                                    </th>
+                                    <th>
                                         Ngày đặt hàng
                                     </th>
                                     <th>
-                                        Trạng thái
-                                    </th>
-                                    @*<th>
-                                        Tình trạng giao hàng
-                                    </th>
-                                    <th>
-                                        Ngày giao hàng
-                                    </th>*@
-                                    <th>
                                         Tổng giá trị
                                     </th>
-                                    <th>
-                                        Tên khách hàng
-                                    </th>
+
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -54,24 +64,35 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>
+                                        Tên khách hàng
+                                    </th>
+                                    <th>
+                                        Số điện thoại
+                                    </th>
+                                    <th>
+                                        Địa chỉ
+                                    </th>
+                                    <th>
+                                        Thành phố
+                                    </th>
+                                    <th>
+                                        Quận Huyện
+                                    </th>
+                                    <th>
+                                        Phường Xã
+                                    </th>
+                                    <th>
+                                        Ghi chú
+                                    </th>
+                                    <th>
                                         Ngày đặt hàng
                                     </th>
                                     <th>
-                                        Trạng thái
-                                    </th>
-                                    @*<th>
-                                        Tình trạng giao hàng
-                                    </th>
-                                    <th>
-                                        Ngày giao hàng
-                                    </th>*@
-                                    <th>
                                         Tổng giá trị
                                     </th>
-                                    <th>
-                                        Tên khách hàng
-                                    </th>
+
                                     <th>Action</th>
+                                </tr>
                             </tfoot>
                             <tbody>
                                 @foreach (var item in Model)
@@ -79,27 +100,35 @@
                                     <tr>
                                         <td>@item.order_id</td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.orderdate)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Status)
-                                        </td>
-                                        @*<td>
-                                            @Html.DisplayFor(modelItem => item.Delivered)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.DeliveryDate)
-                                        </td>*@
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.total_price)
-                                        </td>
-                                        <td>
                                             @Html.DisplayFor(modelItem => item.CUSTOMER.Name)
                                         </td>
                                         <td>
-                                            @*<a href="@Url.Action("Edit", "Order", new { id = item.order_id })"><i class="fa-solid fa-pen-to-square fa-2x"> | </i></a>*@
-                                            <a href="@Url.Action("Details", "Order", new { id = item.order_id })"><i class="fa-solid fa-circle-info fa-2x"> | </i></a>
-                                            <a href="@Url.Action("Delete", "Order", new { id = item.order_id })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
+                                            @Html.DisplayFor(modelItem => item.CUSTOMER.Phone)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CUSTOMER.Address)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CUSTOMER.City)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CUSTOMER.District)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CUSTOMER.Ward)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CUSTOMER.Note)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.orderdate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_price)
+                                        </td>
+
+                                        <td>
+                                            <a href="@Url.Action("Details", "Order", new { id = item.order_id })"><i class="fa-solid fa-circle-info fa-2x"></i></a>
                                         </td>
                                     </tr>
                                 }

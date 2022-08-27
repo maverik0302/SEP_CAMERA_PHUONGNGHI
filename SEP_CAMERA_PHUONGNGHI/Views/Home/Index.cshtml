@@ -17,13 +17,7 @@
             <div class="col-12 col-lg-9 offset-lg-3">
                 <div class="block-slideshow__body">
                     <div class="owl-carousel owl-loaded owl-drag">
-                        <div class="slick-slider slick-initialized">
-                            <div class="slick-list">
-
-                            </div>
-                        </div>
-
-                        @for (int i = 0; i < 5; i++)
+                        @for (int i = 1; i < 6; i++)
                         {
                             <div class="block-slideshow__slide" href="#">
                                 <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop "
@@ -37,13 +31,13 @@
 
                                 <div class="block-slideshow__slide-content">
                                     <div class="block-slideshow__slide-title ">
-                                        @product[i].SeoTitle
+                                        @product[i].Name
                                     </div>
-                                    <div class="block-slideshow__slide-text">
+                                    <div style="width:700px;white-space: nowrap; overflow: hidden; text-overflow: ellipsis " class="block-slideshow__slide-text">
                                         @product[i].Desciption
                                     </div>
                                     <div class="block-slideshow__slide-button">
-                                        <a  href="@Url.Action("ProductDetail", "ShopGrid", new { id = product[i].product_id})" class="btn btn-primary btn-lg" >@product[i].Name</a>
+                                        <a  href="@Url.Action("ProductDetail", "ShopGrid", new { id = product[i].product_id})" class="btn btn-primary" >Mua ngay</a>
                                     </div>
                                 </div>
                             </div>

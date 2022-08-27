@@ -34,7 +34,7 @@
 </head>
 <body>
     <div class="limiter">
-        <div class="container-login100" >
+        <div class="container-login100">
             <div class="wrap-login100">
                 <form action="@Url.Action("Login", "Auth")" method="post" class="login100-form validate-form">
                     <span class="login100-form-logo">
@@ -63,12 +63,18 @@
                         <p style="color:red">Password không đúng</p>
                     }
 
-                    <div class="container-login100-form-btn">
-                        <button type="submit" class="login100-form-btn">
-                            Đăng nhập 
-                        </button>
-                    </div>
+                        <div class="container-login100-form-btn">
+                            <button type="submit" class="login100-form-btn">
+                                Đăng nhập
+                            </button>
+                        </div>
+
                 </form>
+                <br />
+                <div style="background-color:white" class="btn btn-primary container-login100-form-btn" >
+                    <a href="@Url.Action("DangKy", "User", new {area = ""})"> Đăng kí tài khoản</a>
+                  
+                </div>
             </div>
             <!---->
         </div>

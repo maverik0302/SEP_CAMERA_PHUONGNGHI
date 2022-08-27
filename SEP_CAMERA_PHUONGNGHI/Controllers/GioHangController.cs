@@ -176,7 +176,6 @@ namespace SEP_CAMERA_PHUONGNGHI.Controllers
         {
             if (Session["Account"] == null || Session["Account"].ToString() == "")
             {
-                ViewBag.Message = "Vui lòng đăng nhập";
                 return RedirectToAction("Login", "Auth", new { area = "Admin" });
             }
             if (Session["GioHang"] == null)
