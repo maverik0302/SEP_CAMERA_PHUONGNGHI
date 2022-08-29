@@ -11,9 +11,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-
+    
     public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,9 +21,7 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
         }
     
         public int category_id { get; set; }
-        [StringLength(250, MinimumLength = 1)]
         public string Name { get; set; }
-        [StringLength(250, MinimumLength = 1)]
         public string SeoTitle { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> sort { get; set; }

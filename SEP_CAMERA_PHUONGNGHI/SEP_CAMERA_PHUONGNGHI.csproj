@@ -933,6 +933,9 @@
     <Content Include="Areas\Admin\Views\About\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\About\Index.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\Contactss\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Contactss\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Contactss\Index.cshtml" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -940,9 +943,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Contactss\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Contactss\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Contactss\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
