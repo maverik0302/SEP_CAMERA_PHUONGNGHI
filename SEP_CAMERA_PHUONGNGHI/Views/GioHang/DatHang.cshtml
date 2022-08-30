@@ -9,7 +9,7 @@
 {
 
     @Html.AntiForgeryToken()
-    
+
 
     <div class="site__body">
         <div class="page-header">
@@ -32,27 +32,26 @@
                                 @Html.ValidationSummary(true)
                                 <div class="form-group">
                                     <label for="checkout-company-name">
-                                        <label for="checkout-city">Họ và tên</label> <input name="hovaten" type="text" class="form-control" id="checkout-city">
-
+                                        <label for="checkout-city">Họ và tên</label> <input name="hovaten" type="text" class="form-control" id="checkout-city" required="required">
                                     </label>
-                                    
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="checkout-city">Địa chỉ</label> <input name="diachi" type="text" class="form-control" id="checkout-city">
 
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="checkout-city">Tỉnh / Thành phố</label> <input name="tinhtp" type="text" class="form-control" id="checkout-city">
+                                    <label for="checkout-city">Địa chỉ</label> <input name="diachi" type="text" class="form-control" id="checkout-city" required="required">
+
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="checkout-state">Quận / Huyện</label> <input name="quanhhuyen" type="text" class="form-control" id="checkout-state">
+                                    <label for="checkout-city">Tỉnh / Thành phố</label> <input name="tinhtp" type="text" class="form-control" id="checkout-city" required="required">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="checkout-postcode">Phường / Xã</label> <input name="phuongxa" type="text" class="form-control" id="checkout-postcode">
+                                    <label for="checkout-state">Quận / Huyện</label> <input name="quanhhuyen" type="text" class="form-control" id="checkout-state" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="checkout-postcode">Phường / Xã</label> <input name="phuongxa" type="text" class="form-control" id="checkout-postcode" required="required">
                                 </div>
 
 
@@ -61,11 +60,11 @@
                                         <label for="checkout-email">
                                             Email
                                         </label> <input name="email" type="email" class="form-control"
-                                                        id="checkout-email">
+                                                        id="checkout-email" required="required">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="checkout-phone">Số điện thoại</label>
-                                        <input name="sdt" type="number" class="form-control" id="checkout-phone">
+                                        <input name="sdt" type="number" class="form-control" id="checkout-phone" required="required">
                                     </div>
                                 </div>
 
