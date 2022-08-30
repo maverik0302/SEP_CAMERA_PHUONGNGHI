@@ -55,17 +55,13 @@
                                     @Html.TextBox("txtSoLuong", item.sAmount)
                                 </td>
                                 <td class="cart-table__column cart-table__column--total" data-title="Total">
-                                    @String.Format("{0:0,0}", item.ThanhTien)
+                                    @String.Format("{0:0,0}",item.ThanhTien)
                                 </td>
                                 <td class="cart-table__column cart-table__column--remove">
                                     <div class="form-row">
-                                        <i class="fa-solid fa-upload fa-2x"><input type="submit" value="" /></i>
-                                            @*<hr />
-                                            <button class="btn btn-danger" type="button" onclick="location.href='@Url.Action("Xoagiohang", "GioHang", new { iMa = item.iMaProduct })'">
-                                                Xoá
-                                            </button>*@
-                                        @*<a href="@Url.Action("CapNhatGioHang", "GioHang", new { iMa = item.iMaProduct })"><i class="fa-solid fa-upload fa-2x"></i></a>*@
-                                        <a href="@Url.Action("Xoagiohang", "GioHang", new { iMa = item.iMaProduct })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
+                                        <input type="submit" value="Cập nhật" />
+                                        <br />
+                                        <a  href="@Url.Action("Xoagiohang", "GioHang", new { iMa = item.iMaProduct })"><i class="fa-solid fa-trash-can fa-2x"></i></a>
 
                                     </div>
                                 </td>
@@ -119,7 +115,7 @@
 
             <div class="cart__actions">
                 <div class="cart__buttons">
-                    <a href="~/Home/Index" class="btn btn-light">Tiếp tục mua sắm</a> <a href="@Url.Action("DatHang", "GioHang")" class="btn btn-primary cart__update-button">Thanh toán</a>
+                  <a href="@Url.Action("DatHang", "GioHang")" class="btn btn-primary cart__update-button">Thanh toán</a>
                 </div>
             </div>
         </div>
