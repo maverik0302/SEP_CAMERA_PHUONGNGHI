@@ -105,7 +105,7 @@
                                         {
                                             <tr>
                                                 <td>@item.sName <br /> SL: @item.sAmount</td>
-                                                <td>@String.Format("{0:0,0}", item.sPrice)</td>
+                                                <td>@String.Format("{0:0,0}", item.ThanhTien)</td>
                                             </tr>
                                         }
                                     </tbody>
@@ -113,7 +113,7 @@
                                     <tbody class="checkout__totals-subtotals">
 
                                         <tr>
-                                            <th>Khuyến mãi</th>
+                                            <th>Đã khuyến mãi</th>
                                             <td style="color:darkblue">@String.Format("{0:0,0}", @ViewBag.sDiviant) đ</td>
                                         </tr>
 

@@ -20,11 +20,11 @@ namespace SEP_CAMERA_PHUONGNGHI.Models
 
         public int deviant
         {
-            get { return sPrice - sPricePromotion; }
+            get { return (sAmount*sPrice) - (sAmount * sPricePromotion); }
         }
         public int ThanhTien
         {
-            get { return (sAmount * sPrice)- (sAmount * deviant); }
+            get { return (sAmount * sPrice)- (deviant); }
         }
 
         
